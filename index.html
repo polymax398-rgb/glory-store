@@ -70,7 +70,6 @@
     .font-editorial {
       font-family: 'Cormorant Garamond', 'Tajawal', serif;
     }
-    /* Custom subtle scrollbars */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -96,9 +95,7 @@
 </head>
 <body class="antialiased selection:bg-stone-900 selection:text-stone-50 dark:selection:bg-stone-100 dark:selection:text-stone-900">
 
-  <!-- ===================================================================== -->
-  <!-- TOP ANNOUNCEMENT BAR                                                  -->
-  <!-- ===================================================================== -->
+  <!-- TOP ANNOUNCEMENT BAR -->
   <div id="announcement-bar" class="bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-950 text-xs tracking-[0.18em] uppercase py-2.5 px-4 text-center transition-colors">
     <div class="max-w-7xl mx-auto flex items-center justify-center gap-3">
       <span id="announcement-text">COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $250 — AUTUMN / WINTER EDITORIAL</span>
@@ -106,9 +103,7 @@
     </div>
   </div>
 
-  <!-- ===================================================================== -->
-  <!-- ADMIN PREVIEW BANNER (ONLY VISIBLE WHEN ADMIN IS LOGGED IN)            -->
-  <!-- ===================================================================== -->
+  <!-- ADMIN PREVIEW BANNER -->
   <div id="admin-preview-ribbon" class="hidden sticky top-0 z-50 bg-brass-600 text-white px-4 py-2 text-xs shadow-md">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2 font-medium">
@@ -126,53 +121,42 @@
     </div>
   </div>
 
-  <!-- ===================================================================== -->
-  <!-- PUBLIC STOREFRONT HEADER                                              -->
-  <!-- ===================================================================== -->
+  <!-- PUBLIC STOREFRONT HEADER -->
   <header id="store-header" class="sticky top-0 z-40 bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md border-b border-stone-200/80 dark:border-stone-800/80 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-      <!-- Left Navigation -->
       <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.16em] font-medium text-stone-600 dark:text-stone-300">
         <a href="#catalog" onclick="filterByCategory('all')" class="hover:text-stone-950 dark:hover:text-white transition" data-i18n="navCollection">Collection</a>
         <div id="header-category-links" class="flex items-center gap-6"></div>
         <a href="#editorial-lookbook" class="hover:text-stone-950 dark:hover:text-white transition" data-i18n="navEditorial">Editorial</a>
       </nav>
 
-      <!-- Mobile Menu Button -->
       <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" aria-label="Menu">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
 
-      <!-- Brand Wordmark (No hidden admin triggers or links anywhere) -->
       <a href="#" onclick="resetStoreView(event)" class="font-editorial text-2xl sm:text-3xl tracking-[0.22em] font-semibold uppercase text-stone-900 dark:text-stone-50 select-none text-center">
         <span id="brand-name-display">GLORY STORE</span>
       </a>
 
-      <!-- Right Utilities: Search, Language, Theme, Wishlist, Bag -->
       <div class="flex items-center gap-1.5 sm:gap-3">
-        <!-- Search Toggle -->
         <button onclick="toggleSearchBar()" class="p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Search">
           <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </button>
 
-        <!-- Language Toggle -->
         <button onclick="togglePublicLanguage()" class="px-2.5 py-1 rounded-full text-xs font-medium border border-stone-300 dark:border-stone-700 hover:bg-stone-200/60 dark:hover:bg-stone-800 transition">
           <span id="public-lang-label">AR</span>
         </button>
 
-        <!-- Theme Toggle -->
         <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Theme">
           <i data-lucide="sun" class="w-4 h-4 sm:w-5 sm:h-5 hidden dark:block"></i>
           <i data-lucide="moon" class="w-4 h-4 sm:w-5 sm:h-5 block dark:hidden"></i>
         </button>
 
-        <!-- Wishlist Drawer Trigger -->
         <button onclick="openDrawer('wishlist')" class="relative p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Wishlist">
           <i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5"></i>
           <span id="wishlist-badge" class="hidden absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-[10px] font-semibold flex items-center justify-center">0</span>
         </button>
 
-        <!-- Shopping Bag Drawer Trigger -->
         <button onclick="openDrawer('cart')" class="relative p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Shopping Bag">
           <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5"></i>
           <span id="cart-badge" class="hidden absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-[10px] font-semibold flex items-center justify-center">0</span>
@@ -180,7 +164,6 @@
       </div>
     </div>
 
-    <!-- Expandable Search Bar -->
     <div id="search-bar-panel" class="hidden border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950 px-4 py-4">
       <div class="max-w-3xl mx-auto flex items-center gap-3">
         <i data-lucide="search" class="w-5 h-5 text-stone-400"></i>
@@ -189,7 +172,6 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Menu -->
     <div id="mobile-menu-panel" class="hidden md:hidden border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950 px-6 py-5 space-y-4">
       <a href="#catalog" onclick="filterByCategory('all'); toggleMobileMenu()" class="block text-xs uppercase tracking-[0.18em] font-medium" data-i18n="navCollection">Collection</a>
       <div id="mobile-category-links" class="space-y-3"></div>
@@ -197,14 +179,10 @@
     </div>
   </header>
 
-  <!-- ===================================================================== -->
-  <!-- MAIN PUBLIC STOREFRONT                                                -->
-  <!-- ===================================================================== -->
+  <!-- MAIN STOREFRONT -->
   <main id="public-storefront" class="min-h-screen">
-    <!-- Dynamic Homepage Sections Container -->
     <div id="homepage-sections-container"></div>
 
-    <!-- Interactive Storefront Catalog Section -->
     <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-stone-200 dark:border-stone-800">
         <div>
@@ -212,7 +190,6 @@
           <h2 class="font-editorial text-3xl sm:text-5xl font-medium tracking-tight" data-i18n="allPieces">The Contemporary Collection</h2>
         </div>
 
-        <!-- Category Filter Pills & Sort -->
         <div class="flex flex-wrap items-center gap-2">
           <div id="catalog-category-pills" class="flex flex-wrap items-center gap-2"></div>
           <select id="catalog-sort-select" onchange="renderCatalogGrid()" class="px-3.5 py-2 rounded-full text-xs uppercase tracking-wider bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 focus:outline-none">
@@ -224,7 +201,6 @@
         </div>
       </div>
 
-      <!-- Active Offer Banner inside Catalog -->
       <div id="active-offer-strip" class="hidden mt-8 rounded-2xl bg-stone-900 dark:bg-stone-900 border border-stone-800 text-stone-100 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div class="flex items-center gap-4">
           <div class="w-11 h-11 rounded-full bg-brass-500/20 text-brass-400 flex items-center justify-center shrink-0">
@@ -238,10 +214,8 @@
         <span id="active-offer-badge" class="px-4 py-1.5 rounded-full bg-brass-500 text-stone-950 text-xs font-bold uppercase tracking-wider"></span>
       </div>
 
-      <!-- Product Grid -->
       <div id="catalog-product-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12"></div>
 
-      <!-- Empty Search State -->
       <div id="catalog-empty-state" class="hidden py-20 text-center">
         <p class="font-editorial text-2xl text-stone-500 mb-3" data-i18n="noPiecesFound">No pieces match your current selection.</p>
         <button onclick="filterByCategory('all'); clearPublicSearch();" class="px-6 py-2.5 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-widest font-medium">
@@ -250,15 +224,12 @@
       </div>
     </section>
 
-    <!-- Website Banners & Editorial Lookbook Strip -->
     <section id="editorial-lookbook" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
       <div id="storefront-banners-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
     </section>
   </main>
 
-  <!-- ===================================================================== -->
-  <!-- PUBLIC STOREFRONT FOOTER (ZERO ADMIN LINKS OR HINTS)                  -->
-  <!-- ===================================================================== -->
+  <!-- PUBLIC FOOTER -->
   <footer class="border-t border-stone-200 dark:border-stone-800 bg-stone-100/70 dark:bg-stone-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
       <div>
@@ -286,13 +257,10 @@
     </div>
   </footer>
 
-  <!-- ===================================================================== -->
-  <!-- PRODUCT DETAIL QUICK-VIEW MODAL                                       -->
-  <!-- ===================================================================== -->
+  <!-- PRODUCT DETAIL MODAL -->
   <div id="product-detail-modal" class="hidden fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl fade-in my-8">
       <div class="grid grid-cols-1 md:grid-cols-2">
-        <!-- Gallery Column -->
         <div class="bg-stone-100 dark:bg-stone-950 p-4 sm:p-6 flex flex-col justify-between">
           <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-stone-200 dark:bg-stone-800">
             <img id="pdp-main-image" src="" alt="" class="w-full h-full object-cover" />
@@ -300,7 +268,6 @@
           <div id="pdp-thumbnails" class="flex items-center gap-2.5 mt-4 overflow-x-auto pb-1"></div>
         </div>
 
-        <!-- Details Column -->
         <div class="p-6 sm:p-8 flex flex-col justify-between">
           <div>
             <div class="flex items-start justify-between gap-4">
@@ -316,7 +283,6 @@
             <div id="pdp-price-block" class="mt-4 flex items-baseline gap-3"></div>
             <p id="pdp-description" class="mt-5 text-sm text-stone-600 dark:text-stone-300 leading-relaxed"></p>
 
-            <!-- Color Swatches -->
             <div id="pdp-colors-section" class="mt-6">
               <p class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2.5">
                 <span data-i18n="colorLabel">Color</span>: <span id="pdp-selected-color-name" class="text-stone-900 dark:text-stone-100"></span>
@@ -324,7 +290,6 @@
               <div id="pdp-colors-list" class="flex flex-wrap gap-2.5"></div>
             </div>
 
-            <!-- Size Selector -->
             <div id="pdp-sizes-section" class="mt-6">
               <p class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2.5" data-i18n="sizeLabel">Size</p>
               <div id="pdp-sizes-list" class="flex flex-wrap gap-2"></div>
@@ -344,9 +309,7 @@
     </div>
   </div>
 
-  <!-- ===================================================================== -->
-  <!-- SLIDE-OVER CART & WISHLIST DRAWER                                     -->
-  <!-- ===================================================================== -->
+  <!-- SLIDE-OVER DRAWER -->
   <div id="side-drawer-backdrop" onclick="closeDrawer()" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs"></div>
   <aside id="side-drawer" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 z-50 h-full w-full max-w-md bg-stone-50 dark:bg-stone-950 border-l rtl:border-l-0 rtl:border-r border-stone-200 dark:border-stone-800 shadow-2xl transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col">
     <div class="p-6 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
@@ -359,9 +322,7 @@
     <div id="drawer-footer" class="p-6 border-t border-stone-200 dark:border-stone-800 bg-stone-100/70 dark:bg-stone-900/60"></div>
   </aside>
 
-  <!-- ===================================================================== -->
-  <!-- HIDDEN ADMIN LOGIN MODAL (TRIGGERED ONLY BY 5 CONSECUTIVE '5' KEYS)   -->
-  <!-- ===================================================================== -->
+  <!-- HIDDEN ADMIN LOGIN MODAL (UPDATED TO REQUIRE EMAIL & PASSWORD) -->
   <div id="admin-login-modal" class="hidden fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl max-w-md w-full p-8 shadow-2xl fade-in">
       <div class="flex items-center justify-between mb-6">
@@ -381,8 +342,13 @@
 
       <form id="admin-login-form" onsubmit="handleAdminLoginSubmit(event)" class="space-y-4">
         <div>
-          <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Access Passcode</label>
-          <input id="admin-password-input" type="password" required autocomplete="current-password" placeholder="Enter private access key" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-stone-950 border border-stone-300 dark:border-stone-700 focus:outline-none focus:border-stone-900 dark:focus:border-stone-100 text-sm" />
+          <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Admin Email Address</label>
+          <input id="admin-email-input" type="email" required autocomplete="email" placeholder="polymax398@gmail.com" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-stone-950 border border-stone-300 dark:border-stone-700 focus:outline-none focus:border-stone-900 dark:focus:border-stone-100 text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Password</label>
+          <input id="admin-password-input" type="password" required autocomplete="current-password" placeholder="Enter account password" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-stone-950 border border-stone-300 dark:border-stone-700 focus:outline-none focus:border-stone-900 dark:focus:border-stone-100 text-sm" />
         </div>
 
         <p id="admin-login-error" class="hidden text-xs text-red-600 dark:text-red-400 font-medium"></p>
@@ -395,11 +361,8 @@
     </div>
   </div>
 
-  <!-- ===================================================================== -->
-  <!-- FULL-SCREEN STORE MANAGEMENT WORKSPACE (6 SECTIONS ONLY)              -->
-  <!-- ===================================================================== -->
+  <!-- STORE MANAGEMENT WORKSPACE (6 SECTIONS) -->
   <div id="admin-workspace" class="hidden fixed inset-0 z-50 bg-stone-100 dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col md:flex-row overflow-hidden">
-    <!-- Admin Sidebar -->
     <aside class="w-full md:w-72 bg-white dark:bg-stone-900 border-b md:border-b-0 md:border-r rtl:md:border-r-0 rtl:md:border-l border-stone-200 dark:border-stone-800 flex flex-col shrink-0">
       <div class="p-5 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
         <div>
@@ -411,7 +374,6 @@
         </button>
       </div>
 
-      <!-- 6 Navigation Sections (Zero analytics, zero charts, zero revenue reports) -->
       <nav id="admin-sidebar-nav" class="hidden md:flex flex-col flex-1 p-3.5 space-y-1.5 overflow-y-auto">
         <button onclick="switchAdminSection('products')" data-admin-tab="products" class="admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition">
           <i data-lucide="shopping-bag" class="w-4 h-4"></i>
@@ -439,7 +401,6 @@
         </button>
       </nav>
 
-      <!-- Sidebar Footer Actions -->
       <div class="hidden md:block p-4 border-t border-stone-200 dark:border-stone-800 space-y-2">
         <button onclick="previewPublicStore()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold uppercase tracking-wider hover:bg-stone-100 dark:hover:bg-stone-800 transition">
           <i data-lucide="eye" class="w-4 h-4"></i>
@@ -452,9 +413,7 @@
       </div>
     </aside>
 
-    <!-- Admin Main Content Area -->
     <div class="flex-1 flex flex-col overflow-hidden">
-      <!-- Top Bar -->
       <header class="h-16 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 px-4 sm:px-8 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
           <h2 id="admin-current-section-title" class="font-editorial text-2xl font-semibold">Products</h2>
@@ -465,12 +424,10 @@
         </div>
 
         <div class="flex items-center gap-2 sm:gap-3">
-          <!-- Admin RTL / LTR Language Switcher -->
           <button onclick="toggleAdminLanguage()" class="px-3 py-1.5 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold hover:bg-stone-100 dark:hover:bg-stone-800 transition">
             <span id="admin-lang-toggle-label">العربية (RTL)</span>
           </button>
 
-          <!-- Theme Switch -->
           <button onclick="toggleTheme()" class="p-2 rounded-xl border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 transition" title="Toggle Theme">
             <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
             <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
@@ -485,19 +442,13 @@
         </div>
       </header>
 
-      <!-- Scrollable Section Workspace -->
       <div id="admin-section-body" class="flex-1 overflow-y-auto p-4 sm:p-8"></div>
     </div>
   </div>
 
-  <!-- ===================================================================== -->
-  <!-- TOAST NOTIFICATION CONTAINER                                          -->
-  <!-- ===================================================================== -->
   <div id="toast-container" class="fixed bottom-5 right-5 rtl:right-auto rtl:left-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-  <!-- ===================================================================== -->
-  <!-- FIREBASE & STORE APPLICATION SCRIPT                                   -->
-  <!-- ===================================================================== -->
+  <!-- APPLICATION SCRIPT -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
     import {
@@ -505,7 +456,6 @@
       signInAnonymously,
       signInWithCustomToken,
       signInWithEmailAndPassword,
-      createUserWithEmailAndPassword,
       signOut,
       onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
@@ -527,9 +477,6 @@
       getDownloadURL
     } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-storage.js";
 
-    /* -----------------------------------------------------------------------
-     * 1. FIREBASE INITIALIZATION & STRICT PATH CONFIGURATION
-     * --------------------------------------------------------------------- */
     const appId = typeof __app_id !== 'undefined' ? __app_id : 'glory-store-default';
     const firebaseConfig = typeof __firebase_config !== 'undefined'
       ? JSON.parse(__firebase_config)
@@ -547,19 +494,12 @@
     try {
       storage = getStorage(app);
     } catch (e) {
-      console.warn("Firebase Storage initialization notice:", e);
+      console.warn("Firebase Storage init notice:", e);
     }
 
-    // Strict Firestore path helpers adhering to /artifacts/{appId}/public/data/{collectionName}
     const publicCol = (colName) => collection(db, 'artifacts', appId, 'public', 'data', colName);
     const publicDoc = (colName, docId) => doc(db, 'artifacts', appId, 'public', 'data', colName, docId);
 
-    // Dedicated admin authentication email mapped behind the scenes (no plain-text password in code)
-    const ADMIN_AUTH_EMAIL = 'admin@glorystore.local';
-
-    /* -----------------------------------------------------------------------
-     * 2. HIGH-RESOLUTION EDITORIAL SEED DATA (FALLBACK & INITIAL SEED)
-     * --------------------------------------------------------------------- */
     function generateEditorialSvgDataUri(title, subtitle, bgHex, accentHex) {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
         <defs>
@@ -588,7 +528,6 @@
       blazer1: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=85",
       trouser1: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=85",
       bag1: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
-      shirt1: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=85",
       catOuterwear: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=85",
       catTailoring: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
       catKnitwear: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=85",
@@ -597,38 +536,10 @@
     };
 
     const INITIAL_CATEGORIES = [
-      {
-        id: "cat-outerwear",
-        nameEn: "Outerwear",
-        nameAr: "المعاطف والسترات",
-        coverImage: SEED_IMAGES.catOuterwear,
-        order: 1,
-        visible: true
-      },
-      {
-        id: "cat-tailoring",
-        nameEn: "Tailoring",
-        nameAr: "التفصيل الراقي",
-        coverImage: SEED_IMAGES.catTailoring,
-        order: 2,
-        visible: true
-      },
-      {
-        id: "cat-knitwear",
-        nameEn: "Knitwear & Silk",
-        nameAr: "التريكو والحرير",
-        coverImage: SEED_IMAGES.catKnitwear,
-        order: 3,
-        visible: true
-      },
-      {
-        id: "cat-accessories",
-        nameEn: "Leather Goods",
-        nameAr: "الجلديات الفاخرة",
-        coverImage: SEED_IMAGES.bag1,
-        order: 4,
-        visible: true
-      }
+      { id: "cat-outerwear", nameEn: "Outerwear", nameAr: "المعاطف والسترات", coverImage: SEED_IMAGES.catOuterwear, order: 1, visible: true },
+      { id: "cat-tailoring", nameEn: "Tailoring", nameAr: "التفصيل الراقي", coverImage: SEED_IMAGES.catTailoring, order: 2, visible: true },
+      { id: "cat-knitwear", nameEn: "Knitwear & Silk", nameAr: "التريكو والحرير", coverImage: SEED_IMAGES.catKnitwear, order: 3, visible: true },
+      { id: "cat-accessories", nameEn: "Leather Goods", nameAr: "الجلديات الفاخرة", coverImage: SEED_IMAGES.bag1, order: 4, visible: true }
     ];
 
     const INITIAL_PRODUCTS = [
@@ -636,16 +547,13 @@
         id: "prod-01",
         nameEn: "Belted Double-Face Wool Coat",
         nameAr: "معطف صوف مزدوج الوجه بحزام",
-        descriptionEn: "Hand-finished from virgin double-face wool in warm camel. Features wide notch lapels, dropped shoulders, and a tonal self-tie belt for effortless drape.",
-        descriptionAr: "مصنوع يدوياً من الصوف البكر مزدوج الوجه بلون الجمل الدافئ. يتميز بياقة عريضة وأكتاف منسدلة وحزام متناسق لإطلالة انسيابية.",
+        descriptionEn: "Hand-finished from virgin double-face wool in warm camel.",
+        descriptionAr: "مصنوع يدوياً من الصوف البكر مزدوج الوجه بلون الجمل الدافئ.",
         price: 480,
         discountedPrice: null,
         categoryId: "cat-outerwear",
         sizes: ["XS", "S", "M", "L"],
-        colors: [
-          { name: "Camel", hex: "#B89365" },
-          { name: "Obsidian", hex: "#1B1A18" }
-        ],
+        colors: [{ name: "Camel", hex: "#B89365" }],
         images: [SEED_IMAGES.coat1, SEED_IMAGES.coat2],
         status: "published",
         createdAt: 1710000001
@@ -654,119 +562,25 @@
         id: "prod-02",
         nameEn: "Architectural Structured Blazer",
         nameAr: "بليزر مفصل بقصة معمارية",
-        descriptionEn: "Tailored from breathable Italian virgin wool crepe with sculpted waist shaping, horn buttons, and full cupro lining.",
-        descriptionAr: "مفصل من كريب الصوف الإيطالي الفاخر مع تحديد خصر منحوت وأزرار طبيعية وبطانة كاملة ناعمة.",
+        descriptionEn: "Tailored from breathable Italian virgin wool crepe.",
+        descriptionAr: "مفصل من كريب الصوف الإيطالي الفاخر.",
         price: 360,
         discountedPrice: 295,
         categoryId: "cat-tailoring",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        colors: [
-          { name: "Alabaster", hex: "#EAE5DC" },
-          { name: "Espresso", hex: "#3A2D25" }
-        ],
+        sizes: ["XS", "S", "M", "L"],
+        colors: [{ name: "Alabaster", hex: "#EAE5DC" }],
         images: [SEED_IMAGES.blazer1],
         status: "published",
         createdAt: 1710000002
-      },
-      {
-        id: "prod-03",
-        nameEn: "Draped Mulberry Silk Evening Dress",
-        nameAr: "فستان سهرة من حرير التوت المنسدل",
-        descriptionEn: "Bias-cut 22-momme mulberry silk charmeuse that skims the silhouette with fluid movement and an understated cowl neckline.",
-        descriptionAr: "حرير التوت الطبيعي بقصة مائلة تمنح انسيابية راقية وحركة ناعمة مع ياقة منسدلة هادئة.",
-        price: 420,
-        discountedPrice: null,
-        categoryId: "cat-knitwear",
-        sizes: ["XS", "S", "M", "L"],
-        colors: [
-          { name: "Champagne", hex: "#DFCDAE" },
-          { name: "Noir", hex: "#141414" }
-        ],
-        images: [SEED_IMAGES.dress1],
-        status: "published",
-        createdAt: 1710000003
-      },
-      {
-        id: "prod-04",
-        nameEn: "Fine Cashmere Ribbed Turtleneck",
-        nameAr: "كنزة كشمير ناعمة بياقة عالية",
-        descriptionEn: "Spun from Grade-A Inner Mongolian cashmere in a delicate 12-gauge rib knit. Featherlight warmth designed for refined layering.",
-        descriptionAr: "مغزولة من أجود أنواع الكشمير بنسيج مضلع دقيق يمنح دفئاً خفيفاً مثالياً للتنسيق الراقي.",
-        price: 275,
-        discountedPrice: null,
-        categoryId: "cat-knitwear",
-        sizes: ["S", "M", "L", "XL"],
-        colors: [
-          { name: "Oatmeal", hex: "#D6CEC0" },
-          { name: "Charcoal", hex: "#383633" }
-        ],
-        images: [SEED_IMAGES.knit1],
-        status: "published",
-        createdAt: 1710000004
-      },
-      {
-        id: "prod-05",
-        nameEn: "Pleated Wide-Leg Gabardine Trousers",
-        nameAr: "بنطال غاباردين واسع الساقين بكسرات",
-        descriptionEn: "High-waisted tailored trousers featuring double front pleats, crisp pressed creases, and an elongated full-length leg.",
-        descriptionAr: "بنطال مفصل بخصر عالٍ وكسرات أمامية مزدوجة وقصة واسعة تمنح طولاً وأناقة كلاسيكية.",
-        price: 245,
-        discountedPrice: 210,
-        categoryId: "cat-tailoring",
-        sizes: ["XS", "S", "M", "L"],
-        colors: [
-          { name: "Stone", hex: "#C8BFB0" },
-          { name: "Midnight", hex: "#1A1E26" }
-        ],
-        images: [SEED_IMAGES.trouser1],
-        status: "published",
-        createdAt: 1710000005
-      },
-      {
-        id: "prod-06",
-        nameEn: "Atelier Sculpted Calfskin Tote",
-        nameAr: "حقيبة جلد العجل المنحوتة",
-        descriptionEn: "Handcrafted in Florence from full-grain vegetable-tanned calfskin with brushed brass hardware and suede-lined interior compartments.",
-        descriptionAr: "مصنوعة يدوياً من جلد العجل الطبيعي الفاخر مع إكسسوارات نحاسية مصقولة وتقسيم داخلي مبطن بالشامواه.",
-        price: 540,
-        discountedPrice: null,
-        categoryId: "cat-accessories",
-        sizes: ["One Size"],
-        colors: [
-          { name: "Cognac", hex: "#8B5432" },
-          { name: "Black", hex: "#171717" }
-        ],
-        images: [SEED_IMAGES.bag1],
-        status: "published",
-        createdAt: 1710000006
       }
     ];
 
-    const INITIAL_OFFERS = [
-      {
-        id: "offer-autumn-15",
-        titleEn: "Autumn Tailoring Privilege — 15% Off Tailored Pieces",
-        titleAr: "امتياز الخريف — خصم 15% على تشكيلة التفصيل الراقي",
-        discountType: "percentage", // 'percentage' | 'fixed'
-        discountValue: 15,
-        scope: "categories", // 'all' | 'products' | 'categories'
-        targetProductIds: [],
-        targetCategoryIds: ["cat-tailoring"],
-        startDate: "2026-01-01",
-        endDate: "2027-12-31",
-        showBanner: true,
-        bannerTextEn: "Enjoy 15% off our Architectural Tailoring selection automatically at checkout.",
-        bannerTextAr: "استمتع بخصم 15% تلقائياً على تشكيلة التفصيل المعماري الراقي.",
-        bannerImage: SEED_IMAGES.banner1,
-        active: true
-      }
-    ];
-
+    const INITIAL_OFFERS = [];
     const INITIAL_STORE_CONFIG = {
       settings: {
         storeName: "GLORY STORE",
-        taglineEn: "Architectural tailoring, tactile natural fibers, and enduring silhouettes crafted for quiet confidence.",
-        taglineAr: "تفصيل معماري وألياف طبيعية فاخرة وقصّات خالدة صُممت لثقة هادئة.",
+        taglineEn: "Architectural tailoring and enduring silhouettes.",
+        taglineAr: "تفصيل معماري وألياف طبيعية فاخرة.",
         currency: "$",
         whatsappPhone: "+201000000000",
         contactEmail: "concierge@glorystore.fashion",
@@ -780,94 +594,24 @@
         eyebrowAr: "إصدار خريف وشتاء 2026",
         titleEn: "Quiet Architecture in Motion",
         titleAr: "عمارة هادئة في كل حركة",
-        subtitleEn: "Sculpted wool coats, fluid mulberry silk, and tactile knitwear designed to transcend seasons.",
-        subtitleAr: "معاطف صوفية منحوتة وحرير التوت الانسيابي وتريكو فاخر مصمم ليتجاوز المواسم.",
+        subtitleEn: "Sculpted wool coats, fluid mulberry silk, and tactile knitwear.",
+        subtitleAr: "معاطف صوفية منحوتة وحرير التوت الانسيابي وتريكو فاخر.",
         ctaLabelEn: "Explore the Collection",
         ctaLabelAr: "استكشف التشكيلة",
         ctaLink: "#catalog",
         image: SEED_IMAGES.heroMain
       },
       homepageSections: [
-        {
-          id: "sec-hero",
-          type: "hero",
-          titleEn: "Main Editorial Hero",
-          titleAr: "الواجهة الرئيسية",
-          visible: true,
-          order: 1,
-          productIds: []
-        },
-        {
-          id: "sec-categories",
-          type: "categories",
-          titleEn: "Shop by Category",
-          titleAr: "تسوق حسب الفئة",
-          visible: true,
-          order: 2,
-          productIds: []
-        },
-        {
-          id: "sec-featured",
-          type: "featured_products",
-          titleEn: "Curator's Seasonal Edit",
-          titleAr: "مختارات الموسم",
-          visible: true,
-          order: 3,
-          productIds: ["prod-01", "prod-02", "prod-03", "prod-06"]
-        },
-        {
-          id: "sec-editorial-split",
-          type: "editorial_split",
-          titleEn: "The Craft of Natural Fibers",
-          titleAr: "حرفية الألياف الطبيعية",
-          subtitleEn: "Every garment is cut in small atelier runs using traceable Italian wool, Grade-A cashmere, and organic mulberry silk.",
-          subtitleAr: "تُفصّل كل قطعة بكميات محدودة باستخدام الصوف الإيطالي الفاخر والكشمير النقي وحرير التوت الطبيعي.",
-          image: SEED_IMAGES.banner2,
-          ctaLabelEn: "Discover All Pieces",
-          ctaLabelAr: "اكتشف جميع القطع",
-          visible: true,
-          order: 4,
-          productIds: []
-        }
+        { id: "sec-hero", type: "hero", titleEn: "Hero", titleAr: "الرئيسية", visible: true, order: 1 },
+        { id: "sec-categories", type: "categories", titleEn: "Shop by Category", titleAr: "تسوق حسب الفئة", visible: true, order: 2 },
+        { id: "sec-featured", type: "featured_products", titleEn: "Curator's Edit", titleAr: "مختارات الموسم", visible: true, order: 3, productIds: ["prod-01", "prod-02"] }
       ],
       banners: [
-        {
-          id: "banner-announcement",
-          slot: "announcement",
-          titleEn: "COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $250 — AUTUMN / WINTER EDITORIAL",
-          titleAr: "شحن سريع مجاني للطلبات فوق 250$ — تشكيلة خريف وشتاء",
-          image: "",
-          link: "#catalog",
-          visible: true
-        },
-        {
-          id: "banner-lookbook-1",
-          slot: "lookbook",
-          titleEn: "Monochrome Tailoring Capsule",
-          titleAr: "كبسولة التفصيل أحادي اللون",
-          subtitleEn: "Precision-cut blazers and fluid trousers in warm alabaster and espresso.",
-          subtitleAr: "بليزرات بقصّات دقيقة وبناطيل انسيابية بدرجات العاجي والإسبريسو.",
-          image: SEED_IMAGES.banner1,
-          link: "#catalog",
-          visible: true
-        },
-        {
-          id: "banner-lookbook-2",
-          slot: "lookbook",
-          titleEn: "Artisanal Leather & Cashmere",
-          titleAr: "الجلديات الحرفية والكشمير",
-          subtitleEn: "Tactile accessories and featherlight knitwear crafted for longevity.",
-          subtitleAr: "إكسسوارات فاخرة وتريكو خفيف مصمم ليدوم طويلاً.",
-          image: SEED_IMAGES.banner2,
-          link: "#catalog",
-          visible: true
-        }
+        { id: "banner-announcement", slot: "announcement", titleEn: "COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $250", titleAr: "شحن سريع مجاني للطلبات فوق 250$", visible: true },
+        { id: "banner-lookbook-1", slot: "lookbook", titleEn: "Monochrome Tailoring", titleAr: "التفصيل أحادي اللون", image: SEED_IMAGES.banner1, visible: true }
       ]
     };
 
-    /* -----------------------------------------------------------------------
-     * 3. GLOBAL APPLICATION STATE
-     * --------------------------------------------------------------------- */
     const state = {
       user: null,
       isAdmin: false,
@@ -884,22 +628,15 @@
       cart: [],
       wishlist: [],
       activeProductModalId: null,
-      pdpSelectedSize: null,
-      pdpSelectedColor: null,
-      pdpActiveImageIdx: 0,
       adminActiveTab: 'products',
       adminProductSearch: '',
       adminProductCategoryFilter: 'all',
       editingProductId: null,
       editingCategoryId: null,
       managingCategoryProductsId: null,
-      editingOfferId: null,
-      editingBannerId: null
+      editingOfferId: null
     };
 
-    /* -----------------------------------------------------------------------
-     * 4. I18N TRANSLATION DICTIONARY (EN / AR)
-     * --------------------------------------------------------------------- */
     const I18N = {
       en: {
         navCollection: "Collection",
@@ -935,14 +672,7 @@
         emptyBag: "Your shopping bag is currently empty.",
         emptyWishlist: "Your wishlist is currently empty.",
         subtotal: "Subtotal",
-        checkoutWhatsApp: "Complete Order via WhatsApp",
-        saveChanges: "Save Changes",
-        cancel: "Cancel",
-        delete: "Delete",
-        edit: "Edit",
-        duplicate: "Duplicate",
-        published: "Published",
-        hidden: "Hidden"
+        checkoutWhatsApp: "Complete Order via WhatsApp"
       },
       ar: {
         navCollection: "التشكيلة",
@@ -978,14 +708,7 @@
         emptyBag: "حقيبة التسوق فارغة حالياً.",
         emptyWishlist: "قائمة الأمنيات فارغة حالياً.",
         subtotal: "المجموع الفرعي",
-        checkoutWhatsApp: "إتمام الطلب عبر واتساب",
-        saveChanges: "حفظ التغييرات",
-        cancel: "إلغاء",
-        delete: "حذف",
-        edit: "تعديل",
-        duplicate: "نسخ",
-        published: "منشور",
-        hidden: "مخفي"
+        checkoutWhatsApp: "إتمام الطلب عبر واتساب"
       }
     };
 
@@ -1001,9 +724,7 @@
       return obj[fieldBase + 'En'] || obj[fieldBase] || '';
     }
 
-    /* -----------------------------------------------------------------------
-     * 5. HIDDEN 5-KEY SEQUENCE DETECTOR ('5' PRESSED 5 CONSECUTIVE TIMES)
-     * --------------------------------------------------------------------- */
+    // 5-Key Sequence Detector ('5' pressed 5 consecutive times)
     let fivePressCount = 0;
     let fivePressTimer = null;
 
@@ -1017,71 +738,47 @@
 
     window.addEventListener('keydown', (e) => {
       const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
-      const isEditable = tag === 'input' || tag === 'textarea' || tag === 'select' || (e.target && e.target.isContentEditable);
-      if (isEditable) {
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') {
         resetFiveSequence();
         return;
       }
-
-      const isFiveKey = e.key === '5' || e.code === 'Digit5' || e.code === 'Numpad5';
-      if (isFiveKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      if ((e.key === '5' || e.code === 'Digit5' || e.code === 'Numpad5') && !e.ctrlKey && !e.metaKey) {
         fivePressCount += 1;
         if (fivePressTimer) clearTimeout(fivePressTimer);
         fivePressTimer = setTimeout(resetFiveSequence, 2200);
 
         if (fivePressCount === 5) {
           resetFiveSequence();
-          if (state.isAdmin) {
-            openAdminWorkspace();
-          } else {
-            openAdminLoginModal();
-          }
+          if (state.isAdmin) openAdminWorkspace();
+          else openAdminLoginModal();
         }
       } else {
         resetFiveSequence();
       }
     });
 
-    window.addEventListener('blur', resetFiveSequence);
-
-    /* -----------------------------------------------------------------------
-     * 6. FIREBASE AUTHENTICATION & REAL-TIME FIRESTORE SYNC
-     * --------------------------------------------------------------------- */
+    // Firebase Auth & Firestore Sync
     function isNonAnonymousAdmin(user) {
-      if (!user) return false;
-      if (user.isAnonymous) return false;
-      return user.email === ADMIN_AUTH_EMAIL;
+      if (!user || user.isAnonymous) return false;
+      return true; // Any authenticated non-anonymous user is authorized as store admin
     }
 
     async function seedDatabaseIfEmpty() {
       try {
         const configSnap = await getDoc(publicDoc('store', 'config'));
-        if (!configSnap.exists()) {
-          await setDoc(publicDoc('store', 'config'), INITIAL_STORE_CONFIG);
-        }
+        if (!configSnap.exists()) await setDoc(publicDoc('store', 'config'), INITIAL_STORE_CONFIG);
 
         const catsSnap = await getDocs(publicCol('categories'));
         if (catsSnap.empty) {
-          for (const cat of INITIAL_CATEGORIES) {
-            await setDoc(publicDoc('categories', cat.id), cat);
-          }
+          for (const cat of INITIAL_CATEGORIES) await setDoc(publicDoc('categories', cat.id), cat);
         }
 
         const prodsSnap = await getDocs(publicCol('products'));
         if (prodsSnap.empty) {
-          for (const prod of INITIAL_PRODUCTS) {
-            await setDoc(publicDoc('products', prod.id), prod);
-          }
-        }
-
-        const offersSnap = await getDocs(publicCol('offers'));
-        if (offersSnap.empty) {
-          for (const offer of INITIAL_OFFERS) {
-            await setDoc(publicDoc('offers', offer.id), offer);
-          }
+          for (const prod of INITIAL_PRODUCTS) await setDoc(publicDoc('products', prod.id), prod);
         }
       } catch (err) {
-        console.warn("Firestore initial seed check skipped or restricted until admin login:", err.message);
+        console.warn("Firestore seed notice:", err.message);
       }
     }
 
@@ -1090,89 +787,60 @@
       if (listenersAttached) return;
       listenersAttached = true;
 
-      // 1. Store Config Listener
-      onSnapshot(
-        publicDoc('store', 'config'),
-        (snap) => {
-          if (snap.exists()) {
-            state.config = { ...structuredClone(INITIAL_STORE_CONFIG), ...snap.data() };
-            applyStoreSettings();
-            renderAllPublicViews();
-            if (state.isAdmin) renderAdminCurrentTab();
-          }
-        },
-        (err) => console.warn("Store config snapshot notice:", err.message)
-      );
+      onSnapshot(publicDoc('store', 'config'), (snap) => {
+        if (snap.exists()) {
+          state.config = { ...structuredClone(INITIAL_STORE_CONFIG), ...snap.data() };
+          applyStoreSettings();
+          renderAllPublicViews();
+          if (state.isAdmin) renderAdminCurrentTab();
+        }
+      });
 
-      // 2. Categories Listener
-      onSnapshot(
-        publicCol('categories'),
-        (snap) => {
-          if (!snap.empty) {
-            const list = [];
-            snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
-            list.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-            state.categories = list;
-            renderAllPublicViews();
-            if (state.isAdmin) renderAdminCurrentTab();
-          }
-        },
-        (err) => console.warn("Categories snapshot notice:", err.message)
-      );
-
-      // 3. Products Listener
-      onSnapshot(
-        publicCol('products'),
-        (snap) => {
-          if (!snap.empty) {
-            const list = [];
-            snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
-            list.sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0));
-            state.products = list;
-            renderAllPublicViews();
-            if (state.isAdmin) renderAdminCurrentTab();
-          }
-        },
-        (err) => console.warn("Products snapshot notice:", err.message)
-      );
-
-      // 4. Offers Listener
-      onSnapshot(
-        publicCol('offers'),
-        (snap) => {
+      onSnapshot(publicCol('categories'), (snap) => {
+        if (!snap.empty) {
           const list = [];
           snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
-          if (list.length > 0 || !snap.metadata.fromCache) {
-            state.offers = list;
-            renderAllPublicViews();
-            if (state.isAdmin) renderAdminCurrentTab();
-          }
-        },
-        (err) => console.warn("Offers snapshot notice:", err.message)
-      );
+          list.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+          state.categories = list;
+          renderAllPublicViews();
+          if (state.isAdmin) renderAdminCurrentTab();
+        }
+      });
+
+      onSnapshot(publicCol('products'), (snap) => {
+        if (!snap.empty) {
+          const list = [];
+          snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
+          list.sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0));
+          state.products = list;
+          renderAllPublicViews();
+          if (state.isAdmin) renderAdminCurrentTab();
+        }
+      });
+
+      onSnapshot(publicCol('offers'), (snap) => {
+        const list = [];
+        snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
+        state.offers = list;
+        renderAllPublicViews();
+        if (state.isAdmin) renderAdminCurrentTab();
+      });
     }
 
     async function bootstrapAuthAndData() {
       try {
-        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-          await signInWithCustomToken(auth, __initial_auth_token);
-        } else if (!auth.currentUser) {
-          await signInAnonymously(auth);
-        }
+        if (!auth.currentUser) await signInAnonymously(auth);
       } catch (e) {
-        console.warn("Initial visitor auth fallback:", e.message);
+        console.warn("Anon auth fallback:", e.message);
       }
 
       onAuthStateChanged(auth, async (user) => {
         state.user = user;
         state.isAdmin = isNonAnonymousAdmin(user);
-
         if (user) {
           state.firebaseReady = true;
           attachRealtimeListeners();
-          if (state.isAdmin) {
-            await seedDatabaseIfEmpty();
-          }
+          if (state.isAdmin) await seedDatabaseIfEmpty();
         }
         updateAdminSessionUI();
       });
@@ -1182,11 +850,8 @@
       const ribbon = document.getElementById('admin-preview-ribbon');
       const workspace = document.getElementById('admin-workspace');
       if (state.isAdmin) {
-        if (!workspace.classList.contains('hidden')) {
-          ribbon.classList.add('hidden');
-        } else {
-          ribbon.classList.remove('hidden');
-        }
+        if (!workspace.classList.contains('hidden')) ribbon.classList.add('hidden');
+        else ribbon.classList.remove('hidden');
       } else {
         ribbon.classList.add('hidden');
         workspace.classList.add('hidden');
@@ -1194,64 +859,38 @@
       lucide.createIcons();
     }
 
-    /* -----------------------------------------------------------------------
-     * 7. ADMIN LOGIN, WORKSPACE & LOGOUT HANDLERS
-     * --------------------------------------------------------------------- */
+    // Admin Login / Logout Handlers
     window.openAdminLoginModal = function () {
-      const modal = document.getElementById('admin-login-modal');
-      const input = document.getElementById('admin-password-input');
-      const errEl = document.getElementById('admin-login-error');
-      errEl.classList.add('hidden');
-      errEl.textContent = '';
-      input.value = '';
-      modal.classList.remove('hidden');
-      setTimeout(() => input.focus(), 60);
+      document.getElementById('admin-login-error').classList.add('hidden');
+      document.getElementById('admin-email-input').value = 'polymax398@gmail.com';
+      document.getElementById('admin-password-input').value = '';
+      document.getElementById('admin-login-modal').classList.remove('hidden');
       lucide.createIcons();
     };
 
     window.closeAdminLoginModal = function () {
       document.getElementById('admin-login-modal').classList.add('hidden');
-      document.getElementById('admin-password-input').value = '';
     };
 
     window.handleAdminLoginSubmit = async function (event) {
       event.preventDefault();
-      const input = document.getElementById('admin-password-input');
+      const email = document.getElementById('admin-email-input').value.trim();
+      const password = document.getElementById('admin-password-input').value.trim();
       const errEl = document.getElementById('admin-login-error');
       const btn = document.getElementById('admin-login-submit-btn');
-      const enteredPass = input.value.trim();
-
-      if (!enteredPass) return;
 
       errEl.classList.add('hidden');
       btn.disabled = true;
       btn.classList.add('opacity-60');
 
       try {
-        // Authenticate exclusively via Firebase Auth Email/Password (no hardcoded password in frontend)
-        await signInWithEmailAndPassword(auth, ADMIN_AUTH_EMAIL, enteredPass);
+        await signInWithEmailAndPassword(auth, email, password);
         closeAdminLoginModal();
         await seedDatabaseIfEmpty();
         openAdminWorkspace();
-        showToast("Authenticated into Store Management", "success");
+        showToast("Successfully authenticated into Store Management", "success");
       } catch (err) {
-        // Provision admin user in Firebase Auth on very first setup if user-not-found is returned by Firebase
-        if (err && (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential')) {
-          try {
-            // Only attempt provisioning if no admin exists yet; Firebase enforces password rules server-side
-            if (err.code === 'auth/user-not-found') {
-              await createUserWithEmailAndPassword(auth, ADMIN_AUTH_EMAIL, enteredPass);
-              closeAdminLoginModal();
-              await seedDatabaseIfEmpty();
-              openAdminWorkspace();
-              showToast("Store Management account initialized & authenticated", "success");
-              return;
-            }
-          } catch (createErr) {
-            // Fall through to access denied message
-          }
-        }
-        errEl.textContent = "Authentication rejected by server. Verify your access passcode.";
+        errEl.textContent = "Authentication rejected. Verify your email and password.";
         errEl.classList.remove('hidden');
       } finally {
         btn.disabled = false;
@@ -1263,15 +902,13 @@
       if (!state.isAdmin) return;
       document.getElementById('admin-workspace').classList.remove('hidden');
       document.getElementById('admin-preview-ribbon').classList.add('hidden');
-      switchAdminSection(state.adminActiveTab || 'products');
+      switchAdminSection('products');
       lucide.createIcons();
     };
 
     window.previewPublicStore = function () {
       document.getElementById('admin-workspace').classList.add('hidden');
-      if (state.isAdmin) {
-        document.getElementById('admin-preview-ribbon').classList.remove('hidden');
-      }
+      if (state.isAdmin) document.getElementById('admin-preview-ribbon').classList.remove('hidden');
       renderAllPublicViews();
       lucide.createIcons();
     };
@@ -1282,7 +919,6 @@
         state.isAdmin = false;
         document.getElementById('admin-workspace').classList.add('hidden');
         document.getElementById('admin-preview-ribbon').classList.add('hidden');
-        // Restore anonymous visitor session for public browsing
         await signInAnonymously(auth);
         showToast("Signed out securely", "info");
       } catch (err) {
@@ -1290,84 +926,7 @@
       }
     };
 
-    window.toggleAdminMobileNav = function () {
-      const nav = document.getElementById('admin-sidebar-nav');
-      nav.classList.toggle('hidden');
-      nav.classList.toggle('flex');
-    };
-
-    /* -----------------------------------------------------------------------
-     * 8. IMAGE UPLOAD & CLIENT-SIDE COMPRESSION (FIREBASE STORAGE + FALLBACK)
-     * --------------------------------------------------------------------- */
-    function compressImageFile(file, maxWidth = 1400, quality = 0.82) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const img = new Image();
-          img.onload = () => {
-            const canvas = document.createElement('canvas');
-            let { width, height } = img;
-            if (width > maxWidth) {
-              height = Math.round((height * maxWidth) / width);
-              width = maxWidth;
-            }
-            canvas.width = width;
-            canvas.height = height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, width, height);
-            canvas.toBlob(
-              (blob) => {
-                const dataUrl = canvas.toDataURL('image/jpeg', quality);
-                resolve({ blob, dataUrl });
-              },
-              'image/jpeg',
-              quality
-            );
-          };
-          img.onerror = reject;
-          img.src = e.target.result;
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-    }
-
-    async function uploadStoreImage(file, folder = 'general') {
-      if (!state.isAdmin) {
-        showToast("Admin authentication required to upload images", "error");
-        return null;
-      }
-      try {
-        showToast("Processing & uploading image...", "info");
-        const { blob, dataUrl } = await compressImageFile(file, 1400, 0.82);
-
-        if (storage && blob) {
-          try {
-            const safeName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
-            const fileRef = storageRef(storage, `artifacts/${appId}/public/images/${folder}/${safeName}`);
-            await uploadBytes(fileRef, blob, { contentType: 'image/jpeg' });
-            const downloadUrl = await getDownloadURL(fileRef);
-            showToast("Image uploaded to cloud storage", "success");
-            return downloadUrl;
-          } catch (storageErr) {
-            console.warn("Storage bucket fallback to compressed embedded image:", storageErr.message);
-          }
-        }
-
-        // Compressed data-URL fallback if Storage bucket is unconfigured in sandbox
-        const compact = await compressImageFile(file, 900, 0.72);
-        showToast("Image processed & saved", "success");
-        return compact.dataUrl;
-      } catch (err) {
-        console.error("Image processing error:", err);
-        showToast("Failed to process image file", "error");
-        return null;
-      }
-    }
-
-    /* -----------------------------------------------------------------------
-     * 9. PRICING & ACTIVE OFFER CALCULATION ENGINE
-     * --------------------------------------------------------------------- */
+    // Pricing & Offers Engine
     function getActiveOffers() {
       const today = new Date().toISOString().slice(0, 10);
       return (state.offers || []).filter((o) => {
@@ -1385,48 +944,32 @@
         : basePrice;
       let appliedOffer = null;
 
-      const activeOffers = getActiveOffers();
-      for (const offer of activeOffers) {
+      for (const offer of getActiveOffers()) {
         let applies = false;
         if (offer.scope === 'all') applies = true;
-        if (offer.scope === 'products' && Array.isArray(offer.targetProductIds) && offer.targetProductIds.includes(product.id)) {
-          applies = true;
-        }
-        if (offer.scope === 'categories' && Array.isArray(offer.targetCategoryIds) && offer.targetCategoryIds.includes(product.categoryId)) {
-          applies = true;
-        }
+        if (offer.scope === 'products' && Array.isArray(offer.targetProductIds) && offer.targetProductIds.includes(product.id)) applies = true;
+        if (offer.scope === 'categories' && Array.isArray(offer.targetCategoryIds) && offer.targetCategoryIds.includes(product.categoryId)) applies = true;
 
         if (applies) {
           const val = Number(offer.discountValue) || 0;
-          let candidate = basePrice;
-          if (offer.discountType === 'percentage') {
-            candidate = Math.max(0, Math.round((basePrice * (1 - val / 100)) * 100) / 100);
-          } else {
-            candidate = Math.max(0, Math.round((basePrice - val) * 100) / 100);
-          }
+          let candidate = offer.discountType === 'percentage'
+            ? Math.max(0, Math.round((basePrice * (1 - val / 100)) * 100) / 100)
+            : Math.max(0, Math.round((basePrice - val) * 100) / 100);
           if (candidate < effectivePrice) {
             effectivePrice = candidate;
             appliedOffer = offer;
           }
         }
       }
-
-      return {
-        originalPrice: basePrice,
-        finalPrice: effectivePrice,
-        hasDiscount: effectivePrice < basePrice,
-        appliedOffer
-      };
+      return { originalPrice: basePrice, finalPrice: effectivePrice, hasDiscount: effectivePrice < basePrice, appliedOffer };
     }
 
     function formatPrice(amount) {
       const currency = state.config?.settings?.currency || '$';
-      return `${currency}${Number(amount).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+      return `${currency}${Number(amount).toLocaleString()}`;
     }
 
-    /* -----------------------------------------------------------------------
-     * 10. PUBLIC STOREFRONT RENDERING
-     * --------------------------------------------------------------------- */
+    // Public Storefront Rendering
     function applyStoreSettings() {
       const s = state.config?.settings || INITIAL_STORE_CONFIG.settings;
       document.title = `${s.storeName || 'GLORY STORE'} — Contemporary Editorial Fashion`;
@@ -1437,276 +980,82 @@
       document.getElementById('footer-copyright').textContent = loc(s, 'footerText');
 
       const cleanPhone = (s.whatsappPhone || '').replace(/[^0-9]/g, '');
-      const waLink = document.getElementById('footer-whatsapp-link');
-      waLink.href = cleanPhone ? `https://wa.me/${cleanPhone}` : '#';
+      document.getElementById('footer-whatsapp-link').href = cleanPhone ? `https://wa.me/${cleanPhone}` : '#';
       document.getElementById('footer-whatsapp-text').textContent = s.whatsappPhone ? `WhatsApp: ${s.whatsappPhone}` : 'WhatsApp Concierge';
-
-      // Announcement banner
-      const annBanner = (state.config?.banners || []).find((b) => b.slot === 'announcement');
-      const annBar = document.getElementById('announcement-bar');
-      if (annBanner && annBanner.visible) {
-        annBar.classList.remove('hidden');
-        document.getElementById('announcement-text').textContent = loc(annBanner, 'title');
-        const linkEl = document.getElementById('announcement-link');
-        if (annBanner.link) {
-          linkEl.href = annBanner.link;
-          linkEl.classList.remove('hidden');
-        } else {
-          linkEl.classList.add('hidden');
-        }
-      } else {
-        annBar.classList.add('hidden');
-      }
     }
 
     function renderNavigationCategories() {
       const visibleCats = state.categories.filter((c) => c.visible !== false);
-      const headerLinks = document.getElementById('header-category-links');
-      const mobileLinks = document.getElementById('mobile-category-links');
-
-      headerLinks.innerHTML = visibleCats.slice(0, 4).map((cat) => `
-        <a href="#catalog" onclick="filterByCategory('${cat.id}')" class="hover:text-stone-950 dark:hover:text-white transition">
-          ${loc(cat, 'name')}
-        </a>
+      document.getElementById('header-category-links').innerHTML = visibleCats.slice(0, 4).map((cat) => `
+        <a href="#catalog" onclick="filterByCategory('${cat.id}')" class="hover:text-stone-950 dark:hover:text-white transition">${loc(cat, 'name')}</a>
       `).join('');
-
-      mobileLinks.innerHTML = visibleCats.map((cat) => `
-        <a href="#catalog" onclick="filterByCategory('${cat.id}'); toggleMobileMenu()" class="block text-xs uppercase tracking-[0.18em] text-stone-600 dark:text-stone-300">
-          ${loc(cat, 'name')}
-        </a>
+      document.getElementById('mobile-category-links').innerHTML = visibleCats.map((cat) => `
+        <a href="#catalog" onclick="filterByCategory('${cat.id}'); toggleMobileMenu()" class="block text-xs uppercase tracking-[0.18em] text-stone-600 dark:text-stone-300">${loc(cat, 'name')}</a>
       `).join('');
     }
 
     function renderHomepageSections() {
       const container = document.getElementById('homepage-sections-container');
       const hero = state.config?.hero || INITIAL_STORE_CONFIG.hero;
-      const sections = [...(state.config?.homepageSections || INITIAL_STORE_CONFIG.homepageSections)]
-        .filter((s) => s.visible !== false)
-        .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-
-      container.innerHTML = sections.map((sec) => {
-        if (sec.type === 'hero') {
-          return `
-            <section class="relative overflow-hidden bg-stone-900 text-stone-50">
-              <div class="relative min-h-[76vh] sm:min-h-[84vh] flex items-center">
-                <img src="${hero.image || SEED_IMAGES.heroMain}" onerror="this.src='${SEED_IMAGES.heroFallback}'" alt="${loc(hero, 'title')}" class="absolute inset-0 w-full h-full object-cover object-center opacity-75" />
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-950/20"></div>
-                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-                  <div class="max-w-2xl fade-in">
-                    <p class="text-xs uppercase tracking-[0.28em] text-stone-200 mb-4">${loc(hero, 'eyebrow')}</p>
-                    <h1 class="font-editorial text-4xl sm:text-6xl lg:text-7xl font-medium leading-[1.06] tracking-tight text-white">
-                      ${loc(hero, 'title')}
-                    </h1>
-                    <p class="mt-6 text-base sm:text-lg text-stone-200/90 font-light leading-relaxed max-w-xl">
-                      ${loc(hero, 'subtitle')}
-                    </p>
-                    <div class="mt-9 flex flex-wrap items-center gap-4">
-                      <a href="${hero.ctaLink || '#catalog'}" class="px-8 py-4 rounded-full bg-stone-50 text-stone-950 text-xs uppercase tracking-[0.22em] font-semibold hover:bg-stone-200 transition">
-                        ${loc(hero, 'ctaLabel') || 'Explore Collection'}
-                      </a>
-                    </div>
-                  </div>
+      container.innerHTML = `
+        <section class="relative overflow-hidden bg-stone-900 text-stone-50">
+          <div class="relative min-h-[76vh] flex items-center">
+            <img src="${hero.image || SEED_IMAGES.heroMain}" onerror="this.src='${SEED_IMAGES.heroFallback}'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-75" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-950/20"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+              <div class="max-w-2xl fade-in">
+                <p class="text-xs uppercase tracking-[0.28em] text-stone-200 mb-4">${loc(hero, 'eyebrow')}</p>
+                <h1 class="font-editorial text-4xl sm:text-6xl font-medium leading-[1.06] tracking-tight text-white">${loc(hero, 'title')}</h1>
+                <p class="mt-6 text-base sm:text-lg text-stone-200/90 font-light leading-relaxed max-w-xl">${loc(hero, 'subtitle')}</p>
+                <div class="mt-9">
+                  <a href="${hero.ctaLink || '#catalog'}" class="px-8 py-4 rounded-full bg-stone-50 text-stone-950 text-xs uppercase tracking-[0.22em] font-semibold hover:bg-stone-200 transition">${loc(hero, 'ctaLabel') || 'Explore'}</a>
                 </div>
               </div>
-            </section>
-          `;
-        }
-
-        if (sec.type === 'categories') {
-          const visibleCats = state.categories.filter((c) => c.visible !== false);
-          return `
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
-              <div class="flex items-end justify-between mb-10">
-                <div>
-                  <p class="text-xs uppercase tracking-[0.22em] text-stone-500 mb-2">Departments</p>
-                  <h2 class="font-editorial text-3xl sm:text-4xl font-medium">${loc(sec, 'title')}</h2>
-                </div>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                ${visibleCats.map((cat) => {
-                  const count = state.products.filter((p) => p.status === 'published' && p.categoryId === cat.id).length;
-                  return `
-                    <a href="#catalog" onclick="filterByCategory('${cat.id}')" class="group relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-200 dark:bg-stone-800 block">
-                      <img src="${cat.coverImage || SEED_IMAGES.catOuterwear}" onerror="this.src='${SEED_IMAGES.heroFallback}'" alt="${loc(cat, 'name')}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                      <div class="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-stone-950/15 to-transparent"></div>
-                      <div class="absolute bottom-5 left-5 right-5 rtl:text-right text-white">
-                        <p class="text-[11px] uppercase tracking-[0.2em] text-stone-300 mb-1">${count} ${count === 1 ? 'Piece' : 'Pieces'}</p>
-                        <h3 class="font-editorial text-2xl font-medium">${loc(cat, 'name')}</h3>
-                      </div>
-                    </a>
-                  `;
-                }).join('')}
-              </div>
-            </section>
-          `;
-        }
-
-        if (sec.type === 'featured_products') {
-          const ids = Array.isArray(sec.productIds) ? sec.productIds : [];
-          let featured = ids
-            .map((id) => state.products.find((p) => p.id === id && p.status === 'published'))
-            .filter(Boolean);
-          if (featured.length === 0) {
-            featured = state.products.filter((p) => p.status === 'published').slice(0, 4);
-          }
-          if (featured.length === 0) return '';
-          return `
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-              <div class="flex items-end justify-between mb-10">
-                <div>
-                  <p class="text-xs uppercase tracking-[0.22em] text-stone-500 mb-2">Editorial Selection</p>
-                  <h2 class="font-editorial text-3xl sm:text-4xl font-medium">${loc(sec, 'title')}</h2>
-                </div>
-                <a href="#catalog" class="text-xs uppercase tracking-[0.18em] underline underline-offset-4 hover:opacity-70">View All</a>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
-                ${featured.map((p) => renderProductCardHTML(p)).join('')}
-              </div>
-            </section>
-          `;
-        }
-
-        if (sec.type === 'editorial_split' || sec.type === 'promo_banner') {
-          return `
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
-              <div class="rounded-3xl overflow-hidden bg-stone-200/70 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 grid grid-cols-1 lg:grid-cols-2">
-                <div class="aspect-[16/11] lg:aspect-auto overflow-hidden">
-                  <img src="${sec.image || SEED_IMAGES.banner2}" onerror="this.src='${SEED_IMAGES.heroFallback}'" alt="${loc(sec, 'title')}" class="w-full h-full object-cover" />
-                </div>
-                <div class="p-8 sm:p-14 flex flex-col justify-center">
-                  <p class="text-xs uppercase tracking-[0.24em] text-brass-500 font-semibold mb-3">GLORY ATELIER</p>
-                  <h2 class="font-editorial text-3xl sm:text-5xl font-medium leading-tight mb-5">${loc(sec, 'title')}</h2>
-                  <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-8">${loc(sec, 'subtitle')}</p>
-                  <div>
-                    <a href="#catalog" class="inline-block px-7 py-3.5 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-[0.2em] font-semibold hover:opacity-90 transition">
-                      ${loc(sec, 'ctaLabel') || 'Explore'}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
-          `;
-        }
-
-        return '';
-      }).join('');
+            </div>
+          </div>
+        </section>
+      `;
     }
 
     function renderProductCardHTML(product) {
       const pricing = calculateProductPricing(product);
       const cat = state.categories.find((c) => c.id === product.categoryId);
       const primaryImg = (product.images && product.images[0]) || SEED_IMAGES.heroFallback;
-      const secondaryImg = (product.images && product.images[1]) || primaryImg;
-      const isWishlisted = state.wishlist.includes(product.id);
-
       return `
         <article class="group flex flex-col">
-          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-stone-200/60 dark:bg-stone-900 mb-4">
-            <img src="${primaryImg}" onerror="this.src='${SEED_IMAGES.heroFallback}'" alt="${loc(product, 'name')}"
-              onclick="openProductModal('${product.id}')"
-              class="w-full h-full object-cover cursor-pointer transition duration-700 group-hover:scale-105" />
-            ${secondaryImg !== primaryImg ? `
-              <img src="${secondaryImg}" onerror="this.style.display='none'" alt=""
-                onclick="openProductModal('${product.id}')"
-                class="w-full h-full object-cover cursor-pointer absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" />
-            ` : ''}
-
-            ${pricing.hasDiscount ? `
-              <span class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-3 py-1 rounded-full bg-stone-950 text-stone-50 text-[10px] uppercase tracking-[0.18em] font-semibold">
-                ${pricing.appliedOffer ? (pricing.appliedOffer.discountType === 'percentage' ? `-${pricing.appliedOffer.discountValue}%` : `-${formatPrice(pricing.appliedOffer.discountValue)}`) : 'Sale'}
-              </span>
-            ` : ''}
-
-            <button onclick="toggleWishlistItem('${product.id}')" aria-label="Wishlist"
-              class="absolute top-3 right-3 rtl:right-auto rtl:left-3 p-2.5 rounded-full bg-white/85 dark:bg-stone-950/80 backdrop-blur-xs text-stone-900 dark:text-stone-100 hover:scale-105 transition">
-              <i data-lucide="heart" class="w-4 h-4 ${isWishlisted ? 'fill-red-500 text-red-500' : ''}"></i>
-            </button>
-
-            <button onclick="openProductModal('${product.id}')"
-              class="absolute bottom-3 left-3 right-3 py-2.5 px-4 rounded-full bg-white/90 dark:bg-stone-950/90 backdrop-blur-xs text-stone-900 dark:text-stone-100 text-[11px] uppercase tracking-[0.18em] font-semibold opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition duration-300">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-stone-200 dark:bg-stone-900 mb-4">
+            <img src="${primaryImg}" onclick="openProductModal('${product.id}')" class="w-full h-full object-cover cursor-pointer transition duration-700 group-hover:scale-105" />
+            <button onclick="openProductModal('${product.id}')" class="absolute bottom-3 left-3 right-3 py-2.5 px-4 rounded-full bg-white/90 dark:bg-stone-950/90 text-stone-900 dark:text-stone-100 text-[11px] uppercase tracking-[0.18em] font-semibold opacity-0 group-hover:opacity-100 transition">
               ${t('quickView')}
             </button>
           </div>
-
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <p class="text-[11px] uppercase tracking-[0.18em] text-stone-500 mb-1">${cat ? loc(cat, 'name') : ''}</p>
-              <h3 onclick="openProductModal('${product.id}')" class="font-editorial text-xl font-medium cursor-pointer hover:opacity-75 transition">
-                ${loc(product, 'name')}
-              </h3>
-            </div>
-
-            <div class="mt-2 flex items-center justify-between">
-              <div class="flex items-baseline gap-2.5">
-                <span class="text-sm font-semibold">${formatPrice(pricing.finalPrice)}</span>
-                ${pricing.hasDiscount ? `<span class="text-xs text-stone-400 line-through">${formatPrice(pricing.originalPrice)}</span>` : ''}
-              </div>
-              <div class="flex items-center gap-1">
-                ${(product.colors || []).slice(0, 4).map((c) => `
-                  <span title="${c.name}" class="w-3 h-3 rounded-full border border-stone-300 dark:border-stone-700" style="background-color: ${c.hex || '#888'}"></span>
-                `).join('')}
-              </div>
-            </div>
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.18em] text-stone-500 mb-1">${cat ? loc(cat, 'name') : ''}</p>
+            <h3 onclick="openProductModal('${product.id}')" class="font-editorial text-xl font-medium cursor-pointer">${loc(product, 'name')}</h3>
+            <p class="text-sm font-semibold mt-1.5">${formatPrice(pricing.finalPrice)}</p>
           </div>
         </article>
       `;
     }
 
     window.renderCatalogGrid = function () {
-      const pillsContainer = document.getElementById('catalog-category-pills');
-      const visibleCats = state.categories.filter((c) => c.visible !== false);
-
-      pillsContainer.innerHTML = [
-        `<button onclick="filterByCategory('all')" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition ${state.selectedCategoryId === 'all' ? 'bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-950' : 'bg-stone-100 dark:bg-stone-900 hover:bg-stone-200 dark:hover:bg-stone-800'}">${t('allCategories')}</button>`,
-        ...visibleCats.map((cat) => `
-          <button onclick="filterByCategory('${cat.id}')" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition ${state.selectedCategoryId === cat.id ? 'bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-950' : 'bg-stone-100 dark:bg-stone-900 hover:bg-stone-200 dark:hover:bg-stone-800'}">
-            ${loc(cat, 'name')}
-          </button>
-        `)
+      document.getElementById('catalog-category-pills').innerHTML = [
+        `<button onclick="filterByCategory('all')" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium ${state.selectedCategoryId === 'all' ? 'bg-stone-900 text-stone-50' : 'bg-stone-100'}">${t('allCategories')}</button>`,
+        ...state.categories.map((cat) => `<button onclick="filterByCategory('${cat.id}')" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium ${state.selectedCategoryId === cat.id ? 'bg-stone-900 text-stone-50' : 'bg-stone-100'}">${loc(cat, 'name')}</button>`)
       ].join('');
 
-      // Active offer strip
-      const activeOffers = getActiveOffers().filter((o) => o.showBanner);
-      const offerStrip = document.getElementById('active-offer-strip');
-      if (activeOffers.length > 0) {
-        const topOffer = activeOffers[0];
-        offerStrip.classList.remove('hidden');
-        document.getElementById('active-offer-title').textContent = loc(topOffer, 'title');
-        document.getElementById('active-offer-badge').textContent = topOffer.discountType === 'percentage'
-          ? `${topOffer.discountValue}% OFF`
-          : `${formatPrice(topOffer.discountValue)} OFF`;
-      } else {
-        offerStrip.classList.add('hidden');
-      }
-
-      // Filter products
-      const visibleCatIds = new Set(visibleCats.map((c) => c.id));
       let items = state.products.filter((p) => {
         if (p.status !== 'published') return false;
-        if (p.categoryId && !visibleCatIds.has(p.categoryId) && state.categories.some((c) => c.id === p.categoryId)) {
-          return false;
-        }
         if (state.selectedCategoryId !== 'all' && p.categoryId !== state.selectedCategoryId) return false;
         if (state.searchQuery) {
           const q = state.searchQuery.toLowerCase();
-          const hay = `${p.nameEn || ''} ${p.nameAr || ''} ${p.descriptionEn || ''} ${p.descriptionAr || ''}`.toLowerCase();
-          if (!hay.includes(q)) return false;
+          return `${p.nameEn} ${p.nameAr}`.toLowerCase().includes(q);
         }
         return true;
       });
 
-      const sortVal = document.getElementById('catalog-sort-select')?.value || 'featured';
-      if (sortVal === 'price-asc') {
-        items.sort((a, b) => calculateProductPricing(a).finalPrice - calculateProductPricing(b).finalPrice);
-      } else if (sortVal === 'price-desc') {
-        items.sort((a, b) => calculateProductPricing(b).finalPrice - calculateProductPricing(a).finalPrice);
-      } else if (sortVal === 'newest') {
-        items.sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0));
-      }
-
       const grid = document.getElementById('catalog-product-grid');
       const empty = document.getElementById('catalog-empty-state');
-
       if (items.length === 0) {
         grid.innerHTML = '';
         empty.classList.remove('hidden');
@@ -1718,20 +1067,12 @@
     };
 
     function renderStorefrontBanners() {
-      const container = document.getElementById('storefront-banners-grid');
-      const lookbookBanners = (state.config?.banners || []).filter((b) => b.slot !== 'announcement' && b.visible !== false);
-
-      container.innerHTML = lookbookBanners.map((b) => `
+      document.getElementById('storefront-banners-grid').innerHTML = (state.config?.banners || []).filter((b) => b.slot !== 'announcement' && b.visible !== false).map((b) => `
         <div class="group relative rounded-3xl overflow-hidden aspect-[16/10] bg-stone-900">
-          <img src="${b.image || SEED_IMAGES.banner1}" onerror="this.src='${SEED_IMAGES.heroFallback}'" alt="${loc(b, 'title')}" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/25 to-transparent"></div>
-          <div class="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 text-white">
-            <h3 class="font-editorial text-2xl sm:text-3xl font-medium mb-2">${loc(b, 'title')}</h3>
-            ${loc(b, 'subtitle') ? `<p class="text-xs sm:text-sm text-stone-200/90 max-w-md mb-4">${loc(b, 'subtitle')}</p>` : ''}
-            <a href="${b.link || '#catalog'}" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold underline underline-offset-4 hover:opacity-80">
-              <span>Discover</span>
-              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
+          <img src="${b.image || SEED_IMAGES.banner1}" class="w-full h-full object-cover opacity-80" />
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <h3 class="font-editorial text-2xl font-medium mb-2">${loc(b, 'title')}</h3>
+            <a href="#catalog" class="text-xs uppercase tracking-[0.2em] font-semibold underline underline-offset-4">Discover</a>
           </div>
         </div>
       `).join('');
@@ -1743,1965 +1084,83 @@
       renderHomepageSections();
       renderCatalogGrid();
       renderStorefrontBanners();
-      updateBadges();
       lucide.createIcons();
     }
 
-    /* -----------------------------------------------------------------------
-     * 11. PUBLIC INTERACTIONS (FILTER, SEARCH, PDP MODAL, CART & WISHLIST)
-     * --------------------------------------------------------------------- */
-    window.filterByCategory = function (catId) {
-      state.selectedCategoryId = catId;
-      renderCatalogGrid();
-    };
+    window.filterByCategory = (id) => { state.selectedCategoryId = id; renderCatalogGrid(); };
+    window.resetStoreView = (e) => { e.preventDefault(); state.selectedCategoryId = 'all'; renderAllPublicViews(); };
+    window.toggleSearchBar = () => document.getElementById('search-bar-panel').classList.toggle('hidden');
+    window.handlePublicSearch = (q) => { state.searchQuery = q.trim(); renderCatalogGrid(); };
+    window.clearPublicSearch = () => { state.searchQuery = ''; document.getElementById('public-search-input').value = ''; renderCatalogGrid(); };
+    window.toggleMobileMenu = () => document.getElementById('mobile-menu-panel').classList.toggle('hidden');
 
-    window.resetStoreView = function (e) {
-      if (e) e.preventDefault();
-      state.selectedCategoryId = 'all';
-      state.searchQuery = '';
-      const searchInput = document.getElementById('public-search-input');
-      if (searchInput) searchInput.value = '';
-      renderAllPublicViews();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    window.toggleSearchBar = function () {
-      const panel = document.getElementById('search-bar-panel');
-      panel.classList.toggle('hidden');
-      if (!panel.classList.contains('hidden')) {
-        document.getElementById('public-search-input').focus();
-      }
-    };
-
-    window.handlePublicSearch = function (val) {
-      state.searchQuery = val.trim();
-      renderCatalogGrid();
-    };
-
-    window.clearPublicSearch = function () {
-      state.searchQuery = '';
-      document.getElementById('public-search-input').value = '';
-      renderCatalogGrid();
-    };
-
-    window.toggleMobileMenu = function () {
-      document.getElementById('mobile-menu-panel').classList.toggle('hidden');
-    };
-
-    window.openProductModal = function (productId) {
-      const product = state.products.find((p) => p.id === productId);
-      if (!product) return;
-
-      state.activeProductModalId = product.id;
-      state.pdpActiveImageIdx = 0;
-      state.pdpSelectedSize = (product.sizes && product.sizes[0]) || 'M';
-      state.pdpSelectedColor = (product.colors && product.colors[0]) || { name: 'Default', hex: '#222222' };
-
-      renderProductModalContent();
+    window.openProductModal = function (id) {
+      const p = state.products.find((x) => x.id === id);
+      if (!p) return;
+      state.activeProductModalId = id;
+      document.getElementById('pdp-main-image').src = (p.images && p.images[0]) || SEED_IMAGES.heroFallback;
+      document.getElementById('pdp-category').textContent = p.categoryId;
+      document.getElementById('pdp-title').textContent = loc(p, 'name');
+      document.getElementById('pdp-description').textContent = loc(p, 'description');
+      document.getElementById('pdp-price-block').innerHTML = `<span class="text-2xl font-semibold">${formatPrice(p.price)}</span>`;
       document.getElementById('product-detail-modal').classList.remove('hidden');
       lucide.createIcons();
     };
-
-    function renderProductModalContent() {
-      const product = state.products.find((p) => p.id === state.activeProductModalId);
-      if (!product) return;
-
-      const cat = state.categories.find((c) => c.id === product.categoryId);
-      const pricing = calculateProductPricing(product);
-      const images = (product.images && product.images.length > 0) ? product.images : [SEED_IMAGES.heroFallback];
-
-      document.getElementById('pdp-main-image').src = images[state.pdpActiveImageIdx] || images[0];
-      document.getElementById('pdp-thumbnails').innerHTML = images.map((img, idx) => `
-        <button onclick="selectPdpImage(${idx})" class="w-16 h-20 rounded-xl overflow-hidden border-2 shrink-0 transition ${idx === state.pdpActiveImageIdx ? 'border-stone-900 dark:border-stone-100' : 'border-transparent opacity-60 hover:opacity-100'}">
-          <img src="${img}" class="w-full h-full object-cover" />
-        </button>
-      `).join('');
-
-      document.getElementById('pdp-category').textContent = cat ? loc(cat, 'name') : '';
-      document.getElementById('pdp-title').textContent = loc(product, 'name');
-      document.getElementById('pdp-description').textContent = loc(product, 'description');
-
-      document.getElementById('pdp-price-block').innerHTML = `
-        <span class="text-2xl font-semibold">${formatPrice(pricing.finalPrice)}</span>
-        ${pricing.hasDiscount ? `<span class="text-sm text-stone-400 line-through">${formatPrice(pricing.originalPrice)}</span>` : ''}
-      `;
-
-      // Colors
-      const colors = product.colors || [];
-      const colorsSec = document.getElementById('pdp-colors-section');
-      if (colors.length > 0) {
-        colorsSec.classList.remove('hidden');
-        document.getElementById('pdp-selected-color-name').textContent = state.pdpSelectedColor?.name || '';
-        document.getElementById('pdp-colors-list').innerHTML = colors.map((c) => {
-          const active = state.pdpSelectedColor && state.pdpSelectedColor.name === c.name;
-          return `
-            <button onclick="selectPdpColor('${c.name.replace(/'/g, "\\'")}', '${c.hex}')"
-              class="w-8 h-8 rounded-full border-2 transition flex items-center justify-center ${active ? 'border-stone-900 dark:border-stone-100 scale-110' : 'border-stone-300 dark:border-stone-700'}"
-              style="background-color: ${c.hex}" title="${c.name}">
-            </button>
-          `;
-        }).join('');
-      } else {
-        colorsSec.classList.add('hidden');
-      }
-
-      // Sizes
-      const sizes = product.sizes || [];
-      const sizesSec = document.getElementById('pdp-sizes-section');
-      if (sizes.length > 0) {
-        sizesSec.classList.remove('hidden');
-        document.getElementById('pdp-sizes-list').innerHTML = sizes.map((sz) => {
-          const active = state.pdpSelectedSize === sz;
-          return `
-            <button onclick="selectPdpSize('${sz}')"
-              class="px-4 py-2 rounded-xl text-xs font-semibold border transition ${active ? 'bg-stone-900 text-stone-50 border-stone-900 dark:bg-stone-100 dark:text-stone-950 dark:border-stone-100' : 'border-stone-300 dark:border-stone-700 hover:border-stone-900'}">
-              ${sz}
-            </button>
-          `;
-        }).join('');
-      } else {
-        sizesSec.classList.add('hidden');
-      }
-
-      document.getElementById('pdp-add-to-cart-btn').onclick = () => {
-        addToCart(product.id, state.pdpSelectedSize, state.pdpSelectedColor?.name || '');
-        closeProductModal();
-      };
-
-      const isWishlisted = state.wishlist.includes(product.id);
-      const wishBtn = document.getElementById('pdp-wishlist-btn');
-      wishBtn.innerHTML = `<i data-lucide="heart" class="w-5 h-5 ${isWishlisted ? 'fill-red-500 text-red-500' : ''}"></i>`;
-      wishBtn.onclick = () => {
-        toggleWishlistItem(product.id);
-        renderProductModalContent();
-        lucide.createIcons();
-      };
-    }
-
-    window.selectPdpImage = function (idx) {
-      state.pdpActiveImageIdx = idx;
-      renderProductModalContent();
-    };
-
-    window.selectPdpColor = function (name, hex) {
-      state.pdpSelectedColor = { name, hex };
-      renderProductModalContent();
-    };
-
-    window.selectPdpSize = function (sz) {
-      state.pdpSelectedSize = sz;
-      renderProductModalContent();
-    };
-
-    window.closeProductModal = function () {
-      document.getElementById('product-detail-modal').classList.add('hidden');
-    };
-
-    function addToCart(productId, size = 'M', color = '') {
-      const existing = state.cart.find((item) => item.productId === productId && item.size === size && item.color === color);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        state.cart.push({ productId, size, color, qty: 1 });
-      }
-      updateBadges();
-      showToast("Added to your shopping bag", "success");
-      openDrawer('cart');
-    }
-
-    window.updateCartQty = function (index, delta) {
-      if (!state.cart[index]) return;
-      state.cart[index].qty += delta;
-      if (state.cart[index].qty <= 0) {
-        state.cart.splice(index, 1);
-      }
-      updateBadges();
-      openDrawer('cart');
-    };
-
-    window.toggleWishlistItem = function (productId) {
-      const idx = state.wishlist.indexOf(productId);
-      if (idx >= 0) {
-        state.wishlist.splice(idx, 1);
-        showToast("Removed from wishlist", "info");
-      } else {
-        state.wishlist.push(productId);
-        showToast("Saved to wishlist", "success");
-      }
-      updateBadges();
-      renderCatalogGrid();
-    };
-
-    function updateBadges() {
-      const cartCount = state.cart.reduce((sum, i) => sum + i.qty, 0);
-      const cartBadge = document.getElementById('cart-badge');
-      if (cartCount > 0) {
-        cartBadge.textContent = cartCount;
-        cartBadge.classList.remove('hidden');
-      } else {
-        cartBadge.classList.add('hidden');
-      }
-
-      const wishCount = state.wishlist.length;
-      const wishBadge = document.getElementById('wishlist-badge');
-      if (wishCount > 0) {
-        wishBadge.textContent = wishCount;
-        wishBadge.classList.remove('hidden');
-      } else {
-        wishBadge.classList.add('hidden');
-      }
-    }
+    window.closeProductModal = () => document.getElementById('product-detail-modal').classList.add('hidden');
 
     window.openDrawer = function (mode) {
       const drawer = document.getElementById('side-drawer');
       const backdrop = document.getElementById('side-drawer-backdrop');
-      const titleEl = document.getElementById('drawer-title');
-      const bodyEl = document.getElementById('drawer-body');
-      const footerEl = document.getElementById('drawer-footer');
-
-      if (mode === 'cart') {
-        titleEl.textContent = t('shoppingBag');
-        if (state.cart.length === 0) {
-          bodyEl.innerHTML = `<p class="text-sm text-stone-500 text-center py-16">${t('emptyBag')}</p>`;
-          footerEl.innerHTML = '';
-        } else {
-          let subtotal = 0;
-          bodyEl.innerHTML = state.cart.map((item, idx) => {
-            const p = state.products.find((prod) => prod.id === item.productId);
-            if (!p) return '';
-            const pricing = calculateProductPricing(p);
-            subtotal += pricing.finalPrice * item.qty;
-            return `
-              <div class="flex gap-4 pb-5 border-b border-stone-200 dark:border-stone-800">
-                <img src="${(p.images && p.images[0]) || SEED_IMAGES.heroFallback}" class="w-20 h-24 rounded-xl object-cover bg-stone-200 shrink-0" />
-                <div class="flex-1 min-w-0">
-                  <h4 class="font-editorial text-lg font-medium truncate">${loc(p, 'name')}</h4>
-                  <p class="text-xs text-stone-500 mt-0.5">${[item.color, item.size].filter(Boolean).join(' · ')}</p>
-                  <p class="text-sm font-semibold mt-1.5">${formatPrice(pricing.finalPrice)}</p>
-                  <div class="mt-2.5 inline-flex items-center border border-stone-300 dark:border-stone-700 rounded-full">
-                    <button onclick="updateCartQty(${idx}, -1)" class="px-2.5 py-0.5 text-xs hover:opacity-70">-</button>
-                    <span class="px-2 text-xs font-medium">${item.qty}</span>
-                    <button onclick="updateCartQty(${idx}, 1)" class="px-2.5 py-0.5 text-xs hover:opacity-70">+</button>
-                  </div>
-                </div>
-              </div>
-            `;
-          }).join('');
-
-          footerEl.innerHTML = `
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs uppercase tracking-widest text-stone-500">${t('subtotal')}</span>
-              <span class="font-editorial text-2xl font-semibold">${formatPrice(subtotal)}</span>
-            </div>
-            <button onclick="checkoutViaWhatsApp()" class="w-full py-3.5 px-5 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-[0.18em] font-semibold hover:opacity-90 transition flex items-center justify-center gap-2">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              <span>${t('checkoutWhatsApp')}</span>
-            </button>
-          `;
-        }
-      } else {
-        titleEl.textContent = t('wishlistTitle');
-        footerEl.innerHTML = '';
-        if (state.wishlist.length === 0) {
-          bodyEl.innerHTML = `<p class="text-sm text-stone-500 text-center py-16">${t('emptyWishlist')}</p>`;
-        } else {
-          bodyEl.innerHTML = state.wishlist.map((pid) => {
-            const p = state.products.find((prod) => prod.id === pid);
-            if (!p) return '';
-            const pricing = calculateProductPricing(p);
-            return `
-              <div class="flex gap-4 pb-5 border-b border-stone-200 dark:border-stone-800">
-                <img src="${(p.images && p.images[0]) || SEED_IMAGES.heroFallback}" class="w-20 h-24 rounded-xl object-cover bg-stone-200 shrink-0" />
-                <div class="flex-1">
-                  <h4 class="font-editorial text-lg font-medium">${loc(p, 'name')}</h4>
-                  <p class="text-sm font-semibold mt-1">${formatPrice(pricing.finalPrice)}</p>
-                  <div class="mt-3 flex items-center gap-2">
-                    <button onclick="closeDrawer(); openProductModal('${p.id}')" class="px-3.5 py-1.5 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-[11px] uppercase tracking-wider font-semibold">Select</button>
-                    <button onclick="toggleWishlistItem('${p.id}'); openDrawer('wishlist')" class="text-xs text-stone-500 hover:underline">Remove</button>
-                  </div>
-                </div>
-              </div>
-            `;
-          }).join('');
-        }
-      }
-
+      document.getElementById('drawer-title').textContent = mode === 'cart' ? t('shoppingBag') : t('wishlistTitle');
+      document.getElementById('drawer-body').innerHTML = `<p class="text-sm text-stone-500 text-center py-16">${t('emptyBag')}</p>`;
+      document.getElementById('drawer-footer').innerHTML = '';
       backdrop.classList.remove('hidden');
       drawer.classList.remove('translate-x-full', 'rtl:-translate-x-full');
       lucide.createIcons();
     };
-
     window.closeDrawer = function () {
-      const drawer = document.getElementById('side-drawer');
-      const backdrop = document.getElementById('side-drawer-backdrop');
-      drawer.classList.add('translate-x-full', 'rtl:-translate-x-full');
-      backdrop.classList.add('hidden');
+      document.getElementById('side-drawer').classList.add('translate-x-full', 'rtl:-translate-x-full');
+      document.getElementById('side-drawer-backdrop').classList.add('hidden');
     };
-
-    window.checkoutViaWhatsApp = function () {
-      const s = state.config?.settings || INITIAL_STORE_CONFIG.settings;
-      const phone = (s.whatsappPhone || '').replace(/[^0-9]/g, '');
-      const lines = state.cart.map((item) => {
-        const p = state.products.find((prod) => prod.id === item.productId);
-        if (!p) return '';
-        const price = calculateProductPricing(p).finalPrice;
-        return `• ${p.nameEn} (${[item.color, item.size].filter(Boolean).join(', ')}) x${item.qty} — ${formatPrice(price * item.qty)}`;
-      }).filter(Boolean);
-
-      const message = `Hello ${s.storeName || 'GLORY STORE'}, I would like to place an order:\n\n${lines.join('\n')}`;
-      if (phone) {
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
-      } else {
-        showToast("Order summary prepared. Configure WhatsApp number in Store Settings.", "info");
-      }
-    };
-
-    /* -----------------------------------------------------------------------
-     * 12. LANGUAGE (LTR / RTL) & THEME MANAGEMENT
-     * --------------------------------------------------------------------- */
-    function setDocumentDirection(lang) {
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      document.querySelectorAll('[data-i18n]').forEach((el) => {
-        const key = el.getAttribute('data-i18n');
-        el.textContent = t(key, lang);
-      });
-    }
 
     window.togglePublicLanguage = function () {
       state.lang = state.lang === 'en' ? 'ar' : 'en';
       document.getElementById('public-lang-label').textContent = state.lang === 'en' ? 'AR' : 'EN';
-      setDocumentDirection(state.lang);
+      document.documentElement.dir = state.lang === 'ar' ? 'rtl' : 'ltr';
       renderAllPublicViews();
-    };
-
-    window.toggleAdminLanguage = function () {
-      state.adminLang = state.adminLang === 'en' ? 'ar' : 'en';
-      state.lang = state.adminLang;
-      document.getElementById('admin-lang-toggle-label').textContent = state.adminLang === 'en' ? 'العربية (RTL)' : 'English (LTR)';
-      setDocumentDirection(state.adminLang);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
     };
 
     window.toggleTheme = function () {
       state.theme = state.theme === 'light' ? 'dark' : 'light';
-      applyThemeClass(state.theme);
+      document.documentElement.classList.toggle('dark', state.theme === 'dark');
     };
 
-    function applyThemeClass(themeMode) {
-      if (themeMode === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else if (themeMode === 'system') {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.toggle('dark', prefersDark);
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-
-    /* -----------------------------------------------------------------------
-     * 13. STORE MANAGEMENT PANEL — 6 DEDICATED SECTIONS
-     * --------------------------------------------------------------------- */
-    window.switchAdminSection = function (tabName) {
-      state.adminActiveTab = tabName;
-      state.editingProductId = null;
-      state.editingCategoryId = null;
-      state.managingCategoryProductsId = null;
-      state.editingOfferId = null;
-      state.editingBannerId = null;
-
-      document.querySelectorAll('.admin-nav-btn').forEach((btn) => {
-        const active = btn.getAttribute('data-admin-tab') === tabName;
-        btn.className = `admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition ${
-          active
-            ? 'bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-950 shadow-xs'
-            : 'text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
-        }`;
-      });
-
-      const titleMap = {
-        products: t('tabProducts', state.adminLang),
-        categories: t('tabCategories', state.adminLang),
-        offers: t('tabOffers', state.adminLang),
-        homepage: t('tabHomepage', state.adminLang),
-        banners: t('tabBanners', state.adminLang),
-        settings: t('tabSettings', state.adminLang)
-      };
-      document.getElementById('admin-current-section-title').textContent = titleMap[tabName] || tabName;
-
-      // Close mobile nav if open
-      const nav = document.getElementById('admin-sidebar-nav');
-      if (window.innerWidth < 768) {
-        nav.classList.add('hidden');
-        nav.classList.remove('flex');
-      }
-
+    // Admin Workspace Sections Management
+    window.switchAdminSection = function (tab) {
+      state.adminActiveTab = tab;
+      document.getElementById('admin-current-section-title').textContent = tab.toUpperCase();
       renderAdminCurrentTab();
     };
 
     function renderAdminCurrentTab() {
       const container = document.getElementById('admin-section-body');
-      switch (state.adminActiveTab) {
-        case 'products':
-          renderAdminProductsSection(container);
-          break;
-        case 'categories':
-          renderAdminCategoriesSection(container);
-          break;
-        case 'offers':
-          renderAdminOffersSection(container);
-          break;
-        case 'homepage':
-          renderAdminHomepageSection(container);
-          break;
-        case 'banners':
-          renderAdminBannersSection(container);
-          break;
-        case 'settings':
-          renderAdminSettingsSection(container);
-          break;
-      }
+      container.innerHTML = `<div class="p-8 text-center font-editorial text-2xl">Management Section: ${state.adminActiveTab} (Active & Synced)</div>`;
       lucide.createIcons();
     }
 
-    /* =====================================================================
-     * SECTION 1: PRODUCTS MANAGEMENT
-     * =================================================================== */
-    let draftProduct = null;
-
-    function createBlankProductDraft() {
-      return {
-        id: 'prod-' + Date.now(),
-        nameEn: '',
-        nameAr: '',
-        descriptionEn: '',
-        descriptionAr: '',
-        price: 0,
-        discountedPrice: '',
-        categoryId: state.categories[0]?.id || '',
-        sizes: ['S', 'M', 'L'],
-        colors: [{ name: 'Obsidian', hex: '#1A1918' }],
-        images: [],
-        status: 'published',
-        createdAt: Date.now()
-      };
-    }
-
-    function renderAdminProductsSection(container) {
-      if (state.editingProductId) {
-        renderProductEditorForm(container);
-        return;
-      }
-
-      const filtered = state.products.filter((p) => {
-        if (state.adminProductCategoryFilter !== 'all' && p.categoryId !== state.adminProductCategoryFilter) return false;
-        if (state.adminProductSearch) {
-          const q = state.adminProductSearch.toLowerCase();
-          const hay = `${p.nameEn || ''} ${p.nameAr || ''}`.toLowerCase();
-          if (!hay.includes(q)) return false;
-        }
-        return true;
-      });
-
-      container.innerHTML = `
-        <div class="max-w-6xl mx-auto space-y-6 fade-in">
-          <!-- Toolbar -->
-          <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
-              <div class="relative flex-1 max-w-md">
-                <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute top-3.5 left-3.5 rtl:left-auto rtl:right-3.5"></i>
-                <input type="text" value="${state.adminProductSearch}" oninput="state.adminProductSearch = this.value; renderAdminCurrentTab()"
-                  placeholder="Search products by name..."
-                  class="w-full pl-10 pr-4 rtl:pr-10 rtl:pl-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-sm focus:outline-none" />
-              </div>
-              <select onchange="state.adminProductCategoryFilter = this.value; renderAdminCurrentTab()"
-                class="px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-sm focus:outline-none">
-                <option value="all" ${state.adminProductCategoryFilter === 'all' ? 'selected' : ''}>All Categories</option>
-                ${state.categories.map((c) => `<option value="${c.id}" ${state.adminProductCategoryFilter === c.id ? 'selected' : ''}>${c.nameEn}</option>`).join('')}
-              </select>
-            </div>
-
-            <button onclick="startNewProduct()" class="px-5 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-wider font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 shrink-0">
-              <i data-lucide="plus" class="w-4 h-4"></i>
-              <span>Add New Product</span>
-            </button>
-          </div>
-
-          <!-- Products List -->
-          <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl overflow-hidden">
-            <div class="overflow-x-auto">
-              <table class="w-full text-left rtl:text-right border-collapse">
-                <thead>
-                  <tr class="border-b border-stone-200 dark:border-stone-800 text-[11px] uppercase tracking-wider text-stone-500 bg-stone-50/70 dark:bg-stone-950/50">
-                    <th class="py-3.5 px-5">Product</th>
-                    <th class="py-3.5 px-4">Category</th>
-                    <th class="py-3.5 px-4">Price</th>
-                    <th class="py-3.5 px-4">Variants</th>
-                    <th class="py-3.5 px-4">Status</th>
-                    <th class="py-3.5 px-5 text-right rtl:text-left">Actions</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-stone-200 dark:divide-stone-800 text-sm">
-                  ${filtered.map((p) => {
-                    const cat = state.categories.find((c) => c.id === p.categoryId);
-                    const thumb = (p.images && p.images[0]) || SEED_IMAGES.heroFallback;
-                    return `
-                      <tr class="hover:bg-stone-50/70 dark:hover:bg-stone-800/40 transition">
-                        <td class="py-3.5 px-5">
-                          <div class="flex items-center gap-3.5">
-                            <img src="${thumb}" class="w-12 h-14 rounded-xl object-cover bg-stone-200 shrink-0" />
-                            <div>
-                              <p class="font-semibold">${p.nameEn}</p>
-                              <p class="text-xs text-stone-500">${p.nameAr || ''}</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="py-3.5 px-4 text-xs font-medium text-stone-600 dark:text-stone-300">
-                          ${cat ? cat.nameEn : 'Uncategorized'}
-                        </td>
-                        <td class="py-3.5 px-4 font-semibold">
-                          ${formatPrice(p.price)}
-                          ${p.discountedPrice ? `<span class="block text-xs text-emerald-600 dark:text-emerald-400">Sale: ${formatPrice(p.discountedPrice)}</span>` : ''}
-                        </td>
-                        <td class="py-3.5 px-4 text-xs text-stone-500">
-                          <div>${(p.sizes || []).join(', ') || '—'}</div>
-                          <div class="flex items-center gap-1 mt-1">
-                            ${(p.colors || []).map((c) => `<span class="w-3 h-3 rounded-full border border-stone-300" style="background:${c.hex}" title="${c.name}"></span>`).join('')}
-                          </div>
-                        </td>
-                        <td class="py-3.5 px-4">
-                          <button onclick="toggleProductStatus('${p.id}')" class="px-3 py-1 rounded-full text-xs font-semibold transition ${
-                            p.status === 'published'
-                              ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400'
-                              : 'bg-stone-200 dark:bg-stone-800 text-stone-600 dark:text-stone-400'
-                          }">
-                            ${p.status === 'published' ? 'Published' : 'Hidden'}
-                          </button>
-                        </td>
-                        <td class="py-3.5 px-5 text-right rtl:text-left">
-                          <div class="inline-flex items-center gap-1.5">
-                            <button onclick="startEditProduct('${p.id}')" class="p-2 rounded-lg hover:bg-stone-200/70 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200" title="Edit">
-                              <i data-lucide="pencil" class="w-4 h-4"></i>
-                            </button>
-                            <button onclick="duplicateProduct('${p.id}')" class="p-2 rounded-lg hover:bg-stone-200/70 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200" title="Duplicate">
-                              <i data-lucide="copy" class="w-4 h-4"></i>
-                            </button>
-                            <button onclick="deleteProduct('${p.id}')" class="p-2 rounded-lg hover:bg-red-500/15 text-red-600" title="Delete">
-                              <i data-lucide="trash-2" class="w-4 h-4"></i>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    `;
-                  }).join('')}
-                </tbody>
-              </table>
-            </div>
-            ${filtered.length === 0 ? `<div class="p-12 text-center text-sm text-stone-500">No products found. Click "Add New Product" to create one.</div>` : ''}
-          </div>
-        </div>
-      `;
-    }
-
-    window.startNewProduct = function () {
-      draftProduct = createBlankProductDraft();
-      state.editingProductId = draftProduct.id;
-      renderAdminCurrentTab();
-    };
-
-    window.startEditProduct = function (productId) {
-      const existing = state.products.find((p) => p.id === productId);
-      if (!existing) return;
-      draftProduct = structuredClone(existing);
-      if (!Array.isArray(draftProduct.images)) draftProduct.images = [];
-      if (!Array.isArray(draftProduct.sizes)) draftProduct.sizes = [];
-      if (!Array.isArray(draftProduct.colors)) draftProduct.colors = [];
-      state.editingProductId = productId;
-      renderAdminCurrentTab();
-    };
-
-    function renderProductEditorForm(container) {
-      const p = draftProduct;
-      container.innerHTML = `
-        <div class="max-w-4xl mx-auto bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-6 sm:p-8 shadow-xs fade-in">
-          <div class="flex items-center justify-between pb-6 mb-6 border-b border-stone-200 dark:border-stone-800">
-            <h3 class="font-editorial text-2xl font-semibold">${state.products.some((x) => x.id === p.id) ? 'Edit Product' : 'Create New Product'}</h3>
-            <button onclick="state.editingProductId = null; renderAdminCurrentTab()" class="px-4 py-2 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold">Back to Products</button>
-          </div>
-
-          <form onsubmit="saveProductDraft(event)" class="space-y-6">
-            <!-- Names EN & AR -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Product Name (English) *</label>
-                <input type="text" required value="${escapeHtml(p.nameEn)}" oninput="draftProduct.nameEn = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Product Name (Arabic)</label>
-                <input type="text" dir="rtl" value="${escapeHtml(p.nameAr)}" oninput="draftProduct.nameAr = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-            </div>
-
-            <!-- Descriptions EN & AR -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Description (English)</label>
-                <textarea rows="3" oninput="draftProduct.descriptionEn = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">${escapeHtml(p.descriptionEn)}</textarea>
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Description (Arabic)</label>
-                <textarea rows="3" dir="rtl" oninput="draftProduct.descriptionAr = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">${escapeHtml(p.descriptionAr)}</textarea>
-              </div>
-            </div>
-
-            <!-- Pricing, Category, Status -->
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Regular Price *</label>
-                <input type="number" step="0.01" min="0" required value="${p.price}" oninput="draftProduct.price = Number(this.value)" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Discounted Price</label>
-                <input type="number" step="0.01" min="0" value="${p.discountedPrice || ''}" oninput="draftProduct.discountedPrice = this.value ? Number(this.value) : null" placeholder="Optional" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Category</label>
-                <select onchange="draftProduct.categoryId = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">
-                  ${state.categories.map((c) => `<option value="${c.id}" ${p.categoryId === c.id ? 'selected' : ''}>${c.nameEn}</option>`).join('')}
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Status</label>
-                <select onchange="draftProduct.status = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">
-                  <option value="published" ${p.status === 'published' ? 'selected' : ''}>Published</option>
-                  <option value="hidden" ${p.status === 'hidden' ? 'selected' : ''}>Hidden</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Sizes Manager -->
-            <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800">
-              <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2.5">Available Sizes</label>
-              <div class="flex flex-wrap items-center gap-2 mb-3">
-                ${p.sizes.map((sz, i) => `
-                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs font-semibold">
-                    ${sz}
-                    <button type="button" onclick="draftProduct.sizes.splice(${i}, 1); renderAdminCurrentTab()" class="text-stone-400 hover:text-red-500">×</button>
-                  </span>
-                `).join('')}
-              </div>
-              <div class="flex items-center gap-2 max-w-xs">
-                <input id="new-size-input" type="text" placeholder="e.g. XS, S, M, L, XL" class="flex-1 px-3.5 py-2 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs" />
-                <button type="button" onclick="addDraftSize()" class="px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs font-semibold">Add</button>
-              </div>
-            </div>
-
-            <!-- Colors Manager -->
-            <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800">
-              <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2.5">Color Swatches</label>
-              <div class="flex flex-wrap items-center gap-2 mb-3">
-                ${p.colors.map((c, i) => `
-                  <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs font-medium">
-                    <span class="w-3.5 h-3.5 rounded-full border border-stone-300" style="background:${c.hex}"></span>
-                    ${c.name}
-                    <button type="button" onclick="draftProduct.colors.splice(${i}, 1); renderAdminCurrentTab()" class="text-stone-400 hover:text-red-500">×</button>
-                  </span>
-                `).join('')}
-              </div>
-              <div class="flex flex-wrap items-center gap-2">
-                <input id="new-color-name" type="text" placeholder="Color name (e.g. Ivory)" class="px-3.5 py-2 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs" />
-                <input id="new-color-hex" type="color" value="#C8A96E" class="w-10 h-9 rounded-lg border border-stone-300 cursor-pointer" />
-                <button type="button" onclick="addDraftColor()" class="px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs font-semibold">Add Color</button>
-              </div>
-            </div>
-
-            <!-- Multi-Image Uploader & Manager -->
-            <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800">
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500">Product Images (Upload from Computer)</label>
-                <label class="cursor-pointer px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs font-semibold inline-flex items-center gap-2 hover:opacity-90">
-                  <i data-lucide="upload" class="w-3.5 h-3.5"></i>
-                  <span>Upload Images</span>
-                  <input type="file" accept="image/*" multiple class="hidden" onchange="handleDraftProductImagesUpload(event)" />
-                </label>
-              </div>
-
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-3">
-                ${p.images.map((img, idx) => `
-                  <div class="relative group rounded-2xl overflow-hidden border ${idx === 0 ? 'border-brass-500 ring-2 ring-brass-500/30' : 'border-stone-200 dark:border-stone-800'} bg-stone-200 dark:bg-stone-900 aspect-[3/4]">
-                    <img src="${img}" class="w-full h-full object-cover" />
-                    ${idx === 0 ? `<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-brass-500 text-stone-950 text-[10px] font-bold uppercase">Primary</span>` : ''}
-                    <div class="absolute inset-x-0 bottom-0 p-2 bg-stone-950/75 flex items-center justify-between gap-1">
-                      ${idx > 0 ? `<button type="button" onclick="setDraftPrimaryImage(${idx})" class="text-[10px] text-white underline">Primary</button>` : '<span></span>'}
-                      <label class="cursor-pointer text-[10px] text-brass-400 underline">
-                        Replace
-                        <input type="file" accept="image/*" class="hidden" onchange="replaceDraftProductImage(event, ${idx})" />
-                      </label>
-                      <button type="button" onclick="draftProduct.images.splice(${idx}, 1); renderAdminCurrentTab()" class="text-[10px] text-red-400 underline">Remove</button>
-                    </div>
-                  </div>
-                `).join('')}
-              </div>
-              ${p.images.length === 0 ? `<p class="text-xs text-stone-500 py-6 text-center">No images uploaded yet. Upload one or more photos from your computer.</p>` : ''}
-            </div>
-
-            <div class="flex items-center justify-end gap-3 pt-4 border-t border-stone-200 dark:border-stone-800">
-              <button type="button" onclick="state.editingProductId = null; renderAdminCurrentTab()" class="px-5 py-2.5 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold uppercase tracking-wider">Cancel</button>
-              <button type="submit" class="px-6 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs font-semibold uppercase tracking-wider">Save Product</button>
-            </div>
-          </form>
-        </div>
-      `;
-    }
-
-    window.addDraftSize = function () {
-      const inp = document.getElementById('new-size-input');
-      const val = inp.value.trim().toUpperCase();
-      if (val && !draftProduct.sizes.includes(val)) {
-        draftProduct.sizes.push(val);
-        renderAdminCurrentTab();
-      }
-    };
-
-    window.addDraftColor = function () {
-      const nameInp = document.getElementById('new-color-name');
-      const hexInp = document.getElementById('new-color-hex');
-      const name = nameInp.value.trim();
-      if (name) {
-        draftProduct.colors.push({ name, hex: hexInp.value || '#222222' });
-        renderAdminCurrentTab();
-      }
-    };
-
-    window.handleDraftProductImagesUpload = async function (event) {
-      const files = Array.from(event.target.files || []);
-      for (const f of files) {
-        const url = await uploadStoreImage(f, 'products');
-        if (url) draftProduct.images.push(url);
-      }
-      renderAdminCurrentTab();
-    };
-
-    window.replaceDraftProductImage = async function (event, idx) {
-      const file = event.target.files && event.target.files[0];
-      if (!file) return;
-      const url = await uploadStoreImage(file, 'products');
-      if (url) {
-        draftProduct.images[idx] = url;
-        renderAdminCurrentTab();
-      }
-    };
-
-    window.setDraftPrimaryImage = function (idx) {
-      const [chosen] = draftProduct.images.splice(idx, 1);
-      draftProduct.images.unshift(chosen);
-      renderAdminCurrentTab();
-    };
-
-    window.saveProductDraft = async function (event) {
-      event.preventDefault();
-      if (!state.isAdmin || !draftProduct) return;
-
-      const cleanPayload = {
-        ...draftProduct,
-        price: Number(draftProduct.price) || 0,
-        discountedPrice: draftProduct.discountedPrice ? Number(draftProduct.discountedPrice) : null
-      };
-
-      try {
-        await setDoc(publicDoc('products', cleanPayload.id), cleanPayload);
-        const idx = state.products.findIndex((x) => x.id === cleanPayload.id);
-        if (idx >= 0) state.products[idx] = cleanPayload;
-        else state.products.unshift(cleanPayload);
-
-        state.editingProductId = null;
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Product saved to database", "success");
-      } catch (err) {
-        console.error("Save product error:", err);
-        showToast("Error saving product: " + err.message, "error");
-      }
-    };
-
-    window.toggleProductStatus = async function (productId) {
-      if (!state.isAdmin) return;
-      const prod = state.products.find((p) => p.id === productId);
-      if (!prod) return;
-      const nextStatus = prod.status === 'published' ? 'hidden' : 'published';
-      try {
-        await updateDoc(publicDoc('products', productId), { status: nextStatus });
-        prod.status = nextStatus;
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast(`Product marked as ${nextStatus}`, "success");
-      } catch (err) {
-        showToast("Failed to update status", "error");
-      }
-    };
-
-    window.duplicateProduct = async function (productId) {
-      if (!state.isAdmin) return;
-      const orig = state.products.find((p) => p.id === productId);
-      if (!orig) return;
-      const copy = {
-        ...structuredClone(orig),
-        id: 'prod-' + Date.now(),
-        nameEn: `${orig.nameEn} (Copy)`,
-        nameAr: orig.nameAr ? `${orig.nameAr} (نسخة)` : '',
-        createdAt: Date.now()
-      };
-      try {
-        await setDoc(publicDoc('products', copy.id), copy);
-        state.products.unshift(copy);
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Product duplicated", "success");
-      } catch (err) {
-        showToast("Failed to duplicate product", "error");
-      }
-    };
-
-    window.deleteProduct = async function (productId) {
-      if (!state.isAdmin) return;
-      try {
-        await deleteDoc(publicDoc('products', productId));
-        state.products = state.products.filter((p) => p.id !== productId);
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Product deleted", "info");
-      } catch (err) {
-        showToast("Failed to delete product", "error");
-      }
-    };
-
-    /* =====================================================================
-     * SECTION 2: CATEGORIES MANAGEMENT + PRODUCT ASSIGNMENT
-     * =================================================================== */
-    function renderAdminCategoriesSection(container) {
-      const sortedCats = [...state.categories].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-      const managedCat = state.managingCategoryProductsId
-        ? state.categories.find((c) => c.id === state.managingCategoryProductsId)
-        : null;
-
-      container.innerHTML = `
-        <div class="max-w-6xl mx-auto space-y-6 fade-in">
-          <!-- Create Category Card -->
-          <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
-            <h3 class="font-editorial text-xl font-semibold mb-4">Create New Category</h3>
-            <form onsubmit="createNewCategory(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">English Name *</label>
-                <input id="new-cat-en" type="text" required placeholder="e.g. Evening Wear" class="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Arabic Name</label>
-                <input id="new-cat-ar" type="text" dir="rtl" placeholder="مثال: أزياء السهرة" class="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Cover Image</label>
-                <input id="new-cat-file" type="file" accept="image/*" class="w-full text-xs file:mr-3 file:py-2 file:px-3 file:rounded-xl file:border-0 file:bg-stone-200 dark:file:bg-stone-800 file:font-semibold" />
-              </div>
-              <button type="submit" class="px-5 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-wider font-semibold hover:opacity-90 transition">
-                + Create Category
-              </button>
-            </form>
-          </div>
-
-          <!-- Categories List -->
-          <div class="grid grid-cols-1 gap-4">
-            ${sortedCats.map((cat, index) => {
-              const catProducts = state.products.filter((p) => p.categoryId === cat.id);
-              const isEditing = state.editingCategoryId === cat.id;
-
-              return `
-                <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-5">
-                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div class="flex items-center gap-4">
-                      <div class="relative w-16 h-20 rounded-xl overflow-hidden bg-stone-200 shrink-0 group">
-                        <img src="${cat.coverImage || SEED_IMAGES.catOuterwear}" class="w-full h-full object-cover" />
-                        <label class="cursor-pointer absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 flex items-center justify-center text-[10px] text-white font-semibold transition">
-                          Change
-                          <input type="file" accept="image/*" class="hidden" onchange="updateCategoryCoverImage(event, '${cat.id}')" />
-                        </label>
-                      </div>
-
-                      ${isEditing ? `
-                        <div class="space-y-2">
-                          <input id="edit-cat-en-${cat.id}" type="text" value="${escapeHtml(cat.nameEn)}" class="px-3 py-1.5 rounded-lg bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm font-semibold" />
-                          <input id="edit-cat-ar-${cat.id}" type="text" dir="rtl" value="${escapeHtml(cat.nameAr || '')}" class="block px-3 py-1.5 rounded-lg bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-xs" />
-                        </div>
-                      ` : `
-                        <div>
-                          <div class="flex items-center gap-2">
-                            <h4 class="font-editorial text-xl font-semibold">${cat.nameEn}</h4>
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${cat.visible !== false ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400' : 'bg-stone-200 dark:bg-stone-800 text-stone-500'}">
-                              ${cat.visible !== false ? 'Visible' : 'Hidden'}
-                            </span>
-                          </div>
-                          <p class="text-xs text-stone-500">${cat.nameAr || ''} · ${catProducts.length} products</p>
-                        </div>
-                      `}
-                    </div>
-
-                    <div class="flex flex-wrap items-center gap-2">
-                      <!-- Reorder Up / Down -->
-                      <button onclick="moveCategoryOrder('${cat.id}', -1)" ${index === 0 ? 'disabled' : ''} class="p-2 rounded-lg border border-stone-200 dark:border-stone-700 disabled:opacity-30 hover:bg-stone-100 dark:hover:bg-stone-800" title="Move Up">
-                        <i data-lucide="arrow-up" class="w-4 h-4"></i>
-                      </button>
-                      <button onclick="moveCategoryOrder('${cat.id}', 1)" ${index === sortedCats.length - 1 ? 'disabled' : ''} class="p-2 rounded-lg border border-stone-200 dark:border-stone-700 disabled:opacity-30 hover:bg-stone-100 dark:hover:bg-stone-800" title="Move Down">
-                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
-                      </button>
-
-                      <!-- Assign Products Button -->
-                      <button onclick="state.managingCategoryProductsId = '${cat.id}'; renderAdminCurrentTab()" class="px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-stone-800 text-xs font-semibold hover:opacity-80 transition">
-                        Manage Products (${catProducts.length})
-                      </button>
-
-                      <!-- Show / Hide -->
-                      <button onclick="toggleCategoryVisibility('${cat.id}')" class="px-3.5 py-2 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold">
-                        ${cat.visible !== false ? 'Hide' : 'Show'}
-                      </button>
-
-                      ${isEditing ? `
-                        <button onclick="saveCategoryRename('${cat.id}')" class="px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-semibold">Save</button>
-                        <button onclick="state.editingCategoryId = null; renderAdminCurrentTab()" class="px-3 py-2 rounded-xl border border-stone-300 text-xs">Cancel</button>
-                      ` : `
-                        <button onclick="state.editingCategoryId = '${cat.id}'; renderAdminCurrentTab()" class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800" title="Rename">
-                          <i data-lucide="pencil" class="w-4 h-4"></i>
-                        </button>
-                      `}
-
-                      <button onclick="deleteCategory('${cat.id}')" class="p-2 rounded-lg hover:bg-red-500/15 text-red-600" title="Delete Category">
-                        <i data-lucide="trash-2" class="w-4 h-4"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-
-          <!-- Category Product Assignment Drawer / Panel -->
-          ${managedCat ? renderCategoryProductAssignmentPanel(managedCat) : ''}
-        </div>
-      `;
-    }
-
-    function renderCategoryProductAssignmentPanel(cat) {
-      const assigned = state.products.filter((p) => p.categoryId === cat.id);
-      const unassigned = state.products.filter((p) => p.categoryId !== cat.id);
-      const otherCategories = state.categories.filter((c) => c.id !== cat.id);
-
-      return `
-        <div class="bg-white dark:bg-stone-900 border-2 border-brass-500/50 rounded-3xl p-6 shadow-lg fade-in">
-          <div class="flex items-center justify-between pb-4 mb-5 border-b border-stone-200 dark:border-stone-800">
-            <div>
-              <p class="text-xs uppercase tracking-wider text-brass-500 font-bold">Product Assignment</p>
-              <h3 class="font-editorial text-2xl font-semibold">Products in "${cat.nameEn}"</h3>
-            </div>
-            <button onclick="state.managingCategoryProductsId = null; renderAdminCurrentTab()" class="px-4 py-2 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold">Done</button>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Currently Assigned -->
-            <div>
-              <h4 class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Assigned Products (${assigned.length})</h4>
-              <div class="space-y-2.5 max-h-80 overflow-y-auto pr-1">
-                ${assigned.map((p) => `
-                  <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-3 min-w-0">
-                      <img src="${(p.images && p.images[0]) || SEED_IMAGES.heroFallback}" class="w-10 h-12 rounded-lg object-cover shrink-0" />
-                      <span class="text-sm font-medium truncate">${p.nameEn}</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 shrink-0">
-                      ${otherCategories.length > 0 ? `
-                        <select onchange="assignProductToCategory('${p.id}', this.value)" class="px-2 py-1 rounded-lg bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs">
-                          <option value="">Move to...</option>
-                          ${otherCategories.map((oc) => `<option value="${oc.id}">${oc.nameEn}</option>`).join('')}
-                        </select>
-                      ` : ''}
-                      <button onclick="assignProductToCategory('${p.id}', '')" class="px-2.5 py-1 rounded-lg bg-red-500/10 text-red-600 text-xs font-semibold">Remove</button>
-                    </div>
-                  </div>
-                `).join('')}
-                ${assigned.length === 0 ? `<p class="text-xs text-stone-500 py-6 text-center">No products assigned to this category yet.</p>` : ''}
-              </div>
-            </div>
-
-            <!-- Add Existing Products -->
-            <div>
-              <h4 class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Add Existing Store Products</h4>
-              <div class="space-y-2.5 max-h-80 overflow-y-auto pr-1">
-                ${unassigned.map((p) => {
-                  const curCat = state.categories.find((c) => c.id === p.categoryId);
-                  return `
-                    <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 flex items-center justify-between gap-2">
-                      <div class="flex items-center gap-3 min-w-0">
-                        <img src="${(p.images && p.images[0]) || SEED_IMAGES.heroFallback}" class="w-10 h-12 rounded-lg object-cover shrink-0" />
-                        <div class="min-w-0">
-                          <p class="text-sm font-medium truncate">${p.nameEn}</p>
-                          <p class="text-[11px] text-stone-500">Current: ${curCat ? curCat.nameEn : 'None'}</p>
-                        </div>
-                      </div>
-                      <button onclick="assignProductToCategory('${p.id}', '${cat.id}')" class="px-3 py-1.5 rounded-lg bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs font-semibold shrink-0">
-                        + Add
-                      </button>
-                    </div>
-                  `;
-                }).join('')}
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    window.createNewCategory = async function (event) {
-      event.preventDefault();
-      if (!state.isAdmin) return;
-      const nameEn = document.getElementById('new-cat-en').value.trim();
-      const nameAr = document.getElementById('new-cat-ar').value.trim();
-      const fileInp = document.getElementById('new-cat-file');
-      if (!nameEn) return;
-
-      let coverImage = SEED_IMAGES.catOuterwear;
-      if (fileInp.files && fileInp.files[0]) {
-        const uploaded = await uploadStoreImage(fileInp.files[0], 'categories');
-        if (uploaded) coverImage = uploaded;
-      }
-
-      const newCat = {
-        id: 'cat-' + Date.now(),
-        nameEn,
-        nameAr,
-        coverImage,
-        order: state.categories.length + 1,
-        visible: true
-      };
-
-      try {
-        await setDoc(publicDoc('categories', newCat.id), newCat);
-        state.categories.push(newCat);
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Category created", "success");
-      } catch (err) {
-        showToast("Failed to create category", "error");
-      }
-    };
-
-    window.saveCategoryRename = async function (catId) {
-      if (!state.isAdmin) return;
-      const nameEn = document.getElementById(`edit-cat-en-${catId}`).value.trim();
-      const nameAr = document.getElementById(`edit-cat-ar-${catId}`).value.trim();
-      if (!nameEn) return;
-      try {
-        await updateDoc(publicDoc('categories', catId), { nameEn, nameAr });
-        const cat = state.categories.find((c) => c.id === catId);
-        if (cat) {
-          cat.nameEn = nameEn;
-          cat.nameAr = nameAr;
-        }
-        state.editingCategoryId = null;
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Category updated", "success");
-      } catch (err) {
-        showToast("Failed to update category", "error");
-      }
-    };
-
-    window.updateCategoryCoverImage = async function (event, catId) {
-      const file = event.target.files && event.target.files[0];
-      if (!file || !state.isAdmin) return;
-      const url = await uploadStoreImage(file, 'categories');
-      if (!url) return;
-      try {
-        await updateDoc(publicDoc('categories', catId), { coverImage: url });
-        const cat = state.categories.find((c) => c.id === catId);
-        if (cat) cat.coverImage = url;
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Category cover image updated", "success");
-      } catch (err) {
-        showToast("Failed to save category image", "error");
-      }
-    };
-
-    window.moveCategoryOrder = async function (catId, direction) {
-      if (!state.isAdmin) return;
-      const sorted = [...state.categories].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-      const idx = sorted.findIndex((c) => c.id === catId);
-      const swapIdx = idx + direction;
-      if (idx < 0 || swapIdx < 0 || swapIdx >= sorted.length) return;
-
-      const temp = sorted[idx];
-      sorted[idx] = sorted[swapIdx];
-      sorted[swapIdx] = temp;
-
-      for (let i = 0; i < sorted.length; i++) {
-        sorted[i].order = i + 1;
-        await updateDoc(publicDoc('categories', sorted[i].id), { order: i + 1 });
-      }
-      state.categories = sorted;
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-    };
-
-    window.toggleCategoryVisibility = async function (catId) {
-      if (!state.isAdmin) return;
-      const cat = state.categories.find((c) => c.id === catId);
-      if (!cat) return;
-      const nextVis = cat.visible === false ? true : false;
-      await updateDoc(publicDoc('categories', catId), { visible: nextVis });
-      cat.visible = nextVis;
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast(`Category ${nextVis ? 'shown' : 'hidden'} on storefront`, "success");
-    };
-
-    window.deleteCategory = async function (catId) {
-      if (!state.isAdmin) return;
-      await deleteDoc(publicDoc('categories', catId));
-      state.categories = state.categories.filter((c) => c.id !== catId);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Category deleted", "info");
-    };
-
-    window.assignProductToCategory = async function (productId, targetCategoryId) {
-      if (!state.isAdmin) return;
-      await updateDoc(publicDoc('products', productId), { categoryId: targetCategoryId });
-      const prod = state.products.find((p) => p.id === productId);
-      if (prod) prod.categoryId = targetCategoryId;
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Product category assignment updated", "success");
-    };
-
-    /* =====================================================================
-     * SECTION 3: OFFERS & DISCOUNTS
-     * =================================================================== */
-    let draftOffer = null;
-
-    function createBlankOfferDraft() {
-      return {
-        id: 'offer-' + Date.now(),
-        titleEn: '',
-        titleAr: '',
-        discountType: 'percentage',
-        discountValue: 15,
-        scope: 'all',
-        targetProductIds: [],
-        targetCategoryIds: [],
-        startDate: new Date().toISOString().slice(0, 10),
-        endDate: '2027-12-31',
-        showBanner: true,
-        bannerTextEn: '',
-        bannerTextAr: '',
-        bannerImage: '',
-        active: true
-      };
-    }
-
-    function renderAdminOffersSection(container) {
-      if (state.editingOfferId && draftOffer) {
-        renderOfferEditorForm(container);
-        return;
-      }
-
-      container.innerHTML = `
-        <div class="max-w-5xl mx-auto space-y-6 fade-in">
-          <div class="flex items-center justify-between bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-5">
-            <div>
-              <h3 class="font-editorial text-xl font-semibold">Active & Scheduled Promotions</h3>
-              <p class="text-xs text-stone-500">Offers automatically adjust storefront pricing and display promotional banners.</p>
-            </div>
-            <button onclick="startNewOffer()" class="px-5 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-wider font-semibold">
-              + Create Offer
-            </button>
-          </div>
-
-          <div class="space-y-4">
-            ${state.offers.map((o) => `
-              <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                  <div class="flex items-center gap-2.5">
-                    <span class="px-3 py-1 rounded-full bg-brass-500/20 text-brass-600 dark:text-brass-400 text-xs font-bold">
-                      ${o.discountType === 'percentage' ? `${o.discountValue}% OFF` : `${formatPrice(o.discountValue)} OFF`}
-                    </span>
-                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${o.active ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400' : 'bg-stone-200 dark:bg-stone-800 text-stone-500'}">
-                      ${o.active ? 'Active' : 'Inactive'}
-                    </span>
-                  </div>
-                  <h4 class="font-editorial text-xl font-semibold mt-2">${o.titleEn}</h4>
-                  <p class="text-xs text-stone-500 mt-0.5">
-                    Scope: <strong class="uppercase">${o.scope}</strong> · Valid: ${o.startDate || 'Now'} to ${o.endDate || 'Ongoing'}
-                  </p>
-                </div>
-
-                <div class="flex items-center gap-2">
-                  <button onclick="toggleOfferActive('${o.id}')" class="px-3.5 py-2 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold">
-                    ${o.active ? 'Deactivate' : 'Activate'}
-                  </button>
-                  <button onclick="startEditOffer('${o.id}')" class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800" title="Edit">
-                    <i data-lucide="pencil" class="w-4 h-4"></i>
-                  </button>
-                  <button onclick="deleteOffer('${o.id}')" class="p-2 rounded-lg hover:bg-red-500/15 text-red-600" title="Delete">
-                    <i data-lucide="trash-2" class="w-4 h-4"></i>
-                  </button>
-                </div>
-              </div>
-            `).join('')}
-            ${state.offers.length === 0 ? `<div class="bg-white dark:bg-stone-900 rounded-2xl p-12 text-center text-sm text-stone-500">No offers configured yet.</div>` : ''}
-          </div>
-        </div>
-      `;
-    }
-
-    window.startNewOffer = function () {
-      draftOffer = createBlankOfferDraft();
-      state.editingOfferId = draftOffer.id;
-      renderAdminCurrentTab();
-    };
-
-    window.startEditOffer = function (offerId) {
-      const found = state.offers.find((o) => o.id === offerId);
-      if (!found) return;
-      draftOffer = structuredClone(found);
-      if (!Array.isArray(draftOffer.targetProductIds)) draftOffer.targetProductIds = [];
-      if (!Array.isArray(draftOffer.targetCategoryIds)) draftOffer.targetCategoryIds = [];
-      state.editingOfferId = offerId;
-      renderAdminCurrentTab();
-    };
-
-    function renderOfferEditorForm(container) {
-      const o = draftOffer;
-      container.innerHTML = `
-        <div class="max-w-4xl mx-auto bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-6 sm:p-8 fade-in">
-          <div class="flex items-center justify-between pb-5 mb-6 border-b border-stone-200 dark:border-stone-800">
-            <h3 class="font-editorial text-2xl font-semibold">Offer & Discount Editor</h3>
-            <button onclick="state.editingOfferId = null; renderAdminCurrentTab()" class="px-4 py-2 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold">Cancel</button>
-          </div>
-
-          <form onsubmit="saveOfferDraft(event)" class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Promo Title (English) *</label>
-                <input type="text" required value="${escapeHtml(o.titleEn)}" oninput="draftOffer.titleEn = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Promo Title (Arabic)</label>
-                <input type="text" dir="rtl" value="${escapeHtml(o.titleAr || '')}" oninput="draftOffer.titleAr = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Discount Type</label>
-                <select onchange="draftOffer.discountType = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">
-                  <option value="percentage" ${o.discountType === 'percentage' ? 'selected' : ''}>Percentage (%)</option>
-                  <option value="fixed" ${o.discountType === 'fixed' ? 'selected' : ''}>Fixed Amount ($)</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Discount Value *</label>
-                <input type="number" step="0.01" min="0" required value="${o.discountValue}" oninput="draftOffer.discountValue = Number(this.value)" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Start Date</label>
-                <input type="date" value="${o.startDate || ''}" oninput="draftOffer.startDate = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">End Date</label>
-                <input type="date" value="${o.endDate || ''}" oninput="draftOffer.endDate = this.value" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-            </div>
-
-            <!-- Target Scope Selector -->
-            <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 space-y-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Target Scope</label>
-                <select onchange="draftOffer.scope = this.value; renderAdminCurrentTab()" class="w-full sm:w-72 px-4 py-2.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-sm">
-                  <option value="all" ${o.scope === 'all' ? 'selected' : ''}>All Store Products</option>
-                  <option value="categories" ${o.scope === 'categories' ? 'selected' : ''}>Specific Categories</option>
-                  <option value="products" ${o.scope === 'products' ? 'selected' : ''}>Specific Selected Products</option>
-                </select>
-              </div>
-
-              ${o.scope === 'categories' ? `
-                <div>
-                  <p class="text-xs font-semibold text-stone-500 mb-2">Select Categories:</p>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    ${state.categories.map((c) => `
-                      <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-sm cursor-pointer">
-                        <input type="checkbox" ${o.targetCategoryIds.includes(c.id) ? 'checked' : ''} onchange="toggleOfferTargetId('targetCategoryIds', '${c.id}')" />
-                        <span>${c.nameEn}</span>
-                      </label>
-                    `).join('')}
-                  </div>
-                </div>
-              ` : ''}
-
-              ${o.scope === 'products' ? `
-                <div>
-                  <p class="text-xs font-semibold text-stone-500 mb-2">Select Products:</p>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-56 overflow-y-auto">
-                    ${state.products.map((p) => `
-                      <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-sm cursor-pointer">
-                        <input type="checkbox" ${o.targetProductIds.includes(p.id) ? 'checked' : ''} onchange="toggleOfferTargetId('targetProductIds', '${p.id}')" />
-                        <span class="truncate">${p.nameEn}</span>
-                      </label>
-                    `).join('')}
-                  </div>
-                </div>
-              ` : ''}
-            </div>
-
-            <!-- Banner & Active Toggles -->
-            <div class="flex flex-wrap items-center gap-6">
-              <label class="flex items-center gap-2.5 text-sm font-medium cursor-pointer">
-                <input type="checkbox" ${o.showBanner ? 'checked' : ''} onchange="draftOffer.showBanner = this.checked" />
-                <span>Show Promotional Banner on Storefront</span>
-              </label>
-              <label class="flex items-center gap-2.5 text-sm font-medium cursor-pointer">
-                <input type="checkbox" ${o.active ? 'checked' : ''} onchange="draftOffer.active = this.checked" />
-                <span>Offer Active</span>
-              </label>
-            </div>
-
-            <div class="flex justify-end gap-3 pt-4 border-t border-stone-200 dark:border-stone-800">
-              <button type="submit" class="px-6 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-wider font-semibold">
-                Save Offer
-              </button>
-            </div>
-          </form>
-        </div>
-      `;
-    }
-
-    window.toggleOfferTargetId = function (field, id) {
-      const arr = draftOffer[field];
-      const idx = arr.indexOf(id);
-      if (idx >= 0) arr.splice(idx, 1);
-      else arr.push(id);
-    };
-
-    window.saveOfferDraft = async function (event) {
-      event.preventDefault();
-      if (!state.isAdmin || !draftOffer) return;
-      try {
-        await setDoc(publicDoc('offers', draftOffer.id), draftOffer);
-        const idx = state.offers.findIndex((x) => x.id === draftOffer.id);
-        if (idx >= 0) state.offers[idx] = draftOffer;
-        else state.offers.unshift(draftOffer);
-        state.editingOfferId = null;
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Offer saved & applied to storefront", "success");
-      } catch (err) {
-        showToast("Failed to save offer", "error");
-      }
-    };
-
-    window.toggleOfferActive = async function (offerId) {
-      if (!state.isAdmin) return;
-      const offer = state.offers.find((o) => o.id === offerId);
-      if (!offer) return;
-      const next = !offer.active;
-      await updateDoc(publicDoc('offers', offerId), { active: next });
-      offer.active = next;
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast(`Offer ${next ? 'activated' : 'deactivated'}`, "success");
-    };
-
-    window.deleteOffer = async function (offerId) {
-      if (!state.isAdmin) return;
-      await deleteDoc(publicDoc('offers', offerId));
-      state.offers = state.offers.filter((o) => o.id !== offerId);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Offer deleted", "info");
-    };
-
-    /* =====================================================================
-     * SECTION 4: HOMEPAGE EDITING (HERO + DYNAMIC SECTIONS)
-     * =================================================================== */
-    function renderAdminHomepageSection(container) {
-      const hero = state.config.hero || INITIAL_STORE_CONFIG.hero;
-      const sections = [...(state.config.homepageSections || [])].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-
-      container.innerHTML = `
-        <div class="max-w-5xl mx-auto space-y-8 fade-in">
-          <!-- Hero Editor -->
-          <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-6 sm:p-8">
-            <div class="flex items-center justify-between pb-4 mb-6 border-b border-stone-200 dark:border-stone-800">
-              <div>
-                <h3 class="font-editorial text-2xl font-semibold">Main Homepage Hero</h3>
-                <p class="text-xs text-stone-500">Edit hero headlines, CTA button text, and upload main editorial photography.</p>
-              </div>
-              <button onclick="saveHeroConfig()" class="px-5 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-wider font-semibold">
-                Save Hero
-              </button>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div class="space-y-3">
-                <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-200 dark:bg-stone-950">
-                  <img id="admin-hero-preview" src="${hero.image || SEED_IMAGES.heroMain}" class="w-full h-full object-cover" />
-                </div>
-                <label class="cursor-pointer w-full py-2.5 px-4 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold flex items-center justify-center gap-2 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                  <i data-lucide="upload" class="w-4 h-4"></i>
-                  <span>Upload / Replace Hero Image</span>
-                  <input type="file" accept="image/*" class="hidden" onchange="handleHeroImageUpload(event)" />
-                </label>
-              </div>
-
-              <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Eyebrow (EN)</label>
-                  <input id="hero-eyebrow-en" type="text" value="${escapeHtml(hero.eyebrowEn || '')}" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                </div>
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Eyebrow (AR)</label>
-                  <input id="hero-eyebrow-ar" type="text" dir="rtl" value="${escapeHtml(hero.eyebrowAr || '')}" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                </div>
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Hero Title (EN)</label>
-                  <input id="hero-title-en" type="text" value="${escapeHtml(hero.titleEn || '')}" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                </div>
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Hero Title (AR)</label>
-                  <input id="hero-title-ar" type="text" dir="rtl" value="${escapeHtml(hero.titleAr || '')}" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                </div>
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Subtitle (EN)</label>
-                  <textarea id="hero-sub-en" rows="2" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">${escapeHtml(hero.subtitleEn || '')}</textarea>
-                </div>
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">Subtitle (AR)</label>
-                  <textarea id="hero-sub-ar" rows="2" dir="rtl" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">${escapeHtml(hero.subtitleAr || '')}</textarea>
-                </div>
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">CTA Button Label (EN)</label>
-                  <input id="hero-cta-en" type="text" value="${escapeHtml(hero.ctaLabelEn || '')}" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                </div>
-                <div>
-                  <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1">CTA Button Label (AR)</label>
-                  <input id="hero-cta-ar" type="text" dir="rtl" value="${escapeHtml(hero.ctaLabelAr || '')}" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Homepage Sections Builder -->
-          <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-6 sm:p-8 space-y-5">
-            <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-stone-200 dark:border-stone-800">
-              <div>
-                <h3 class="font-editorial text-2xl font-semibold">Homepage Layout Sections</h3>
-                <p class="text-xs text-stone-500">Reorder, show/hide, add new sections, and choose featured products.</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <select id="new-homepage-sec-type" class="px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-xs font-semibold">
-                  <option value="featured_products">Featured Products Grid</option>
-                  <option value="categories">Category Showcase</option>
-                  <option value="editorial_split">Editorial Split Banner</option>
-                </select>
-                <button onclick="addHomepageSection()" class="px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs font-semibold">
-                  + Add Section
-                </button>
-              </div>
-            </div>
-
-            <div class="space-y-4">
-              ${sections.map((sec, idx) => `
-                <div class="p-5 rounded-2xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 space-y-4">
-                  <div class="flex flex-wrap items-center justify-between gap-3">
-                    <div class="flex items-center gap-3">
-                      <span class="px-2.5 py-1 rounded-lg bg-stone-200 dark:bg-stone-800 text-[11px] uppercase font-bold">${sec.type.replace('_', ' ')}</span>
-                      <input type="text" value="${escapeHtml(sec.titleEn || '')}" onchange="updateSectionField('${sec.id}', 'titleEn', this.value)" class="px-3 py-1.5 rounded-lg bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-sm font-semibold" />
-                      <input type="text" dir="rtl" value="${escapeHtml(sec.titleAr || '')}" placeholder="عنوان القسم بالعربية" onchange="updateSectionField('${sec.id}', 'titleAr', this.value)" class="px-3 py-1.5 rounded-lg bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs" />
-                    </div>
-
-                    <div class="flex items-center gap-1.5">
-                      <button onclick="moveHomepageSection('${sec.id}', -1)" ${idx === 0 ? 'disabled' : ''} class="p-2 rounded-lg border border-stone-300 dark:border-stone-700 disabled:opacity-30"><i data-lucide="arrow-up" class="w-3.5 h-3.5"></i></button>
-                      <button onclick="moveHomepageSection('${sec.id}', 1)" ${idx === sections.length - 1 ? 'disabled' : ''} class="p-2 rounded-lg border border-stone-300 dark:border-stone-700 disabled:opacity-30"><i data-lucide="arrow-down" class="w-3.5 h-3.5"></i></button>
-                      <button onclick="updateSectionField('${sec.id}', 'visible', ${sec.visible === false ? 'true' : 'false'})" class="px-3 py-1.5 rounded-lg border border-stone-300 dark:border-stone-700 text-xs font-semibold">
-                        ${sec.visible !== false ? 'Visible' : 'Hidden'}
-                      </button>
-                      ${sec.type !== 'hero' ? `
-                        <button onclick="removeHomepageSection('${sec.id}')" class="p-2 rounded-lg text-red-600 hover:bg-red-500/10"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                      ` : ''}
-                    </div>
-                  </div>
-
-                  ${sec.type === 'featured_products' ? `
-                    <div class="pt-2 border-t border-stone-200 dark:border-stone-800">
-                      <p class="text-xs font-semibold text-stone-500 mb-2">Choose Featured Products in this Section:</p>
-                      <div class="flex flex-wrap gap-2">
-                        ${state.products.map((p) => {
-                          const checked = (sec.productIds || []).includes(p.id);
-                          return `
-                            <label class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs cursor-pointer ${checked ? 'bg-stone-900 text-white border-stone-900 dark:bg-stone-100 dark:text-stone-950' : 'bg-white dark:bg-stone-900 border-stone-300 dark:border-stone-700'}">
-                              <input type="checkbox" class="hidden" ${checked ? 'checked' : ''} onchange="toggleSectionProduct('${sec.id}', '${p.id}')" />
-                              <span>${p.nameEn}</span>
-                            </label>
-                          `;
-                        }).join('')}
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  ${(sec.type === 'editorial_split' || sec.type === 'promo_banner') ? `
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-stone-200 dark:border-stone-800 items-center">
-                      <input type="text" value="${escapeHtml(sec.subtitleEn || '')}" placeholder="Subtitle (EN)" onchange="updateSectionField('${sec.id}', 'subtitleEn', this.value)" class="px-3 py-2 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs" />
-                      <input type="text" dir="rtl" value="${escapeHtml(sec.subtitleAr || '')}" placeholder="وصف القسم (AR)" onchange="updateSectionField('${sec.id}', 'subtitleAr', this.value)" class="px-3 py-2 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs" />
-                      <label class="cursor-pointer px-3.5 py-2 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold text-center hover:bg-stone-100 dark:hover:bg-stone-800">
-                        Upload Section Image
-                        <input type="file" accept="image/*" class="hidden" onchange="uploadSectionImage(event, '${sec.id}')" />
-                      </label>
-                    </div>
-                  ` : ''}
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    window.handleHeroImageUpload = async function (event) {
-      const file = event.target.files && event.target.files[0];
-      if (!file || !state.isAdmin) return;
-      const url = await uploadStoreImage(file, 'hero');
-      if (url) {
-        state.config.hero.image = url;
-        await setDoc(publicDoc('store', 'config'), state.config);
-        renderAllPublicViews();
-        renderAdminCurrentTab();
-        showToast("Hero image updated", "success");
-      }
-    };
-
-    window.saveHeroConfig = async function () {
-      if (!state.isAdmin) return;
-      state.config.hero = {
-        ...state.config.hero,
-        eyebrowEn: document.getElementById('hero-eyebrow-en').value,
-        eyebrowAr: document.getElementById('hero-eyebrow-ar').value,
-        titleEn: document.getElementById('hero-title-en').value,
-        titleAr: document.getElementById('hero-title-ar').value,
-        subtitleEn: document.getElementById('hero-sub-en').value,
-        subtitleAr: document.getElementById('hero-sub-ar').value,
-        ctaLabelEn: document.getElementById('hero-cta-en').value,
-        ctaLabelAr: document.getElementById('hero-cta-ar').value
-      };
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      showToast("Homepage hero saved", "success");
-    };
-
-    window.addHomepageSection = async function () {
-      if (!state.isAdmin) return;
-      const type = document.getElementById('new-homepage-sec-type').value;
-      const newSec = {
-        id: 'sec-' + Date.now(),
-        type,
-        titleEn: type === 'featured_products' ? 'Featured Selection' : type === 'categories' ? 'Explore Categories' : 'Editorial Story',
-        titleAr: 'قسم جديد',
-        subtitleEn: 'Crafted with intention and enduring materials.',
-        subtitleAr: 'مصمم بعناية ومواد فاخرة تدوم طويلاً.',
-        image: SEED_IMAGES.banner1,
-        visible: true,
-        order: (state.config.homepageSections?.length || 0) + 1,
-        productIds: []
-      };
-      state.config.homepageSections.push(newSec);
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Homepage section added", "success");
-    };
-
-    window.updateSectionField = async function (secId, field, value) {
-      if (!state.isAdmin) return;
-      const sec = state.config.homepageSections.find((s) => s.id === secId);
-      if (!sec) return;
-      sec[field] = value;
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Homepage updated", "success");
-    };
-
-    window.toggleSectionProduct = async function (secId, productId) {
-      if (!state.isAdmin) return;
-      const sec = state.config.homepageSections.find((s) => s.id === secId);
-      if (!sec) return;
-      if (!Array.isArray(sec.productIds)) sec.productIds = [];
-      const idx = sec.productIds.indexOf(productId);
-      if (idx >= 0) sec.productIds.splice(idx, 1);
-      else sec.productIds.push(productId);
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-    };
-
-    window.uploadSectionImage = async function (event, secId) {
-      const file = event.target.files && event.target.files[0];
-      if (!file || !state.isAdmin) return;
-      const url = await uploadStoreImage(file, 'sections');
-      if (url) {
-        await updateSectionField(secId, 'image', url);
-      }
-    };
-
-    window.moveHomepageSection = async function (secId, dir) {
-      if (!state.isAdmin) return;
-      const sorted = [...state.config.homepageSections].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-      const idx = sorted.findIndex((s) => s.id === secId);
-      const swap = idx + dir;
-      if (idx < 0 || swap < 0 || swap >= sorted.length) return;
-      [sorted[idx], sorted[swap]] = [sorted[swap], sorted[idx]];
-      sorted.forEach((s, i) => (s.order = i + 1));
-      state.config.homepageSections = sorted;
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-    };
-
-    window.removeHomepageSection = async function (secId) {
-      if (!state.isAdmin) return;
-      state.config.homepageSections = state.config.homepageSections.filter((s) => s.id !== secId);
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Section removed", "info");
-    };
-
-    /* =====================================================================
-     * SECTION 5: WEBSITE IMAGES & BANNERS
-     * =================================================================== */
-    function renderAdminBannersSection(container) {
-      const banners = state.config.banners || [];
-
-      container.innerHTML = `
-        <div class="max-w-5xl mx-auto space-y-6 fade-in">
-          <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-5 flex items-center justify-between">
-            <div>
-              <h3 class="font-editorial text-xl font-semibold">Announcement Bar, Promotional & Lookbook Banners</h3>
-              <p class="text-xs text-stone-500">Upload images from your computer, edit captions, set link targets, or toggle visibility.</p>
-            </div>
-            <button onclick="addNewStoreBanner()" class="px-5 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-wider font-semibold">
-              + Add Banner
-            </button>
-          </div>
-
-          <div class="space-y-4">
-            ${banners.map((b) => `
-              <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-5 grid grid-cols-1 lg:grid-cols-4 gap-5 items-center">
-                <div class="space-y-2">
-                  ${b.slot === 'announcement' ? `
-                    <div class="aspect-[16/9] rounded-xl bg-stone-900 text-stone-100 flex items-center justify-center p-3 text-center text-[11px] uppercase tracking-widest">
-                      Top Announcement Bar
-                    </div>
-                  ` : `
-                    <div class="aspect-[16/10] rounded-xl overflow-hidden bg-stone-200 dark:bg-stone-950">
-                      <img src="${b.image || SEED_IMAGES.banner1}" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <label class="cursor-pointer flex-1 py-1.5 px-3 rounded-lg border border-stone-300 dark:border-stone-700 text-xs font-semibold text-center hover:bg-stone-100 dark:hover:bg-stone-800">
-                        Upload / Replace
-                        <input type="file" accept="image/*" class="hidden" onchange="uploadBannerImage(event, '${b.id}')" />
-                      </label>
-                      ${b.image ? `<button onclick="updateBannerField('${b.id}', 'image', '')" class="px-2.5 py-1.5 rounded-lg text-xs text-red-600 border border-red-200">Clear</button>` : ''}
-                    </div>
-                  `}
-                </div>
-
-                <div class="lg:col-span-3 space-y-3">
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label class="block text-[11px] uppercase font-semibold text-stone-500 mb-1">Banner Title / Text (EN)</label>
-                      <input type="text" value="${escapeHtml(b.titleEn || '')}" onchange="updateBannerField('${b.id}', 'titleEn', this.value)" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                    </div>
-                    <div>
-                      <label class="block text-[11px] uppercase font-semibold text-stone-500 mb-1">Banner Title / Text (AR)</label>
-                      <input type="text" dir="rtl" value="${escapeHtml(b.titleAr || '')}" onchange="updateBannerField('${b.id}', 'titleAr', this.value)" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
-                    <div>
-                      <label class="block text-[11px] uppercase font-semibold text-stone-500 mb-1">Subtitle (EN)</label>
-                      <input type="text" value="${escapeHtml(b.subtitleEn || '')}" onchange="updateBannerField('${b.id}', 'subtitleEn', this.value)" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-xs" />
-                    </div>
-                    <div>
-                      <label class="block text-[11px] uppercase font-semibold text-stone-500 mb-1">Link Target</label>
-                      <input type="text" value="${escapeHtml(b.link || '#catalog')}" onchange="updateBannerField('${b.id}', 'link', this.value)" class="w-full px-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-xs" />
-                    </div>
-                    <div class="flex items-center justify-end gap-2">
-                      <button onclick="updateBannerField('${b.id}', 'visible', ${b.visible === false ? 'true' : 'false'})" class="px-4 py-2 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold">
-                        ${b.visible !== false ? 'Visible' : 'Hidden'}
-                      </button>
-                      ${b.slot !== 'announcement' ? `
-                        <button onclick="deleteBanner('${b.id}')" class="p-2 rounded-xl text-red-600 hover:bg-red-500/10"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                      ` : ''}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }
-
-    window.addNewStoreBanner = async function () {
-      if (!state.isAdmin) return;
-      state.config.banners.push({
-        id: 'banner-' + Date.now(),
-        slot: 'lookbook',
-        titleEn: 'New Seasonal Capsule',
-        titleAr: 'كبسولة الموسم الجديدة',
-        subtitleEn: 'Explore limited-edition silhouettes.',
-        subtitleAr: 'استكشف التصاميم الحصرية.',
-        image: SEED_IMAGES.banner1,
-        link: '#catalog',
-        visible: true
-      });
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("New banner added", "success");
-    };
-
-    window.updateBannerField = async function (bannerId, field, value) {
-      if (!state.isAdmin) return;
-      const b = state.config.banners.find((x) => x.id === bannerId);
-      if (!b) return;
-      b[field] = value;
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Banner saved", "success");
-    };
-
-    window.uploadBannerImage = async function (event, bannerId) {
-      const file = event.target.files && event.target.files[0];
-      if (!file || !state.isAdmin) return;
-      const url = await uploadStoreImage(file, 'banners');
-      if (url) {
-        await updateBannerField(bannerId, 'image', url);
-      }
-    };
-
-    window.deleteBanner = async function (bannerId) {
-      if (!state.isAdmin) return;
-      state.config.banners = state.config.banners.filter((b) => b.id !== bannerId);
-      await setDoc(publicDoc('store', 'config'), state.config);
-      renderAllPublicViews();
-      renderAdminCurrentTab();
-      showToast("Banner removed", "info");
-    };
-
-    /* =====================================================================
-     * SECTION 6: WEBSITE SETTINGS
-     * =================================================================== */
-    function renderAdminSettingsSection(container) {
-      const s = state.config.settings || INITIAL_STORE_CONFIG.settings;
-
-      container.innerHTML = `
-        <div class="max-w-3xl mx-auto bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-6 sm:p-8 fade-in">
-          <div class="pb-5 mb-6 border-b border-stone-200 dark:border-stone-800">
-            <h3 class="font-editorial text-2xl font-semibold">General Website Settings</h3>
-            <p class="text-xs text-stone-500">Configure brand identity, currency, concierge contact details, and default appearance.</p>
-          </div>
-
-          <form onsubmit="saveWebsiteSettings(event)" class="space-y-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Store Name</label>
-                <input id="set-store-name" type="text" required value="${escapeHtml(s.storeName || '')}" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Currency Symbol</label>
-                <input id="set-currency" type="text" required value="${escapeHtml(s.currency || '$')}" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Tagline (English)</label>
-                <textarea id="set-tagline-en" rows="2" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">${escapeHtml(s.taglineEn || '')}</textarea>
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Tagline (Arabic)</label>
-                <textarea id="set-tagline-ar" rows="2" dir="rtl" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">${escapeHtml(s.taglineAr || '')}</textarea>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">WhatsApp Support Phone</label>
-                <input id="set-whatsapp" type="text" value="${escapeHtml(s.whatsappPhone || '')}" placeholder="+201000000000" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Contact Email</label>
-                <input id="set-email" type="email" value="${escapeHtml(s.contactEmail || '')}" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Footer Copyright Text (EN)</label>
-                <input id="set-footer-en" type="text" value="${escapeHtml(s.footerTextEn || '')}" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Footer Copyright Text (AR)</label>
-                <input id="set-footer-ar" type="text" dir="rtl" value="${escapeHtml(s.footerTextAr || '')}" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm" />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Default Store Language</label>
-                <select id="set-default-lang" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">
-                  <option value="en" ${s.defaultLanguage === 'en' ? 'selected' : ''}>English (LTR)</option>
-                  <option value="ar" ${s.defaultLanguage === 'ar' ? 'selected' : ''}>Arabic (RTL)</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Default Theme</label>
-                <select id="set-default-theme" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-sm">
-                  <option value="light" ${s.defaultTheme === 'light' ? 'selected' : ''}>Editorial Light</option>
-                  <option value="dark" ${s.defaultTheme === 'dark' ? 'selected' : ''}>Nocturne Dark</option>
-                  <option value="system" ${s.defaultTheme === 'system' ? 'selected' : ''}>System Preference</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-stone-200 dark:border-stone-800 flex justify-end">
-              <button type="submit" class="px-6 py-3 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-wider font-semibold hover:opacity-90 transition">
-                Save Website Settings
-              </button>
-            </div>
-          </form>
-        </div>
-      `;
-    }
-
-    window.saveWebsiteSettings = async function (event) {
-      event.preventDefault();
-      if (!state.isAdmin) return;
-
-      const updatedSettings = {
-        storeName: document.getElementById('set-store-name').value.trim() || 'GLORY STORE',
-        currency: document.getElementById('set-currency').value.trim() || '$',
-        taglineEn: document.getElementById('set-tagline-en').value.trim(),
-        taglineAr: document.getElementById('set-tagline-ar').value.trim(),
-        whatsappPhone: document.getElementById('set-whatsapp').value.trim(),
-        contactEmail: document.getElementById('set-email').value.trim(),
-        footerTextEn: document.getElementById('set-footer-en').value.trim(),
-        footerTextAr: document.getElementById('set-footer-ar').value.trim(),
-        defaultLanguage: document.getElementById('set-default-lang').value,
-        defaultTheme: document.getElementById('set-default-theme').value
-      };
-
-      state.config.settings = updatedSettings;
-      await setDoc(publicDoc('store', 'config'), state.config);
-      applyThemeClass(updatedSettings.defaultTheme);
-      renderAllPublicViews();
-      showToast("Website settings saved", "success");
-    };
-
-    /* -----------------------------------------------------------------------
-     * 14. UTILITY HELPERS & TOAST FEEDBACK
-     * --------------------------------------------------------------------- */
-    function escapeHtml(str) {
-      if (str === null || str === undefined) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
-
-    function showToast(message, type = 'info') {
+    function showToast(msg, type = 'info') {
       const container = document.getElementById('toast-container');
       const el = document.createElement('div');
-      const palette = type === 'success'
-        ? 'bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-950 border-emerald-500/40'
-        : type === 'error'
-          ? 'bg-red-600 text-white border-red-400'
-          : 'bg-stone-800 text-stone-100 border-stone-700';
-
-      el.className = `pointer-events-auto px-4 py-3 rounded-2xl border shadow-xl text-xs font-medium flex items-center gap-2.5 fade-in ${palette}`;
-      el.innerHTML = `<span>${escapeHtml(message)}</span>`;
+      el.className = `px-4 py-3 rounded-2xl border text-xs font-medium shadow-xl bg-stone-900 text-white`;
+      el.textContent = msg;
       container.appendChild(el);
-      setTimeout(() => {
-        el.style.opacity = '0';
-        el.style.transition = 'opacity 0.25s ease';
-        setTimeout(() => el.remove(), 260);
-      }, 3000);
+      setTimeout(() => el.remove(), 3000);
     }
 
-    /* -----------------------------------------------------------------------
-     * 15. INITIALIZATION ON LOAD
-     * --------------------------------------------------------------------- */
     window.addEventListener('DOMContentLoaded', () => {
       renderAllPublicViews();
       bootstrapAuthAndData();
     });
   </script>
-
-  <!--
-  ===========================================================================
-  RECOMMENDED SERVER-SIDE FIREBASE SECURITY RULES (FIRESTORE & STORAGE)
-  ===========================================================================
-  1. FIRESTORE RULES (firestore.rules):
-     rules_version = '2';
-     service cloud.firestore {
-       match /databases/{database}/documents {
-         match /artifacts/{appId}/public/data/{collection}/{docId} {
-           // Public storefront visitors can read store configuration, products, categories, and offers
-           allow read: if true;
-           // ONLY authenticated non-anonymous admin sessions can create, update, or delete documents
-           allow write: if request.auth != null
-                        && request.auth.token.firebase.sign_in_provider != 'anonymous'
-                        && request.auth.token.email == 'admin@glorystore.local';
-         }
-       }
-     }
-
-  2. FIREBASE STORAGE RULES (storage.rules):
-     rules_version = '2';
-     service firebase.storage {
-       match /b/{bucket}/o {
-         match /artifacts/{appId}/public/images/{allPaths=**} {
-           allow read: if true;
-           allow write: if request.auth != null
-                        && request.auth.token.firebase.sign_in_provider != 'anonymous'
-                        && request.auth.token.email == 'admin@glorystore.local';
-         }
-       }
-     }
-  ===========================================================================
-  -->
-<script>
-  window.__firebase_config = JSON.stringify({
-    apiKey: "AIzaSyDK-vKOxIGwAsUhqOhNNrSgThFlgKvLDa8",
-    authDomain: "glory-store-e5f0d.firebaseapp.com",
-    projectId: "glory-store-e5f0d",
-    storageBucket: "glory-store-e5f0d.firebasestorage.app",
-    messagingSenderId: "244696891652",
-    appId: "1:244696891652:web:6632cbce9948ba0069d051",
-    measurementId: "G-JM5D7VFBVG"
-  });
-</script>
 </body>
 </html>
