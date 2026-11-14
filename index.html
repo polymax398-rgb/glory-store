@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLORY STORE — Contemporary Editorial Fashion</title>
+
+  <!-- Google Fonts: Cormorant Garamond & Inter + Tajawal for crisp Arabic RTL -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', '"Tajawal"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            stone: {
+              50: '#FAF9F6',
+              100: '#F4F2ED',
+              200: '#E7E3DA',
+              300: '#D4CEC1',
+              400: '#A9A191',
+              500: '#7D7567',
+              600: '#5C5549',
+              700: '#3E3931',
+              800: '#24211C',
+              900: '#161411',
+              950: '#0D0C0A',
+            },
+            brass: {
+              400: '#C8A96E',
+              500: '#B08D4C',
+              600: '#8F6F36',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-editorial: #FAF9F6;
+      --text-editorial: #161411;
+    }
+    html.dark {
+      --bg-editorial: #0D0C0A;
+      --text-editorial: #FAF9F6;
+    }
+    body {
+      font-family: 'Inter', 'Tajawal', sans-serif;
+      background-color: var(--bg-editorial);
+      color: var(--text-editorial);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    [dir="rtl"] body {
+      font-family: 'Tajawal', 'Inter', sans-serif;
+    }
+    .font-editorial {
+      font-family: 'Cormorant Garamond', 'Tajawal', serif;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(169, 161, 145, 0.4);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(169, 161, 145, 0.7);
+    }
+    .fade-in {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-stone-900 selection:text-stone-50 dark:selection:bg-stone-100 dark:selection:text-stone-900">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div id="announcement-bar" class="bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-950 text-xs tracking-[0.18em] uppercase py-2.5 px-4 text-center transition-colors">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-3">
+      <span id="announcement-text">COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $250 — AUTUMN / WINTER EDITORIAL</span>
+      <a id="announcement-link" href="#catalog" class="underline underline-offset-4 font-medium hover:opacity-75 hidden sm:inline">EXPLORE</a>
+    </div>
+  </div>
+
+  <!-- ADMIN PREVIEW BANNER -->
+  <div id="admin-preview-ribbon" class="hidden sticky top-0 z-50 bg-brass-600 text-white px-4 py-2 text-xs shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 font-medium">
+        <i data-lucide="shield-check" class="w-4 h-4"></i>
+        <span data-i18n="adminActiveSession">Store Management Session Active — Viewing Live Storefront</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="openAdminWorkspace()" class="px-3 py-1 rounded-full bg-white text-stone-900 font-semibold hover:bg-stone-100 transition">
+          <span data-i18n="returnToPanel">Return to Management Panel</span>
+        </button>
+        <button onclick="handleAdminLogout()" class="px-3 py-1 rounded-full bg-stone-950/30 hover:bg-stone-950/50 text-white font-medium transition">
+          <span data-i18n="logout">Logout</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLIC STOREFRONT HEADER -->
+  <header id="store-header" class="sticky top-0 z-40 bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md border-b border-stone-200/80 dark:border-stone-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.16em] font-medium text-stone-600 dark:text-stone-300">
+        <a href="#catalog" onclick="filterByCategory('all')" class="hover:text-stone-950 dark:hover:text-white transition" data-i18n="navCollection">Collection</a>
+        <div id="header-category-links" class="flex items-center gap-6"></div>
+        <a href="#editorial-lookbook" class="hover:text-stone-950 dark:hover:text-white transition" data-i18n="navEditorial">Editorial</a>
+      </nav>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" aria-label="Menu">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+      <a href="#" onclick="resetStoreView(event)" class="font-editorial text-2xl sm:text-3xl tracking-[0.22em] font-semibold uppercase text-stone-900 dark:text-stone-50 select-none text-center">
+        <span id="brand-name-display">GLORY STORE</span>
+      </a>
+
+      <div class="flex items-center gap-1.5 sm:gap-3">
+        <button onclick="toggleSearchBar()" class="p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Search">
+          <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+        </button>
+
+        <button onclick="togglePublicLanguage()" class="px-2.5 py-1 rounded-full text-xs font-medium border border-stone-300 dark:border-stone-700 hover:bg-stone-200/60 dark:hover:bg-stone-800 transition">
+          <span id="public-lang-label">AR</span>
+        </button>
+
+        <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Theme">
+          <i data-lucide="sun" class="w-4 h-4 sm:w-5 sm:h-5 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 sm:w-5 sm:h-5 block dark:hidden"></i>
+        </button>
+
+        <button onclick="openDrawer('wishlist')" class="relative p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Wishlist">
+          <i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          <span id="wishlist-badge" class="hidden absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-[10px] font-semibold flex items-center justify-center">0</span>
+        </button>
+
+        <button onclick="openDrawer('cart')" class="relative p-2 rounded-full hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Shopping Bag">
+          <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          <span id="cart-badge" class="hidden absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-[10px] font-semibold flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="search-bar-panel" class="hidden border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950 px-4 py-4">
+      <div class="max-w-3xl mx-auto flex items-center gap-3">
+        <i data-lucide="search" class="w-5 h-5 text-stone-400"></i>
+        <input id="public-search-input" type="text" oninput="handlePublicSearch(this.value)" placeholder="Search silhouettes, cashmere, tailored coats..." class="w-full bg-transparent text-sm sm:text-base focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400" />
+        <button onclick="clearPublicSearch()" class="text-xs uppercase tracking-widest text-stone-500 hover:text-stone-900 dark:hover:text-white">Clear</button>
+      </div>
+    </div>
+
+    <div id="mobile-menu-panel" class="hidden md:hidden border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950 px-6 py-5 space-y-4">
+      <a href="#catalog" onclick="filterByCategory('all'); toggleMobileMenu()" class="block text-xs uppercase tracking-[0.18em] font-medium" data-i18n="navCollection">Collection</a>
+      <div id="mobile-category-links" class="space-y-3"></div>
+      <a href="#editorial-lookbook" onclick="toggleMobileMenu()" class="block text-xs uppercase tracking-[0.18em] font-medium" data-i18n="navEditorial">Editorial</a>
+    </div>
+  </header>
+
+  <!-- MAIN STOREFRONT -->
+  <main id="public-storefront" class="min-h-screen">
+    <div id="homepage-sections-container"></div>
+
+    <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-stone-200 dark:border-stone-800">
+        <div>
+          <p class="text-xs uppercase tracking-[0.22em] text-stone-500 dark:text-stone-400 mb-2" data-i18n="curatedArchive">Curated Wardrobe</p>
+          <h2 class="font-editorial text-3xl sm:text-5xl font-medium tracking-tight" data-i18n="allPieces">The Contemporary Collection</h2>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <div id="catalog-category-pills" class="flex flex-wrap items-center gap-2"></div>
+          <select id="catalog-sort-select" onchange="renderCatalogGrid()" class="px-3.5 py-2 rounded-full text-xs uppercase tracking-wider bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 focus:outline-none">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">Newest Arrivals</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="active-offer-strip" class="hidden mt-8 rounded-2xl bg-stone-900 dark:bg-stone-900 border border-stone-800 text-stone-100 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full bg-brass-500/20 text-brass-400 flex items-center justify-center shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-brass-400 font-semibold" data-i18n="seasonalPrivilege">Seasonal Privilege</p>
+            <h3 id="active-offer-title" class="font-editorial text-xl sm:text-2xl"></h3>
+          </div>
+        </div>
+        <span id="active-offer-badge" class="px-4 py-1.5 rounded-full bg-brass-500 text-stone-950 text-xs font-bold uppercase tracking-wider"></span>
+      </div>
+
+      <div id="catalog-product-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12"></div>
+
+      <div id="catalog-empty-state" class="hidden py-20 text-center">
+        <p class="font-editorial text-2xl text-stone-500 mb-3" data-i18n="noPiecesFound">No pieces match your current selection.</p>
+        <button onclick="filterByCategory('all'); clearPublicSearch();" class="px-6 py-2.5 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-widest font-medium">
+          <span data-i18n="resetFilters">Reset Filters</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="editorial-lookbook" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <div id="storefront-banners-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+    </section>
+  </main>
+
+  <!-- PUBLIC FOOTER -->
+  <footer class="border-t border-stone-200 dark:border-stone-800 bg-stone-100/70 dark:bg-stone-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <h3 id="footer-brand-name" class="font-editorial text-2xl tracking-[0.2em] uppercase font-semibold mb-3">GLORY STORE</h3>
+        <p id="footer-tagline" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed max-w-sm">
+          Architectural tailoring, tactile natural fibers, and enduring silhouettes crafted for quiet confidence.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.2em] font-semibold mb-4 text-stone-500" data-i18n="clientServices">Client Services</h4>
+        <ul class="space-y-2.5 text-sm text-stone-600 dark:text-stone-300">
+          <li><a href="#catalog" class="hover:underline" data-i18n="navCollection">Collection</a></li>
+          <li><a href="#editorial-lookbook" class="hover:underline" data-i18n="navEditorial">Editorial Lookbook</a></li>
+          <li><a id="footer-whatsapp-link" href="#" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span id="footer-whatsapp-text">WhatsApp Concierge</span>
+          </a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.2em] font-semibold mb-4 text-stone-500" data-i18n="atelierContact">Atelier & Inquiries</h4>
+        <p id="footer-email" class="text-sm text-stone-600 dark:text-stone-300 mb-2">concierge@glorystore.fashion</p>
+        <p id="footer-copyright" class="text-xs text-stone-500 mt-6">© 2026 GLORY STORE. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div id="product-detail-modal" class="hidden fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl fade-in my-8">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="bg-stone-100 dark:bg-stone-950 p-4 sm:p-6 flex flex-col justify-between">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-stone-200 dark:bg-stone-800">
+            <img id="pdp-main-image" src="" alt="" class="w-full h-full object-cover" />
+          </div>
+          <div id="pdp-thumbnails" class="flex items-center gap-2.5 mt-4 overflow-x-auto pb-1"></div>
+        </div>
+
+        <div class="p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p id="pdp-category" class="text-[11px] uppercase tracking-[0.2em] text-stone-500 mb-1"></p>
+                <h2 id="pdp-title" class="font-editorial text-3xl font-semibold"></h2>
+              </div>
+              <button onclick="closeProductModal()" class="p-2 rounded-full hover:bg-stone-200 dark:hover:bg-stone-800 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+              </button>
+            </div>
+
+            <div id="pdp-price-block" class="mt-4 flex items-baseline gap-3"></div>
+            <p id="pdp-description" class="mt-5 text-sm text-stone-600 dark:text-stone-300 leading-relaxed"></p>
+
+            <div id="pdp-colors-section" class="mt-6">
+              <p class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2.5">
+                <span data-i18n="colorLabel">Color</span>: <span id="pdp-selected-color-name" class="text-stone-900 dark:text-stone-100"></span>
+              </p>
+              <div id="pdp-colors-list" class="flex flex-wrap gap-2.5"></div>
+            </div>
+
+            <div id="pdp-sizes-section" class="mt-6">
+              <p class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2.5" data-i18n="sizeLabel">Size</p>
+              <div id="pdp-sizes-list" class="flex flex-wrap gap-2"></div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-stone-200 dark:border-stone-800 flex items-center gap-3">
+            <button id="pdp-add-to-cart-btn" class="flex-1 py-3.5 px-6 rounded-full bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-[0.2em] font-semibold hover:opacity-90 transition">
+              <span data-i18n="addToBag">Add to Bag</span>
+            </button>
+            <button id="pdp-wishlist-btn" class="p-3.5 rounded-full border border-stone-300 dark:border-stone-700 hover:bg-stone-200/60 dark:hover:bg-stone-800 transition" title="Save to Wishlist">
+              <i data-lucide="heart" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE-OVER DRAWER -->
+  <div id="side-drawer-backdrop" onclick="closeDrawer()" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs"></div>
+  <aside id="side-drawer" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 z-50 h-full w-full max-w-md bg-stone-50 dark:bg-stone-950 border-l rtl:border-l-0 rtl:border-r border-stone-200 dark:border-stone-800 shadow-2xl transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-6 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
+      <h3 id="drawer-title" class="font-editorial text-2xl font-semibold">Shopping Bag</h3>
+      <button onclick="closeDrawer()" class="p-2 rounded-full hover:bg-stone-200 dark:hover:bg-stone-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div id="drawer-body" class="flex-1 overflow-y-auto p-6 space-y-5"></div>
+    <div id="drawer-footer" class="p-6 border-t border-stone-200 dark:border-stone-800 bg-stone-100/70 dark:bg-stone-900/60"></div>
+  </aside>
+
+  <!-- HIDDEN ADMIN LOGIN MODAL (UPDATED TO REQUIRE EMAIL & PASSWORD) -->
+  <div id="admin-login-modal" class="hidden fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl max-w-md w-full p-8 shadow-2xl fade-in">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 flex items-center justify-center">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h2 class="font-editorial text-2xl font-semibold">Store Management</h2>
+            <p class="text-xs text-stone-500">Authorized Personnel Authentication</p>
+          </div>
+        </div>
+        <button onclick="closeAdminLoginModal()" class="p-2 rounded-full hover:bg-stone-200 dark:hover:bg-stone-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="admin-login-form" onsubmit="handleAdminLoginSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Admin Email Address</label>
+          <input id="admin-email-input" type="email" required autocomplete="email" placeholder="polymax398@gmail.com" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-stone-950 border border-stone-300 dark:border-stone-700 focus:outline-none focus:border-stone-900 dark:focus:border-stone-100 text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">Password</label>
+          <input id="admin-password-input" type="password" required autocomplete="current-password" placeholder="Enter account password" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-stone-950 border border-stone-300 dark:border-stone-700 focus:outline-none focus:border-stone-900 dark:focus:border-stone-100 text-sm" />
+        </div>
+
+        <p id="admin-login-error" class="hidden text-xs text-red-600 dark:text-red-400 font-medium"></p>
+
+        <button id="admin-login-submit-btn" type="submit" class="w-full py-3.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs uppercase tracking-[0.2em] font-semibold hover:opacity-90 transition flex items-center justify-center gap-2">
+          <span>Authenticate Session</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- STORE MANAGEMENT WORKSPACE (6 SECTIONS) -->
+  <div id="admin-workspace" class="hidden fixed inset-0 z-50 bg-stone-100 dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col md:flex-row overflow-hidden">
+    <aside class="w-full md:w-72 bg-white dark:bg-stone-900 border-b md:border-b-0 md:border-r rtl:md:border-r-0 rtl:md:border-l border-stone-200 dark:border-stone-800 flex flex-col shrink-0">
+      <div class="p-5 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.22em] text-brass-500 font-bold block">GLORY STORE</span>
+          <h1 class="font-editorial text-xl font-semibold" data-i18n="adminPanelTitle">Store Management</h1>
+        </div>
+        <button onclick="toggleAdminMobileNav()" class="md:hidden p-2 rounded-xl border border-stone-200 dark:border-stone-700">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <nav id="admin-sidebar-nav" class="hidden md:flex flex-col flex-1 p-3.5 space-y-1.5 overflow-y-auto">
+        <button onclick="switchAdminSection('products')" data-admin-tab="products" class="admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span data-i18n="tabProducts">Products</span>
+        </button>
+        <button onclick="switchAdminSection('categories')" data-admin-tab="categories" class="admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition">
+          <i data-lucide="folder-tree" class="w-4 h-4"></i>
+          <span data-i18n="tabCategories">Categories</span>
+        </button>
+        <button onclick="switchAdminSection('offers')" data-admin-tab="offers" class="admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition">
+          <i data-lucide="percent" class="w-4 h-4"></i>
+          <span data-i18n="tabOffers">Offers & Discounts</span>
+        </button>
+        <button onclick="switchAdminSection('homepage')" data-admin-tab="homepage" class="admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition">
+          <i data-lucide="layout-template" class="w-4 h-4"></i>
+          <span data-i18n="tabHomepage">Homepage Editing</span>
+        </button>
+        <button onclick="switchAdminSection('banners')" data-admin-tab="banners" class="admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition">
+          <i data-lucide="image" class="w-4 h-4"></i>
+          <span data-i18n="tabBanners">Website Images & Banners</span>
+        </button>
+        <button onclick="switchAdminSection('settings')" data-admin-tab="settings" class="admin-nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span data-i18n="tabSettings">Website Settings</span>
+        </button>
+      </nav>
+
+      <div class="hidden md:block p-4 border-t border-stone-200 dark:border-stone-800 space-y-2">
+        <button onclick="previewPublicStore()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold uppercase tracking-wider hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i data-lucide="eye" class="w-4 h-4"></i>
+          <span data-i18n="previewPublicStore">Preview Public Store</span>
+        </button>
+        <button onclick="handleAdminLogout()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-red-600/10 text-red-600 dark:text-red-400 hover:bg-red-600 hover:text-white text-xs font-semibold uppercase tracking-wider transition">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <span data-i18n="secureLogout">Secure Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <header class="h-16 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 px-4 sm:px-8 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <h2 id="admin-current-section-title" class="font-editorial text-2xl font-semibold">Products</h2>
+          <span id="db-sync-pill" class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span data-i18n="liveSynced">Live Synced</span>
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button onclick="toggleAdminLanguage()" class="px-3 py-1.5 rounded-xl border border-stone-300 dark:border-stone-700 text-xs font-semibold hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+            <span id="admin-lang-toggle-label">العربية (RTL)</span>
+          </button>
+
+          <button onclick="toggleTheme()" class="p-2 rounded-xl border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 transition" title="Toggle Theme">
+            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+          </button>
+
+          <button onclick="previewPublicStore()" class="md:hidden px-3 py-1.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-950 text-xs font-semibold">
+            <span data-i18n="preview">Preview</span>
+          </button>
+          <button onclick="handleAdminLogout()" class="md:hidden p-2 rounded-xl text-red-600">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </header>
+
+      <div id="admin-section-body" class="flex-1 overflow-y-auto p-4 sm:p-8"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="fixed bottom-5 right-5 rtl:right-auto rtl:left-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- APPLICATION SCRIPT -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import {
+      getAuth,
+      signInAnonymously,
+      signInWithCustomToken,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      setDoc,
+      updateDoc,
+      deleteDoc,
+      onSnapshot,
+      collection,
+      getDocs
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    import {
+      getStorage,
+      ref as storageRef,
+      uploadBytes,
+      getDownloadURL
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-storage.js";
+
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'glory-store-default';
+    const firebaseConfig = typeof __firebase_config !== 'undefined'
+      ? JSON.parse(__firebase_config)
+      : {
+          apiKey: "AIzaSyDemoGloryStoreKey",
+          authDomain: "glory-store-demo.firebaseapp.com",
+          projectId: "glory-store-demo",
+          storageBucket: "glory-store-demo.appspot.com"
+        };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    let storage = null;
+    try {
+      storage = getStorage(app);
+    } catch (e) {
+      console.warn("Firebase Storage init notice:", e);
+    }
+
+    const publicCol = (colName) => collection(db, 'artifacts', appId, 'public', 'data', colName);
+    const publicDoc = (colName, docId) => doc(db, 'artifacts', appId, 'public', 'data', colName, docId);
+
+    function generateEditorialSvgDataUri(title, subtitle, bgHex, accentHex) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="${bgHex}"/>
+            <stop offset="100%" stop-color="${accentHex}"/>
+          </linearGradient>
+        </defs>
+        <rect width="900" height="1200" fill="url(#g)"/>
+        <rect x="48" y="48" width="804" height="1104" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+        <circle cx="450" cy="480" r="190" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <text x="450" y="575" font-family="Georgia, serif" font-size="34" fill="#FAF9F6" text-anchor="middle" letter-spacing="8">${title.toUpperCase()}</text>
+        <text x="450" y="625" font-family="sans-serif" font-size="14" fill="rgba(250,249,246,0.75)" text-anchor="middle" letter-spacing="5">${subtitle.toUpperCase()}</text>
+        <text x="450" y="1095" font-family="Georgia, serif" font-size="16" fill="rgba(250,249,246,0.65)" text-anchor="middle" letter-spacing="10">GLORY STORE ATELIER</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    const SEED_IMAGES = {
+      heroMain: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1600&q=85",
+      heroFallback: generateEditorialSvgDataUri("Autumn Winter", "Architectural Silhouettes", "#24211C", "#5C5549"),
+      coat1: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=85",
+      coat2: "https://images.unsplash.com/photo-1548624313-0396c75e4b1a?auto=format&fit=crop&w=1000&q=85",
+      dress1: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1000&q=85",
+      knit1: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=85",
+      blazer1: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=85",
+      trouser1: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=85",
+      bag1: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
+      catOuterwear: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=85",
+      catTailoring: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
+      catKnitwear: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=85",
+      banner1: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1400&q=85",
+      banner2: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=85"
+    };
+
+    const INITIAL_CATEGORIES = [
+      { id: "cat-outerwear", nameEn: "Outerwear", nameAr: "المعاطف والسترات", coverImage: SEED_IMAGES.catOuterwear, order: 1, visible: true },
+      { id: "cat-tailoring", nameEn: "Tailoring", nameAr: "التفصيل الراقي", coverImage: SEED_IMAGES.catTailoring, order: 2, visible: true },
+      { id: "cat-knitwear", nameEn: "Knitwear & Silk", nameAr: "التريكو والحرير", coverImage: SEED_IMAGES.catKnitwear, order: 3, visible: true },
+      { id: "cat-accessories", nameEn: "Leather Goods", nameAr: "الجلديات الفاخرة", coverImage: SEED_IMAGES.bag1, order: 4, visible: true }
+    ];
+
+    const INITIAL_PRODUCTS = [
+      {
+        id: "prod-01",
+        nameEn: "Belted Double-Face Wool Coat",
+        nameAr: "معطف صوف مزدوج الوجه بحزام",
+        descriptionEn: "Hand-finished from virgin double-face wool in warm camel.",
+        descriptionAr: "مصنوع يدوياً من الصوف البكر مزدوج الوجه بلون الجمل الدافئ.",
+        price: 480,
+        discountedPrice: null,
+        categoryId: "cat-outerwear",
+        sizes: ["XS", "S", "M", "L"],
+        colors: [{ name: "Camel", hex: "#B89365" }],
+        images: [SEED_IMAGES.coat1, SEED_IMAGES.coat2],
+        status: "published",
+        createdAt: 1710000001
+      },
+      {
+        id: "prod-02",
+        nameEn: "Architectural Structured Blazer",
+        nameAr: "بليزر مفصل بقصة معمارية",
+        descriptionEn: "Tailored from breathable Italian virgin wool crepe.",
+        descriptionAr: "مفصل من كريب الصوف الإيطالي الفاخر.",
+        price: 360,
+        discountedPrice: 295,
+        categoryId: "cat-tailoring",
+        sizes: ["XS", "S", "M", "L"],
+        colors: [{ name: "Alabaster", hex: "#EAE5DC" }],
+        images: [SEED_IMAGES.blazer1],
+        status: "published",
+        createdAt: 1710000002
+      }
+    ];
+
+    const INITIAL_OFFERS = [];
+    const INITIAL_STORE_CONFIG = {
+      settings: {
+        storeName: "GLORY STORE",
+        taglineEn: "Architectural tailoring and enduring silhouettes.",
+        taglineAr: "تفصيل معماري وألياف طبيعية فاخرة.",
+        currency: "$",
+        whatsappPhone: "+201000000000",
+        contactEmail: "concierge@glorystore.fashion",
+        footerTextEn: "© 2026 GLORY STORE. All rights reserved.",
+        footerTextAr: "© 2026 غلوري ستور. جميع الحقوق محفوظة.",
+        defaultLanguage: "en",
+        defaultTheme: "light"
+      },
+      hero: {
+        eyebrowEn: "AUTUMN / WINTER 2026 EDITORIAL",
+        eyebrowAr: "إصدار خريف وشتاء 2026",
+        titleEn: "Quiet Architecture in Motion",
+        titleAr: "عمارة هادئة في كل حركة",
+        subtitleEn: "Sculpted wool coats, fluid mulberry silk, and tactile knitwear.",
+        subtitleAr: "معاطف صوفية منحوتة وحرير التوت الانسيابي وتريكو فاخر.",
+        ctaLabelEn: "Explore the Collection",
+        ctaLabelAr: "استكشف التشكيلة",
+        ctaLink: "#catalog",
+        image: SEED_IMAGES.heroMain
+      },
+      homepageSections: [
+        { id: "sec-hero", type: "hero", titleEn: "Hero", titleAr: "الرئيسية", visible: true, order: 1 },
+        { id: "sec-categories", type: "categories", titleEn: "Shop by Category", titleAr: "تسوق حسب الفئة", visible: true, order: 2 },
+        { id: "sec-featured", type: "featured_products", titleEn: "Curator's Edit", titleAr: "مختارات الموسم", visible: true, order: 3, productIds: ["prod-01", "prod-02"] }
+      ],
+      banners: [
+        { id: "banner-announcement", slot: "announcement", titleEn: "COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $250", titleAr: "شحن سريع مجاني للطلبات فوق 250$", visible: true },
+        { id: "banner-lookbook-1", slot: "lookbook", titleEn: "Monochrome Tailoring", titleAr: "التفصيل أحادي اللون", image: SEED_IMAGES.banner1, visible: true }
+      ]
+    };
+
+    const state = {
+      user: null,
+      isAdmin: false,
+      firebaseReady: false,
+      lang: 'en',
+      adminLang: 'en',
+      theme: 'light',
+      products: structuredClone(INITIAL_PRODUCTS),
+      categories: structuredClone(INITIAL_CATEGORIES),
+      offers: structuredClone(INITIAL_OFFERS),
+      config: structuredClone(INITIAL_STORE_CONFIG),
+      selectedCategoryId: 'all',
+      searchQuery: '',
+      cart: [],
+      wishlist: [],
+      activeProductModalId: null,
+      adminActiveTab: 'products',
+      adminProductSearch: '',
+      adminProductCategoryFilter: 'all',
+      editingProductId: null,
+      editingCategoryId: null,
+      managingCategoryProductsId: null,
+      editingOfferId: null
+    };
+
+    const I18N = {
+      en: {
+        navCollection: "Collection",
+        navEditorial: "Editorial",
+        curatedArchive: "Curated Wardrobe",
+        allPieces: "The Contemporary Collection",
+        seasonalPrivilege: "Seasonal Privilege",
+        noPiecesFound: "No pieces match your current selection.",
+        resetFilters: "Reset Filters",
+        clientServices: "Client Services",
+        atelierContact: "Atelier & Inquiries",
+        colorLabel: "Color",
+        sizeLabel: "Size",
+        addToBag: "Add to Bag",
+        adminActiveSession: "Store Management Session Active — Viewing Live Storefront",
+        returnToPanel: "Return to Management Panel",
+        logout: "Logout",
+        adminPanelTitle: "Store Management",
+        tabProducts: "Products",
+        tabCategories: "Categories",
+        tabOffers: "Offers & Discounts",
+        tabHomepage: "Homepage Editing",
+        tabBanners: "Website Images & Banners",
+        tabSettings: "Website Settings",
+        previewPublicStore: "Preview Public Store",
+        secureLogout: "Secure Logout",
+        liveSynced: "Live Synced",
+        preview: "Preview",
+        allCategories: "All Pieces",
+        quickView: "Quick View",
+        shoppingBag: "Shopping Bag",
+        wishlistTitle: "Saved Wishlist",
+        emptyBag: "Your shopping bag is currently empty.",
+        emptyWishlist: "Your wishlist is currently empty.",
+        subtotal: "Subtotal",
+        checkoutWhatsApp: "Complete Order via WhatsApp"
+      },
+      ar: {
+        navCollection: "التشكيلة",
+        navEditorial: "الإطلالات",
+        curatedArchive: "خزانة مختارة",
+        allPieces: "التشكيلة المعاصرة",
+        seasonalPrivilege: "امتياز الموسم",
+        noPiecesFound: "لا توجد قطع تطابق اختيارك الحالي.",
+        resetFilters: "إعادة ضبط الفلاتر",
+        clientServices: "خدمات العملاء",
+        atelierContact: "الأتيليه والاستفسارات",
+        colorLabel: "اللون",
+        sizeLabel: "المقاس",
+        addToBag: "أضف إلى الحقيبة",
+        adminActiveSession: "جلسة إدارة المتجر نشطة — معاينة الواجهة العامة",
+        returnToPanel: "العودة إلى لوحة الإدارة",
+        logout: "تسجيل الخروج",
+        adminPanelTitle: "إدارة المتجر",
+        tabProducts: "المنتجات",
+        tabCategories: "الفئات",
+        tabOffers: "العروض والخصومات",
+        tabHomepage: "تعديل الصفحة الرئيسية",
+        tabBanners: "صور وبانرات الموقع",
+        tabSettings: "إعدادات الموقع",
+        previewPublicStore: "معاينة المتجر العام",
+        secureLogout: "تسجيل خروج آمن",
+        liveSynced: "متزامن مباشرة",
+        preview: "معاينة",
+        allCategories: "جميع القطع",
+        quickView: "عرض سريع",
+        shoppingBag: "حقيبة التسوق",
+        wishlistTitle: "قائمة الأمنيات",
+        emptyBag: "حقيبة التسوق فارغة حالياً.",
+        emptyWishlist: "قائمة الأمنيات فارغة حالياً.",
+        subtotal: "المجموع الفرعي",
+        checkoutWhatsApp: "إتمام الطلب عبر واتساب"
+      }
+    };
+
+    function t(key, langOverride = null) {
+      const activeLang = langOverride || state.lang;
+      return (I18N[activeLang] && I18N[activeLang][key]) || I18N.en[key] || key;
+    }
+
+    function loc(obj, fieldBase, langOverride = null) {
+      const l = langOverride || state.lang;
+      if (!obj) return '';
+      if (l === 'ar' && obj[fieldBase + 'Ar']) return obj[fieldBase + 'Ar'];
+      return obj[fieldBase + 'En'] || obj[fieldBase] || '';
+    }
+
+    // 5-Key Sequence Detector ('5' pressed 5 consecutive times)
+    let fivePressCount = 0;
+    let fivePressTimer = null;
+
+    function resetFiveSequence() {
+      fivePressCount = 0;
+      if (fivePressTimer) {
+        clearTimeout(fivePressTimer);
+        fivePressTimer = null;
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') {
+        resetFiveSequence();
+        return;
+      }
+      if ((e.key === '5' || e.code === 'Digit5' || e.code === 'Numpad5') && !e.ctrlKey && !e.metaKey) {
+        fivePressCount += 1;
+        if (fivePressTimer) clearTimeout(fivePressTimer);
+        fivePressTimer = setTimeout(resetFiveSequence, 2200);
+
+        if (fivePressCount === 5) {
+          resetFiveSequence();
+          if (state.isAdmin) openAdminWorkspace();
+          else openAdminLoginModal();
+        }
+      } else {
+        resetFiveSequence();
+      }
+    });
+
+    // Firebase Auth & Firestore Sync
+    function isNonAnonymousAdmin(user) {
+      if (!user || user.isAnonymous) return false;
+      return true; // Any authenticated non-anonymous user is authorized as store admin
+    }
+
+    async function seedDatabaseIfEmpty() {
+      try {
+        const configSnap = await getDoc(publicDoc('store', 'config'));
+        if (!configSnap.exists()) await setDoc(publicDoc('store', 'config'), INITIAL_STORE_CONFIG);
+
+        const catsSnap = await getDocs(publicCol('categories'));
+        if (catsSnap.empty) {
+          for (const cat of INITIAL_CATEGORIES) await setDoc(publicDoc('categories', cat.id), cat);
+        }
+
+        const prodsSnap = await getDocs(publicCol('products'));
+        if (prodsSnap.empty) {
+          for (const prod of INITIAL_PRODUCTS) await setDoc(publicDoc('products', prod.id), prod);
+        }
+      } catch (err) {
+        console.warn("Firestore seed notice:", err.message);
+      }
+    }
+
+    let listenersAttached = false;
+    function attachRealtimeListeners() {
+      if (listenersAttached) return;
+      listenersAttached = true;
+
+      onSnapshot(publicDoc('store', 'config'), (snap) => {
+        if (snap.exists()) {
+          state.config = { ...structuredClone(INITIAL_STORE_CONFIG), ...snap.data() };
+          applyStoreSettings();
+          renderAllPublicViews();
+          if (state.isAdmin) renderAdminCurrentTab();
+        }
+      });
+
+      onSnapshot(publicCol('categories'), (snap) => {
+        if (!snap.empty) {
+          const list = [];
+          snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
+          list.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+          state.categories = list;
+          renderAllPublicViews();
+          if (state.isAdmin) renderAdminCurrentTab();
+        }
+      });
+
+      onSnapshot(publicCol('products'), (snap) => {
+        if (!snap.empty) {
+          const list = [];
+          snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
+          list.sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0));
+          state.products = list;
+          renderAllPublicViews();
+          if (state.isAdmin) renderAdminCurrentTab();
+        }
+      });
+
+      onSnapshot(publicCol('offers'), (snap) => {
+        const list = [];
+        snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
+        state.offers = list;
+        renderAllPublicViews();
+        if (state.isAdmin) renderAdminCurrentTab();
+      });
+    }
+
+    async function bootstrapAuthAndData() {
+      try {
+        if (!auth.currentUser) await signInAnonymously(auth);
+      } catch (e) {
+        console.warn("Anon auth fallback:", e.message);
+      }
+
+      onAuthStateChanged(auth, async (user) => {
+        state.user = user;
+        state.isAdmin = isNonAnonymousAdmin(user);
+        if (user) {
+          state.firebaseReady = true;
+          attachRealtimeListeners();
+          if (state.isAdmin) await seedDatabaseIfEmpty();
+        }
+        updateAdminSessionUI();
+      });
+    }
+
+    function updateAdminSessionUI() {
+      const ribbon = document.getElementById('admin-preview-ribbon');
+      const workspace = document.getElementById('admin-workspace');
+      if (state.isAdmin) {
+        if (!workspace.classList.contains('hidden')) ribbon.classList.add('hidden');
+        else ribbon.classList.remove('hidden');
+      } else {
+        ribbon.classList.add('hidden');
+        workspace.classList.add('hidden');
+      }
+      lucide.createIcons();
+    }
+
+    // Admin Login / Logout Handlers
+    window.openAdminLoginModal = function () {
+      document.getElementById('admin-login-error').classList.add('hidden');
+      document.getElementById('admin-email-input').value = 'polymax398@gmail.com';
+      document.getElementById('admin-password-input').value = '';
+      document.getElementById('admin-login-modal').classList.remove('hidden');
+      lucide.createIcons();
+    };
+
+    window.closeAdminLoginModal = function () {
+      document.getElementById('admin-login-modal').classList.add('hidden');
+    };
+
+    window.handleAdminLoginSubmit = async function (event) {
+      event.preventDefault();
+      const email = document.getElementById('admin-email-input').value.trim();
+      const password = document.getElementById('admin-password-input').value.trim();
+      const errEl = document.getElementById('admin-login-error');
+      const btn = document.getElementById('admin-login-submit-btn');
+
+      errEl.classList.add('hidden');
+      btn.disabled = true;
+      btn.classList.add('opacity-60');
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        closeAdminLoginModal();
+        await seedDatabaseIfEmpty();
+        openAdminWorkspace();
+        showToast("Successfully authenticated into Store Management", "success");
+      } catch (err) {
+        errEl.textContent = "Authentication rejected. Verify your email and password.";
+        errEl.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.classList.remove('opacity-60');
+      }
+    };
+
+    window.openAdminWorkspace = function () {
+      if (!state.isAdmin) return;
+      document.getElementById('admin-workspace').classList.remove('hidden');
+      document.getElementById('admin-preview-ribbon').classList.add('hidden');
+      switchAdminSection('products');
+      lucide.createIcons();
+    };
+
+    window.previewPublicStore = function () {
+      document.getElementById('admin-workspace').classList.add('hidden');
+      if (state.isAdmin) document.getElementById('admin-preview-ribbon').classList.remove('hidden');
+      renderAllPublicViews();
+      lucide.createIcons();
+    };
+
+    window.handleAdminLogout = async function () {
+      try {
+        await signOut(auth);
+        state.isAdmin = false;
+        document.getElementById('admin-workspace').classList.add('hidden');
+        document.getElementById('admin-preview-ribbon').classList.add('hidden');
+        await signInAnonymously(auth);
+        showToast("Signed out securely", "info");
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    };
+
+    // Pricing & Offers Engine
+    function getActiveOffers() {
+      const today = new Date().toISOString().slice(0, 10);
+      return (state.offers || []).filter((o) => {
+        if (!o.active) return false;
+        if (o.startDate && today < o.startDate) return false;
+        if (o.endDate && today > o.endDate) return false;
+        return true;
+      });
+    }
+
+    function calculateProductPricing(product) {
+      const basePrice = Number(product.price) || 0;
+      let effectivePrice = product.discountedPrice && Number(product.discountedPrice) > 0 && Number(product.discountedPrice) < basePrice
+        ? Number(product.discountedPrice)
+        : basePrice;
+      let appliedOffer = null;
+
+      for (const offer of getActiveOffers()) {
+        let applies = false;
+        if (offer.scope === 'all') applies = true;
+        if (offer.scope === 'products' && Array.isArray(offer.targetProductIds) && offer.targetProductIds.includes(product.id)) applies = true;
+        if (offer.scope === 'categories' && Array.isArray(offer.targetCategoryIds) && offer.targetCategoryIds.includes(product.categoryId)) applies = true;
+
+        if (applies) {
+          const val = Number(offer.discountValue) || 0;
+          let candidate = offer.discountType === 'percentage'
+            ? Math.max(0, Math.round((basePrice * (1 - val / 100)) * 100) / 100)
+            : Math.max(0, Math.round((basePrice - val) * 100) / 100);
+          if (candidate < effectivePrice) {
+            effectivePrice = candidate;
+            appliedOffer = offer;
+          }
+        }
+      }
+      return { originalPrice: basePrice, finalPrice: effectivePrice, hasDiscount: effectivePrice < basePrice, appliedOffer };
+    }
+
+    function formatPrice(amount) {
+      const currency = state.config?.settings?.currency || '$';
+      return `${currency}${Number(amount).toLocaleString()}`;
+    }
+
+    // Public Storefront Rendering
+    function applyStoreSettings() {
+      const s = state.config?.settings || INITIAL_STORE_CONFIG.settings;
+      document.title = `${s.storeName || 'GLORY STORE'} — Contemporary Editorial Fashion`;
+      document.getElementById('brand-name-display').textContent = s.storeName || 'GLORY STORE';
+      document.getElementById('footer-brand-name').textContent = s.storeName || 'GLORY STORE';
+      document.getElementById('footer-tagline').textContent = loc(s, 'tagline');
+      document.getElementById('footer-email').textContent = s.contactEmail || 'concierge@glorystore.fashion';
+      document.getElementById('footer-copyright').textContent = loc(s, 'footerText');
+
+      const cleanPhone = (s.whatsappPhone || '').replace(/[^0-9]/g, '');
+      document.getElementById('footer-whatsapp-link').href = cleanPhone ? `https://wa.me/${cleanPhone}` : '#';
+      document.getElementById('footer-whatsapp-text').textContent = s.whatsappPhone ? `WhatsApp: ${s.whatsappPhone}` : 'WhatsApp Concierge';
+    }
+
+    function renderNavigationCategories() {
+      const visibleCats = state.categories.filter((c) => c.visible !== false);
+      document.getElementById('header-category-links').innerHTML = visibleCats.slice(0, 4).map((cat) => `
+        <a href="#catalog" onclick="filterByCategory('${cat.id}')" class="hover:text-stone-950 dark:hover:text-white transition">${loc(cat, 'name')}</a>
+      `).join('');
+      document.getElementById('mobile-category-links').innerHTML = visibleCats.map((cat) => `
+        <a href="#catalog" onclick="filterByCategory('${cat.id}'); toggleMobileMenu()" class="block text-xs uppercase tracking-[0.18em] text-stone-600 dark:text-stone-300">${loc(cat, 'name')}</a>
+      `).join('');
+    }
+
+    function renderHomepageSections() {
+      const container = document.getElementById('homepage-sections-container');
+      const hero = state.config?.hero || INITIAL_STORE_CONFIG.hero;
+      container.innerHTML = `
+        <section class="relative overflow-hidden bg-stone-900 text-stone-50">
+          <div class="relative min-h-[76vh] flex items-center">
+            <img src="${hero.image || SEED_IMAGES.heroMain}" onerror="this.src='${SEED_IMAGES.heroFallback}'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-75" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-950/20"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+              <div class="max-w-2xl fade-in">
+                <p class="text-xs uppercase tracking-[0.28em] text-stone-200 mb-4">${loc(hero, 'eyebrow')}</p>
+                <h1 class="font-editorial text-4xl sm:text-6xl font-medium leading-[1.06] tracking-tight text-white">${loc(hero, 'title')}</h1>
+                <p class="mt-6 text-base sm:text-lg text-stone-200/90 font-light leading-relaxed max-w-xl">${loc(hero, 'subtitle')}</p>
+                <div class="mt-9">
+                  <a href="${hero.ctaLink || '#catalog'}" class="px-8 py-4 rounded-full bg-stone-50 text-stone-950 text-xs uppercase tracking-[0.22em] font-semibold hover:bg-stone-200 transition">${loc(hero, 'ctaLabel') || 'Explore'}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderProductCardHTML(product) {
+      const pricing = calculateProductPricing(product);
+      const cat = state.categories.find((c) => c.id === product.categoryId);
+      const primaryImg = (product.images && product.images[0]) || SEED_IMAGES.heroFallback;
+      return `
+        <article class="group flex flex-col">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-stone-200 dark:bg-stone-900 mb-4">
+            <img src="${primaryImg}" onclick="openProductModal('${product.id}')" class="w-full h-full object-cover cursor-pointer transition duration-700 group-hover:scale-105" />
+            <button onclick="openProductModal('${product.id}')" class="absolute bottom-3 left-3 right-3 py-2.5 px-4 rounded-full bg-white/90 dark:bg-stone-950/90 text-stone-900 dark:text-stone-100 text-[11px] uppercase tracking-[0.18em] font-semibold opacity-0 group-hover:opacity-100 transition">
+              ${t('quickView')}
+            </button>
+          </div>
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.18em] text-stone-500 mb-1">${cat ? loc(cat, 'name') : ''}</p>
+            <h3 onclick="openProductModal('${product.id}')" class="font-editorial text-xl font-medium cursor-pointer">${loc(product, 'name')}</h3>
+            <p class="text-sm font-semibold mt-1.5">${formatPrice(pricing.finalPrice)}</p>
+          </div>
+        </article>
+      `;
+    }
+
+    window.renderCatalogGrid = function () {
+      document.getElementById('catalog-category-pills').innerHTML = [
+        `<button onclick="filterByCategory('all')" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium ${state.selectedCategoryId === 'all' ? 'bg-stone-900 text-stone-50' : 'bg-stone-100'}">${t('allCategories')}</button>`,
+        ...state.categories.map((cat) => `<button onclick="filterByCategory('${cat.id}')" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium ${state.selectedCategoryId === cat.id ? 'bg-stone-900 text-stone-50' : 'bg-stone-100'}">${loc(cat, 'name')}</button>`)
+      ].join('');
+
+      let items = state.products.filter((p) => {
+        if (p.status !== 'published') return false;
+        if (state.selectedCategoryId !== 'all' && p.categoryId !== state.selectedCategoryId) return false;
+        if (state.searchQuery) {
+          const q = state.searchQuery.toLowerCase();
+          return `${p.nameEn} ${p.nameAr}`.toLowerCase().includes(q);
+        }
+        return true;
+      });
+
+      const grid = document.getElementById('catalog-product-grid');
+      const empty = document.getElementById('catalog-empty-state');
+      if (items.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+      } else {
+        empty.classList.add('hidden');
+        grid.innerHTML = items.map((p) => renderProductCardHTML(p)).join('');
+      }
+      lucide.createIcons();
+    };
+
+    function renderStorefrontBanners() {
+      document.getElementById('storefront-banners-grid').innerHTML = (state.config?.banners || []).filter((b) => b.slot !== 'announcement' && b.visible !== false).map((b) => `
+        <div class="group relative rounded-3xl overflow-hidden aspect-[16/10] bg-stone-900">
+          <img src="${b.image || SEED_IMAGES.banner1}" class="w-full h-full object-cover opacity-80" />
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <h3 class="font-editorial text-2xl font-medium mb-2">${loc(b, 'title')}</h3>
+            <a href="#catalog" class="text-xs uppercase tracking-[0.2em] font-semibold underline underline-offset-4">Discover</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderAllPublicViews() {
+      applyStoreSettings();
+      renderNavigationCategories();
+      renderHomepageSections();
+      renderCatalogGrid();
+      renderStorefrontBanners();
+      lucide.createIcons();
+    }
+
+    window.filterByCategory = (id) => { state.selectedCategoryId = id; renderCatalogGrid(); };
+    window.resetStoreView = (e) => { e.preventDefault(); state.selectedCategoryId = 'all'; renderAllPublicViews(); };
+    window.toggleSearchBar = () => document.getElementById('search-bar-panel').classList.toggle('hidden');
+    window.handlePublicSearch = (q) => { state.searchQuery = q.trim(); renderCatalogGrid(); };
+    window.clearPublicSearch = () => { state.searchQuery = ''; document.getElementById('public-search-input').value = ''; renderCatalogGrid(); };
+    window.toggleMobileMenu = () => document.getElementById('mobile-menu-panel').classList.toggle('hidden');
+
+    window.openProductModal = function (id) {
+      const p = state.products.find((x) => x.id === id);
+      if (!p) return;
+      state.activeProductModalId = id;
+      document.getElementById('pdp-main-image').src = (p.images && p.images[0]) || SEED_IMAGES.heroFallback;
+      document.getElementById('pdp-category').textContent = p.categoryId;
+      document.getElementById('pdp-title').textContent = loc(p, 'name');
+      document.getElementById('pdp-description').textContent = loc(p, 'description');
+      document.getElementById('pdp-price-block').innerHTML = `<span class="text-2xl font-semibold">${formatPrice(p.price)}</span>`;
+      document.getElementById('product-detail-modal').classList.remove('hidden');
+      lucide.createIcons();
+    };
+    window.closeProductModal = () => document.getElementById('product-detail-modal').classList.add('hidden');
+
+    window.openDrawer = function (mode) {
+      const drawer = document.getElementById('side-drawer');
+      const backdrop = document.getElementById('side-drawer-backdrop');
+      document.getElementById('drawer-title').textContent = mode === 'cart' ? t('shoppingBag') : t('wishlistTitle');
+      document.getElementById('drawer-body').innerHTML = `<p class="text-sm text-stone-500 text-center py-16">${t('emptyBag')}</p>`;
+      document.getElementById('drawer-footer').innerHTML = '';
+      backdrop.classList.remove('hidden');
+      drawer.classList.remove('translate-x-full', 'rtl:-translate-x-full');
+      lucide.createIcons();
+    };
+    window.closeDrawer = function () {
+      document.getElementById('side-drawer').classList.add('translate-x-full', 'rtl:-translate-x-full');
+      document.getElementById('side-drawer-backdrop').classList.add('hidden');
+    };
+
+    window.togglePublicLanguage = function () {
+      state.lang = state.lang === 'en' ? 'ar' : 'en';
+      document.getElementById('public-lang-label').textContent = state.lang === 'en' ? 'AR' : 'EN';
+      document.documentElement.dir = state.lang === 'ar' ? 'rtl' : 'ltr';
+      renderAllPublicViews();
+    };
+
+    window.toggleTheme = function () {
+      state.theme = state.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.classList.toggle('dark', state.theme === 'dark');
+    };
+
+    // Admin Workspace Sections Management
+    window.switchAdminSection = function (tab) {
+      state.adminActiveTab = tab;
+      document.getElementById('admin-current-section-title').textContent = tab.toUpperCase();
+      renderAdminCurrentTab();
+    };
+
+    function renderAdminCurrentTab() {
+      const container = document.getElementById('admin-section-body');
+      container.innerHTML = `<div class="p-8 text-center font-editorial text-2xl">Management Section: ${state.adminActiveTab} (Active & Synced)</div>`;
+      lucide.createIcons();
+    }
+
+    function showToast(msg, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const el = document.createElement('div');
+      el.className = `px-4 py-3 rounded-2xl border text-xs font-medium shadow-xl bg-stone-900 text-white`;
+      el.textContent = msg;
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 3000);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderAllPublicViews();
+      bootstrapAuthAndData();
+    });
+  </script>
+</body>
+</html>
