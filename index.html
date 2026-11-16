@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GLORY STORE — Contemporary Fashion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Glory Store: premium clothing, shoes, bags and accessories.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#faf8f4;--fg:#111;--bg2:#efe9de;--mut:#77736b;--line:#ddd6c9;--ac:#111;--ac2:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0f0f;--fg:#f2eee6;--bg2:#1a1917;--mut:#9b968b;--line:#2d2b27;--ac:#f2eee6;--ac2:#111;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f0f0f;--fg:#f2eee6;--bg2:#1a1917;--mut:#9b968b;--line:#2d2b27;--ac:#f2eee6;--ac2:#111;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--fg);font:400 14px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3,.lg{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;letter-spacing:.02em}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+a{color:inherit}
+.b{background:var(--ac);color:var(--ac2);padding:12px 24px;letter-spacing:.14em;text-transform:uppercase;font-size:12px;transition:.3s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.b:hover{opacity:.82}
+.b.o{background:none;color:var(--fg);border:1px solid var(--fg)}
+.b.sm{padding:7px 13px;font-size:11px;letter-spacing:.06em}
+.b.dng{background:#b3372c;color:#fff;border-color:#b3372c}
+.b.ok{background:#236b43;color:#fff;border-color:#236b43}
+input,select,textarea{background:var(--bg);border:1px solid var(--line);padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--fg)}
+.top{background:var(--ac);color:var(--ac2);text-align:center;font-size:12px;letter-spacing:.12em;padding:7px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.hr{display:flex;align-items:center;gap:14px;padding:12px 4vw}
+.logo{font-size:26px;letter-spacing:.3em;cursor:pointer;white-space:nowrap}
+.sr{position:relative;flex:1;max-width:420px;margin-left:auto}
+.sg{position:absolute;top:100%;left:0;right:0;background:var(--bg);border:1px solid var(--line);z-index:30;max-height:300px;overflow:auto}
+.sg div{padding:9px 12px;cursor:pointer;display:flex;justify-content:space-between}
+.sg div:hover{background:var(--bg2)}
+.ic{position:relative;padding:6px 8px;font-size:17px;display:inline-flex;align-items:center;gap:5px}
+.ic i{position:absolute;top:-2px;right:-2px;background:var(--ac);color:var(--ac2);font-size:10px;border-radius:9px;padding:0 5px;font-style:normal}
+.ic span.uname{font-size:12px;font-weight:500;max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+nav{display:flex;gap:22px;padding:0 4vw 10px;overflow-x:auto;white-space:nowrap;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+nav a{cursor:pointer;color:var(--mut);text-decoration:none}
+nav a:hover,nav a.on{color:var(--fg)}
+main{min-height:70vh;animation:fi .4s}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}}
+.sec{padding:60px 4vw}
+.sec h2{font-size:clamp(28px,4vw,44px);margin-bottom:24px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px}
+.sec h2 a{font:12px Inter;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--mut)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;min-height:78vh;background:#141311;color:#f2eee6}
+.hero>div:first-child{padding:7vw 5vw;align-self:center}
+.hero h1{font-size:clamp(44px,7.5vw,104px);line-height:.95;margin:16px 0 28px}
+.hero .im{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:24px}
+.hero .im div{overflow:hidden;background:#22201d}
+.hero .im div:nth-child(2){margin-top:10vh}
+.hero .im svg,.hero .im img{width:100%;height:100%;transition:transform 6s;object-fit:cover}
+.hero:hover .im svg,.hero:hover .im img{transform:scale(1.06)}
+.hero .b{background:#f2eee6;color:#111}
+.hero .b.o{background:none;color:#f2eee6;border-color:#f2eee6;margin-left:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:24px 16px}
+.cd{position:relative;cursor:pointer}
+.cd .im{aspect-ratio:3/4;overflow:hidden;background:var(--bg2);position:relative}
+.cd svg,.cd img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.cd:hover svg,.cd:hover img{transform:scale(1.07)}
+.cd .qa{position:absolute;left:0;right:0;bottom:0;background:var(--ac);color:var(--ac2);text-align:center;padding:9px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transform:translateY(100%);transition:.3s}
+.cd:hover .qa{transform:none}
+.cd h3{font:500 13px Inter;margin-top:10px}
+.cd small{color:var(--mut);display:block}
+.pr{margin-top:2px;font-weight:500}
+.pr s{color:var(--mut);margin-left:6px;font-weight:400}
+.pr em{color:#b3372c;font-style:normal;margin-left:6px;font-size:12px}
+.tg{position:absolute;top:8px;left:8px;background:#b3372c;color:#fff;font-size:11px;padding:2px 8px;z-index:2;letter-spacing:.05em}
+.tg.new{background:var(--ac);color:var(--ac2)}
+.hb{position:absolute;top:6px;right:8px;z-index:2;font-size:20px;text-shadow:0 0 4px #fff8}
+.cmp{position:absolute;bottom:8px;left:8px;z-index:2;font-size:11px;background:var(--bg);padding:2px 6px;border:1px solid var(--line)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.tile{background:var(--bg2);padding:30px 18px;text-align:center;cursor:pointer;font-size:20px;transition:.3s;display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid transparent}
+.tile span.tico{font-size:28px;line-height:1}
+.tile:hover{background:var(--ac);color:var(--ac2)}
+.fl{background:var(--bg2);display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:24px;padding:16px 20px;justify-content:space-between}
+.fl b{font:600 28px "Cormorant Garamond",serif;letter-spacing:.08em}
+.shop{display:grid;grid-template-columns:250px 1fr;gap:30px;padding:30px 4vw}
+.fp label{display:block;padding:4px 0;cursor:pointer}
+.fp input[type="checkbox"],.fp input[type="radio"]{width:auto;margin-right:6px}
+.fp h4{font:500 12px Inter;letter-spacing:.14em;text-transform:uppercase;margin:20px 0 8px}
+.ov{position:fixed;inset:0;background:#0009;z-index:50;display:flex;justify-content:center;align-items:flex-start;overflow:auto;animation:fi .25s}
+.ov.r{justify-content:flex-end}
+.md{background:var(--bg);width:min(980px,100%);margin:3vh auto;padding:28px;position:relative;border:1px solid var(--line)}
+.md.auth-md{width:min(430px,94%);margin:8vh auto;direction:rtl;font-family:Cairo,Inter,sans-serif}
+.dr{background:var(--bg);width:min(440px,100%);min-height:100%;padding:24px;position:relative;display:flex;flex-direction:column}
+.x{position:absolute;top:12px;right:16px;font-size:24px}
+.md.auth-md .x{right:auto;left:16px}
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.zm{aspect-ratio:3/4;overflow:hidden;cursor:zoom-in;background:var(--bg2)}
+.zm svg,.zm img{width:100%;height:100%;object-fit:cover;transition:transform .2s}
+.zm:hover svg,.zm:hover img{transform:scale(1.8)}
+.th{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.th div{width:64px;aspect-ratio:3/4;overflow:hidden;cursor:pointer;border:1px solid var(--line)}
+.th .on{border:2px solid var(--fg)}
+.ch{display:inline-block;border:1px solid var(--line);padding:6px 12px;margin:0 6px 6px 0;cursor:pointer}
+.ch.on{background:var(--ac);color:var(--ac2)}
+.sw{width:26px;height:26px;border-radius:50%;display:inline-block;margin-right:8px;cursor:pointer;border:2px solid var(--line)}
+.sw.on{outline:2px solid var(--fg);outline-offset:2px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:inherit;vertical-align:middle}
+.ci{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ci .t{width:68px;aspect-ratio:3/4;overflow:hidden;background:var(--bg2);flex-shrink:0}
+.ci .t svg,.ci .t img{width:100%;height:100%;object-fit:cover}
+.fab{position:fixed;right:16px;z-index:40;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:22px;box-shadow:0 4px 18px #0004}
+.nl{background:var(--ac);color:var(--ac2);text-align:center;padding:64px 4vw}
+.nl input{max-width:340px;display:inline-block;color:#111;background:#fff}
+.nl .b{background:#f2eee6;color:#111}
+footer{padding:40px 4vw 90px;color:var(--mut);font-size:12px;border-top:1px solid var(--line)}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--ac);color:var(--ac2);padding:10px 22px;z-index:99;box-shadow:0 6px 20px #0004;font-size:13px}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.st div{background:var(--bg2);padding:16px;border:1px solid var(--line)}
+.st b{font:600 28px "Cormorant Garamond",serif;display:block}
+.tb{overflow-x:auto}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0;align-items:center}
+.th img,.cd img,.zm img,.ci img,.hero .im img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block}
+.auth-tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:18px}
+.auth-tabs button{flex:1;padding:10px;font-weight:700;color:var(--mut);border-bottom:2px solid transparent}
+.auth-tabs button.on{color:var(--fg);border-bottom-color:var(--fg)}
+
+/* Admin Control Panel Styles */
+.ad{display:grid;grid-template-columns:230px 1fr;gap:28px;padding:28px 4vw;direction:rtl;font-family:Cairo,Inter,sans-serif}
+.ad aside{display:flex;flex-direction:column;gap:4px;background:var(--bg2);padding:14px;height:fit-content;border:1px solid var(--line)}
+.ad aside a{padding:11px 14px;cursor:pointer;color:var(--mut);display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px;transition:.2s}
+.ad aside a.on,.ad aside a:hover{background:var(--ac);color:var(--ac2)}
+.ad h2,.ad h3{font-family:Cairo,Inter,sans-serif;font-weight:700}
+.ad h3{font-size:20px;margin:22px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.ad section{min-width:0}
+.ad-box{background:var(--bg2);padding:18px;border:1px solid var(--line);margin-bottom:18px}
+.ad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.ad label{display:block;font-size:12px;font-weight:600;margin-bottom:4px;color:var(--mut)}
+.ad-thumb{width:46px;height:58px;object-fit:cover;border:1px solid var(--line);background:var(--bg2);display:block}
+.badge{display:inline-block;padding:2px 8px;font-size:11px;background:var(--ac);color:var(--ac2);border-radius:2px}
+.badge.sale{background:#b3372c;color:#fff}
+.badge.off{background:var(--line);color:var(--mut)}
+.chk-list{display:flex;flex-wrap:wrap;gap:8px;max-height:160px;overflow:auto;padding:8px;border:1px solid var(--line);background:var(--bg)}
+.chk-item{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:var(--bg2);font-size:12px;cursor:pointer}
+.chk-item input{width:auto}
+
+@media(max-width:800px){
+  .hero,.pd,.shop{grid-template-columns:1fr}
+  .hero .im{height:48vh}
+  .sr{max-width:none}
+  .fp{display:none}
+  .fp.s{display:block}
+  .hr .hd{display:none}
+  .ad{grid-template-columns:1fr}
+  .ad aside{flex-direction:row;overflow-x:auto}
+  .ad aside a{white-space:nowrap}
+}
+</style>
+</head>
+<body>
+<div class="top" id="tp"></div>
+<header>
+  <div class="hr">
+    <button class="b o sm" data-a="ff" id="fb" style="display:none">Filters</button>
+    <span class="logo lg" id="logoBtn" data-a="go" data-v="home">GLORY STORE</span>
+    <div class="sr">
+      <input id="q" placeholder="Search products, categories, “under 100”…" autocomplete="off">
+      <div class="sg" id="sg" hidden></div>
+    </div>
+    <button class="ic" data-a="acc" title="Account / تسجيل الدخول" id="icAcc">👤</button>
+    <button class="ic" data-a="wl" title="Wishlist" id="icWish">♡<i id="wc"></i></button>
+    <button class="ic" data-a="th" title="Theme" id="icTheme">◐</button>
+    <button class="ic" data-a="cart" title="Cart" id="icCart">🛍<i id="cc"></i></button>
+  </div>
+  <nav id="nv"></nav>
+</header>
+
+<main id="app"></main>
+<footer id="ft"></footer>
+<div id="ov"></div>
+
+<a class="fab" id="waFab" style="bottom:84px;background:#25d366;color:#fff;text-decoration:none" href="https://wa.me/201000000000" target="_blank" rel="noopener" title="WhatsApp Support">✆</a>
+<button class="fab" id="cartFab" style="bottom:20px;background:var(--ac);color:var(--ac2)" data-a="cart">🛍</button>
+
+<script>
+/* ==========================================================================
+   1. CLOUD DATABASE CONFIG (Paste your Firebase Realtime Database URL below)
+   ========================================================================== */
+const HARDCODED_FIREBASE_URL = ""; // مثال: "https://glory-store-default-rtdb.firebaseio.com"
+
+const mkSvg = (bg, fg, label) =>
+  "data:image/svg+xml;utf8," + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+      <rect width="600" height="800" fill="${bg}"/>
+      <rect x="40" y="40" width="520" height="720" fill="none" stroke="${fg}" stroke-opacity="0.25" stroke-width="2"/>
+      <text x="300" y="390" font-family="Georgia,serif" font-size="34" fill="${fg}" text-anchor="middle" letter-spacing="4">${label}</text>
+      <text x="300" y="435" font-family="sans-serif" font-size="14" fill="${fg}" fill-opacity="0.6" text-anchor="middle" letter-spacing="6">GLORY STORE</text>
+    </svg>`
+  );
+
+const IM = {
+  w1: mkSvg("#e5ddd0", "#1c1a17", "SILK TRENCH"),
+  m1: mkSvg("#232220", "#f2eee6", "WOOL OVERCOAT"),
+  w2f: mkSvg("#d8cfc0", "#1c1a17", "LINEN BLAZER"),
+  m2f: mkSvg("#2c302e", "#f2eee6", "TAILORED SUIT"),
+  w2b: mkSvg("#cbbba3", "#1c1a17", "CASHMERE KNIT"),
+  shoe: mkSvg("#1e1b18", "#e8dfd1", "LEATHER BOOTS"),
+  bag: mkSvg("#c7b299", "#111111", "TOTE BAG"),
+  acc: mkSvg("#dfd7ca", "#111111", "CHRONO WATCH")
+};
+
+const DEFAULT_DATA = {
+  settings: {
+    storeName: "GLORY STORE",
+    currency: "$",
+    topBar: "COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $150 — SEASONAL ARCHIVE LIVE",
+    whatsapp: "201000000000",
+    adminPass: "222555888admin",
+    firebaseUrl: HARDCODED_FIREBASE_URL,
+    footerText: "© 2026 GLORY STORE — Contemporary Fashion & Luxury Essentials. All rights reserved.",
+    icons: {
+      account: "👤",
+      wishlist: "♡",
+      theme: "◐",
+      cart: "🛍",
+      whatsapp: "✆"
+    },
+    hero: {
+      eyebrow: "AUTUMN / WINTER COLLECTION",
+      title: "Quiet Luxury.",
+      subtitle: "Architectural silhouettes crafted from pure wool, raw silk, and full-grain leather.",
+      btn1Text: "Shop Collection",
+      btn1Cat: "all",
+      btn2Text: "Seasonal Offers",
+      btn2Cat: "sale",
+      img1: IM.w1,
+      img2: IM.m1
+    },
+    discounts: {
+      globalEnabled: false,
+      globalPercent: 15,
+      categoryDiscounts: {},
+      coupons: [
+        { code: "GLORY10", percent: 10, active: true },
+        { code: "VIP25", percent: 25, active: true }
+      ]
+    }
+  },
+  categories: [
+    { id: "women", name: "Women", icon: "👗", showNav: true },
+    { id: "men", name: "Men", icon: "🧥", showNav: true },
+    { id: "shoes", name: "Shoes", icon: "👞", showNav: true },
+    { id: "bags", name: "Bags", icon: "👜", showNav: true },
+    { id: "accessories", name: "Accessories", icon: "⌚", showNav: true }
+  ],
+  products: [
+    {
+      id: "p1",
+      name: "Draped Silk Trench Coat",
+      price: 240,
+      discountPercent: 20,
+      cats: ["women"],
+      sizes: ["XS", "S", "M", "L"],
+      colors: ["#e5ddd0", "#111111", "#8c6d53"],
+      badge: "BEST SELLER",
+      desc: "Fluid heavyweight silk-blend trench with horn buttons and storm flap.",
+      imgs: [IM.w1, IM.w2f]
+    },
+    {
+      id: "p2",
+      name: "Structured Virgin Wool Overcoat",
+      price: 310,
+      discountPercent: 0,
+      cats: ["men"],
+      sizes: ["S", "M", "L", "XL"],
+      colors: ["#232220", "#4a463f", "#8a7968"],
+      badge: "NEW",
+      desc: "Double-breasted Italian virgin wool overcoat with satin lining.",
+      imgs: [IM.m1, IM.m2f]
+    },
+    {
+      id: "p3",
+      name: "Relaxed Belgian Linen Blazer",
+      price: 185,
+      discountPercent: 15,
+      cats: ["women"],
+      sizes: ["XS", "S", "M", "L"],
+      colors: ["#d8cfc0", "#ffffff"],
+      badge: "",
+      desc: "Breathable unlined linen blazer tailored for effortless layering.",
+      imgs: [IM.w2f, IM.w2b]
+    },
+    {
+      id: "p4",
+      name: "Monolith Tailored Suit",
+      price: 420,
+      discountPercent: 0,
+      cats: ["men"],
+      sizes: ["M", "L", "XL"],
+      colors: ["#2c302e", "#111111"],
+      badge: "LIMITED",
+      desc: "Sharp modern cut featuring pleated trousers and peak lapels.",
+      imgs: [IM.m2f, IM.m1]
+    },
+    {
+      id: "p5",
+      name: "Pure Cashmere Ribbed Knit",
+      price: 160,
+      discountPercent: 10,
+      cats: ["women", "men"],
+      sizes: ["S", "M", "L"],
+      colors: ["#cbbba3", "#111111", "#5c2c2c"],
+      badge: "",
+      desc: "Ultra-soft Grade-A cashmere sweater with dropped shoulders.",
+      imgs: [IM.w2b, IM.w1]
+    },
+    {
+      id: "p6",
+      name: "Chelsea Full-Grain Leather Boots",
+      price: 210,
+      discountPercent: 0,
+      cats: ["shoes", "men", "women"],
+      sizes: ["39", "40", "41", "42", "43", "44"],
+      colors: ["#1e1b18", "#593a27"],
+      badge: "NEW",
+      desc: "Goodyear-welted calfskin boots with durable stacked leather sole.",
+      imgs: [IM.shoe]
+    },
+    {
+      id: "p7",
+      name: "Architectural Calfskin Tote",
+      price: 275,
+      discountPercent: 25,
+      cats: ["bags", "women"],
+      sizes: ["One Size"],
+      colors: ["#c7b299", "#111111"],
+      badge: "SALE",
+      desc: "Hand-stitched structured tote with suede interior and magnetic clasp.",
+      imgs: [IM.bag]
+    },
+    {
+      id: "p8",
+      name: "Minimalist Steel Chronograph",
+      price: 195,
+      discountPercent: 0,
+      cats: ["accessories", "men", "women"],
+      sizes: ["One Size"],
+      colors: ["#dfd7ca", "#222222"],
+      badge: "",
+      desc: "Sapphire crystal dial with Japanese quartz movement and mesh strap.",
+      imgs: [IM.acc]
+    }
+  ]
+};
+
+/* ==========================================================================
+   2. HYBRID CLOUD + LOCAL PERSISTENCE & FRESH VISITOR SESSION
+   ========================================================================== */
+const STORAGE_KEY = "GLORY_STORE_DATA_V2";
+const USERS_KEY   = "GLORY_STORE_USERS_V1";
+
+function normalizeDB(parsed) {
+  if (!parsed) return JSON.parse(JSON.stringify(DEFAULT_DATA));
+  return {
+    settings: {
+      ...DEFAULT_DATA.settings,
+      ...(parsed.settings || {}),
+      icons: { ...DEFAULT_DATA.settings.icons, ...(parsed.settings?.icons || {}) },
+      hero: { ...DEFAULT_DATA.settings.hero, ...(parsed.settings?.hero || {}) },
+      discounts: { ...DEFAULT_DATA.settings.discounts, ...(parsed.settings?.discounts || {}) }
+    },
+    categories: Array.isArray(parsed.categories) ? parsed.categories : DEFAULT_DATA.categories,
+    products: Array.isArray(parsed.products) ? parsed.products : DEFAULT_DATA.products
+  };
+}
+
+function loadLocalStore() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) return normalizeDB(JSON.parse(saved));
+  } catch (e) {}
+  return normalizeDB(null);
+}
+
+function loadLocalUsers() {
+  try { return JSON.parse(localStorage.getItem(USERS_KEY) || "{}"); } catch { return {}; }
+}
+
+let DB = loadLocalStore();
+let usersDB = loadLocalUsers();
+
+function getCloudUrl() {
+  const url = (DB.settings.firebaseUrl || HARDCODED_FIREBASE_URL || "").trim();
+  return url ? url.replace(/\/+$/, "") : "";
+}
+
+// Fetch latest store catalog & user accounts from Cloud for all visitors
+async function syncFromCloud() {
+  const base = getCloudUrl();
+  if (!base) return;
+  try {
+    const [storeRes, usersRes] = await Promise.all([
+      fetch(`${base}/store.json`),
+      fetch(`${base}/users.json`)
+    ]);
+    if (storeRes.ok) {
+      const remoteStore = await storeRes.json();
+      if (remoteStore && remoteStore.products) {
+        remoteStore.settings = remoteStore.settings || {};
+        remoteStore.settings.firebaseUrl = base;
+        DB = normalizeDB(remoteStore);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(DB));
+      } else {
+        // First time initialization in Firebase: push current DB
+        await pushStoreToCloud();
+      }
+    }
+    if (usersRes.ok) {
+      const remoteUsers = await usersRes.json();
+      if (remoteUsers && typeof remoteUsers === "object") {
+        usersDB = remoteUsers;
+        localStorage.setItem(USERS_KEY, JSON.stringify(usersDB));
+      }
+    }
+    render();
+  } catch (e) {
+    console.warn("Cloud sync offline, using cached data.", e);
+  }
+}
+
+async function pushStoreToCloud() {
+  const base = getCloudUrl();
+  if (!base) return;
+  try {
+    await fetch(`${base}/store.json`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(DB)
+    });
+  } catch (e) { console.error(e); }
+}
+
+async function pushSingleUserToCloud(username) {
+  const base = getCloudUrl();
+  if (!base || !usersDB[username]) return;
+  const safeKey = encodeURIComponent(username.replace(/[.#$\[\]]/g, "_"));
+  try {
+    await fetch(`${base}/users/${safeKey}.json`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(usersDB[username])
+    });
+  } catch (e) { console.error(e); }
+}
+
+function getUserKey(uname) {
+  return uname.replace(/[.#$\[\]]/g, "_");
+}
+
+// Fresh Visitor Session on every open/reload until user logs in
+let currentUser = null;
+let cart = [];
+let wish = [];
+let compareList = [];
+let appliedCoupon = null;
+
+function syncCurrentUserData() {
+  if (!currentUser) return;
+  const k = getUserKey(currentUser);
+  if (!usersDB[k]) return;
+  usersDB[k].cart = JSON.parse(JSON.stringify(cart));
+  usersDB[k].wish = [...wish];
+  usersDB[k].appliedCoupon = appliedCoupon;
+  localStorage.setItem(USERS_KEY, JSON.stringify(usersDB));
+  pushSingleUserToCloud(k);
+}
+
+let UI = {
+  view: "home",
+  cat: "all",
+  search: "",
+  sort: "featured",
+  onlySale: false,
+  maxPrice: 1000,
+  adminTab: "dashboard",
+  adminAuth: false,
+  editProdId: null,
+  editCatId: null,
+  authTab: "login"
+};
+
+function saveDB(msg) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(DB));
+  } catch (e) {}
+  pushStoreToCloud();
+  renderChrome();
+  if (msg) toast(msg);
+}
+
+function saveCart() {
+  syncCurrentUserData();
+  updateBadges();
+}
+
+function saveWish() {
+  syncCurrentUserData();
+  updateBadges();
+}
+
+/* ==========================================================================
+   3. PRICING & DISCOUNT CALCULATION ENGINE
+   ========================================================================== */
+function getProductPricing(p) {
+  const d = DB.settings.discounts;
+  let pct = Number(p.discountPercent) || 0;
+
+  if (d.categoryDiscounts && Array.isArray(p.cats)) {
+    p.cats.forEach(cId => {
+      const cPct = Number(d.categoryDiscounts[cId]) || 0;
+      if (cPct > pct) pct = cPct;
+    });
+  }
+
+  if (d.globalEnabled) {
+    const gPct = Number(d.globalPercent) || 0;
+    if (gPct > pct) pct = gPct;
+  }
+
+  pct = Math.min(95, Math.max(0, pct));
+  const orig = Number(p.price) || 0;
+  const final = pct > 0 ? Math.round(orig * (1 - pct / 100) * 100) / 100 : orig;
+  return { orig, final, pct, onSale: pct > 0 };
+}
+
+function fmtPrice(val) {
+  return `${DB.settings.currency}${Number(val).toFixed(val % 1 === 0 ? 0 : 2)}`;
+}
+
+/* ==========================================================================
+   4. UI HELPERS & CHROME RENDERING
+   ========================================================================== */
+const $ = id => document.getElementById(id);
+
+function toast(text) {
+  const el = document.createElement("div");
+  el.className = "toast";
+  el.textContent = text;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2600);
+}
+
+function updateBadges() {
+  $("wc").textContent = wish.length || "";
+  $("cc").textContent = cart.reduce((s, i) => s + i.qty, 0) || "";
+}
+
+function renderChrome() {
+  const s = DB.settings;
+  document.title = `${s.storeName} — Contemporary Fashion`;
+  $("tp").textContent = s.topBar;
+  $("logoBtn").textContent = s.storeName;
+  $("ft").innerHTML = `
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center">
+      <div>${s.footerText}</div>
+      <div style="display:flex;gap:16px">
+        <a style="cursor:pointer" data-a="go" data-v="home">Home</a>
+        <a style="cursor:pointer" data-a="go" data-v="shop" data-c="all">Catalog</a>
+        <a style="cursor:pointer" data-a="go" data-v="shop" data-c="sale">Sale</a>
+        <a style="cursor:pointer" data-a="acc">${currentUser ? currentUser : "Account"}</a>
+      </div>
+    </div>`;
+
+  const accIcon = s.icons.account || "👤";
+  $("icAcc").innerHTML = currentUser
+    ? `${accIcon}<span class="uname">${currentUser}</span>`
+    : `${accIcon}`;
+  $("icWish").innerHTML = `${s.icons.wishlist || "♡"}<i id="wc"></i>`;
+  $("icTheme").textContent = s.icons.theme || "◐";
+  $("icCart").innerHTML = `${s.icons.cart || "🛍"}<i id="cc"></i>`;
+  $("cartFab").textContent = s.icons.cart || "🛍";
+  $("waFab").textContent = s.icons.whatsapp || "✆";
+  $("waFab").href = `https://wa.me/${(s.whatsapp || "").replace(/\D/g, "")}?text=${encodeURIComponent("Hello " + s.storeName)}`;
+
+  const navCats = DB.categories.filter(c => c.showNav !== false);
+  $("nv").innerHTML = `
+    <a class="${UI.view === "home" ? "on" : ""}" data-a="go" data-v="home">Home</a>
+    <a class="${UI.view === "shop" && UI.cat === "all" && !UI.onlySale ? "on" : ""}" data-a="go" data-v="shop" data-c="all">Shop All</a>
+    ${navCats.map(c => `<a class="${UI.view === "shop" && UI.cat === c.id ? "on" : ""}" data-a="go" data-v="shop" data-c="${c.id}">${c.icon ? c.icon + " " : ""}${c.name}</a>`).join("")}
+    <a class="${UI.view === "shop" && UI.onlySale ? "on" : ""}" style="color:#b3372c;font-weight:500" data-a="go" data-v="shop" data-c="sale">🔥 Sale</a>
+  `;
+  updateBadges();
+}
+
+/* ==========================================================================
+   5. GLOBAL CLOUD USER ACCOUNTS (REGISTER / LOGIN / RESTORE FROM ANY DEVICE)
+   ========================================================================== */
+function openAccountModal() {
+  if (currentUser && usersDB[getUserKey(currentUser)]) {
+    const uData = usersDB[getUserKey(currentUser)];
+    const savedItemsCount = (uData.cart || []).reduce((s, i) => s + i.qty, 0);
+    const savedWishCount = (uData.wish || []).length;
+
+    $("ov").innerHTML = `
+      <div class="ov" onclick="if(event.target===this)closeOv()">
+        <div class="md auth-md">
+          <button class="x" onclick="closeOv()">×</button>
+          <div style="text-align:center;margin-bottom:18px">
+            <div style="font-size:40px;margin-bottom:6px">👤</div>
+            <h2 style="font-size:22px">${currentUser}</h2>
+            <p style="color:var(--mut);font-size:13px">حسابك نشط — يتم حفظ مشترياتك تلقائياً ويمكنك الدخول من أي جهاز</p>
+          </div>
+          <div class="st">
+            <div><span>في السلة</span><b>${savedItemsCount}</b></div>
+            <div><span>في المفضلة</span><b>${savedWishCount}</b></div>
+          </div>
+          <div class="row" style="margin-top:18px">
+            <button class="b o" style="flex:1" onclick="closeOv();openCartDrawer()">عرض السلة</button>
+            <button class="b dng" style="flex:1" onclick="logoutUser()">تسجيل الخروج</button>
+          </div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  $("ov").innerHTML = `
+    <div class="ov" onclick="if(event.target===this)closeOv()">
+      <div class="md auth-md">
+        <button class="x" onclick="closeOv()">×</button>
+        <div class="auth-tabs">
+          <button class="${UI.authTab === "login" ? "on" : ""}" onclick="UI.authTab='login';openAccountModal()">تسجيل الدخول</button>
+          <button class="${UI.authTab === "register" ? "on" : ""}" onclick="UI.authTab='register';openAccountModal()">إنشاء حساب جديد</button>
+        </div>
+
+        ${UI.authTab === "login" ? `
+          <form onsubmit="handleUserLogin(event)">
+            <div style="margin-bottom:12px">
+              <label style="display:block;font-size:12px;margin-bottom:4px;color:var(--mut)">اسم المستخدم</label>
+              <input id="authUser" required autocomplete="username">
+            </div>
+            <div style="margin-bottom:16px">
+              <label style="display:block;font-size:12px;margin-bottom:4px;color:var(--mut)">كلمة المرور</label>
+              <input type="password" id="authPass" required autocomplete="current-password">
+            </div>
+            <button class="b" style="width:100%" type="submit" id="btnLoginSub">دخول واسترجاع بياناتي</button>
+          </form>
+        ` : `
+          <form onsubmit="handleUserRegister(event)">
+            <div style="margin-bottom:12px">
+              <label style="display:block;font-size:12px;margin-bottom:4px;color:var(--mut)">اختر اسم المستخدم</label>
+              <input id="regUser" required autocomplete="username">
+            </div>
+            <div style="margin-bottom:16px">
+              <label style="display:block;font-size:12px;margin-bottom:4px;color:var(--mut)">اختر كلمة المرور</label>
+              <input type="password" id="regPass" required autocomplete="new-password">
+            </div>
+            <button class="b ok" style="width:100%" type="submit" id="btnRegSub">إنشاء الحساب وحفظ بياناتي</button>
+          </form>
+        `}
+      </div>
+    </div>
+  `;
+}
+
+async function handleUserRegister(e) {
+  e.preventDefault();
+  const uname = $("regUser").value.trim();
+  const pass = $("regPass").value;
+  if (!uname || !pass) return;
+
+  const btn = $("btnRegSub");
+  if (btn) { btn.disabled = true; btn.textContent = "جاري التحقق..."; }
+
+  const k = getUserKey(uname);
+  const base = getCloudUrl();
+
+  // Check cloud first to prevent duplicate usernames across all devices
+  if (base) {
+    try {
+      const res = await fetch(`${base}/users/${encodeURIComponent(k)}.json`);
+      if (res.ok) {
+        const remoteAcc = await res.json();
+        if (remoteAcc) {
+          toast("اسم المستخدم موجود بالفعل، اختر اسماً آخر أو سجل الدخول");
+          if (btn) { btn.disabled = false; btn.textContent = "إنشاء الحساب وحفظ بياناتي"; }
+          return;
+        }
+      }
+    } catch {}
+  }
+
+  if (usersDB[k]) {
+    toast("اسم المستخدم موجود بالفعل، اختر اسماً آخر أو سجل الدخول");
+    if (btn) { btn.disabled = false; btn.textContent = "إنشاء الحساب وحفظ بياناتي"; }
+    return;
+  }
+
+  usersDB[k] = {
+    username: uname,
+    password: pass,
+    cart: JSON.parse(JSON.stringify(cart)),
+    wish: [...wish],
+    appliedCoupon: appliedCoupon
+  };
+  localStorage.setItem(USERS_KEY, JSON.stringify(usersDB));
+  await pushSingleUserToCloud(k);
+
+  currentUser = uname;
+  closeOv();
+  render();
+  toast(`تم إنشاء الحساب وتفعيل الحفظ التلقائي لـ ${uname}`);
+}
+
+async function handleUserLogin(e) {
+  e.preventDefault();
+  const uname = $("authUser").value.trim();
+  const pass = $("authPass").value;
+  const k = getUserKey(uname);
+
+  const btn = $("btnLoginSub");
+  if (btn) { btn.disabled = true; btn.textContent = "جاري الدخول..."; }
+
+  // Fetch latest account state from Cloud if connected
+  const base = getCloudUrl();
+  if (base) {
+    try {
+      const res = await fetch(`${base}/users/${encodeURIComponent(k)}.json`);
+      if (res.ok) {
+        const remoteAcc = await res.json();
+        if (remoteAcc) usersDB[k] = remoteAcc;
+      }
+    } catch {}
+  }
+
+  const account = usersDB[k];
+  if (!account || account.password !== pass) {
+    toast("اسم المستخدم أو كلمة المرور غير صحيحة");
+    if (btn) { btn.disabled = false; btn.textContent = "دخول واسترجاع بياناتي"; }
+    return;
+  }
+
+  currentUser = account.username || uname;
+
+  const savedCart = Array.isArray(account.cart) ? JSON.parse(JSON.stringify(account.cart)) : [];
+  cart.forEach(guestItem => {
+    const found = savedCart.find(x => x.id === guestItem.id && x.size === guestItem.size && x.color === guestItem.color);
+    if (found) found.qty += guestItem.qty;
+    else savedCart.push(guestItem);
+  });
+  cart = savedCart;
+
+  const savedWish = Array.isArray(account.wish) ? [...account.wish] : [];
+  wish.forEach(wId => { if (!savedWish.includes(wId)) savedWish.push(wId); });
+  wish = savedWish;
+
+  appliedCoupon = account.appliedCoupon || appliedCoupon;
+  syncCurrentUserData();
+
+  closeOv();
+  render();
+  toast(`مرحباً بعودتك ${currentUser}! تم استرجاع سلتك وبياناتك`);
+}
+
+function logoutUser() {
+  syncCurrentUserData();
+  currentUser = null;
+  cart = [];
+  wish = [];
+  compareList = [];
+  appliedCoupon = null;
+  closeOv();
+  render();
+  toast("تم تسجيل الخروج وإعادة تهيئة الجلسة");
+}
+
+/* ==========================================================================
+   6. STOREFRONT VIEWS (HOME, SHOP, PRODUCT MODAL, CART, WISHLIST)
+   ========================================================================== */
+function productCard(p) {
+  const pr = getProductPricing(p);
+  const inWish = wish.includes(p.id);
+  const inCmp = compareList.includes(p.id);
+  const catNames = (p.cats || []).map(cid => DB.categories.find(c => c.id === cid)?.name).filter(Boolean).join(" · ");
+  const img = (p.imgs && p.imgs[0]) || IM.w1;
+
+  return `
+    <div class="cd" data-a="pd" data-id="${p.id}">
+      <div class="im">
+        ${pr.onSale ? `<span class="tg">-${pr.pct}%</span>` : (p.badge ? `<span class="tg new">${p.badge}</span>` : "")}
+        <button class="hb" data-a="tgw" data-id="${p.id}" title="Wishlist">${inWish ? "♥" : "♡"}</button>
+        <button class="cmp" data-a="cmp" data-id="${p.id}">${inCmp ? "✓ Compare" : "+ Compare"}</button>
+        <img src="${img}" alt="${p.name}" loading="lazy">
+        <button class="qa" data-a="qadd" data-id="${p.id}">+ Quick Add</button>
+      </div>
+      <h3>${p.name}</h3>
+      <small>${catNames || "Collection"}</small>
+      <div class="pr">
+        ${fmtPrice(pr.final)}
+        ${pr.onSale ? `<s>${fmtPrice(pr.orig)}</s><em>Save ${pr.pct}%</em>` : ""}
+      </div>
+    </div>
+  `;
+}
+
+function renderHome() {
+  const h = DB.settings.hero;
+  const saleProducts = DB.products.filter(p => getProductPricing(p).onSale);
+  const featured = DB.products.slice(0, 8);
+
+  return `
+    <section class="hero">
+      <div>
+        <div style="letter-spacing:.22em;font-size:12px;opacity:.75">${h.eyebrow}</div>
+        <h1>${h.title}</h1>
+        <p style="max-width:440px;opacity:.85;margin-bottom:30px">${h.subtitle}</p>
+        <div>
+          <button class="b" data-a="go" data-v="shop" data-c="${h.btn1Cat || "all"}">${h.btn1Text}</button>
+          <button class="b o" data-a="go" data-v="shop" data-c="${h.btn2Cat || "sale"}">${h.btn2Text}</button>
+        </div>
+      </div>
+      <div class="im">
+        <div><img src="${h.img1 || IM.w1}" alt="Hero 1"></div>
+        <div><img src="${h.img2 || IM.m1}" alt="Hero 2"></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>Shop by Category <a data-a="go" data-v="shop" data-c="all">View All →</a></h2>
+      <div class="tiles">
+        ${DB.categories.map(c => `
+          <div class="tile" data-a="go" data-v="shop" data-c="${c.id}">
+            <span class="tico">${c.icon || "✦"}</span>
+            <span class="lg">${c.name}</span>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+
+    ${saleProducts.length ? `
+    <section class="sec" style="padding-top:10px">
+      <h2>Seasonal Offers <a data-a="go" data-v="shop" data-c="sale">Shop All Sale (${saleProducts.length}) →</a></h2>
+      <div class="grid">${saleProducts.slice(0, 4).map(productCard).join("")}</div>
+    </section>` : ""}
+
+    <section class="sec" style="padding-top:10px">
+      <h2>Curated Pieces <a data-a="go" data-v="shop" data-c="all">Explore Catalog →</a></h2>
+      <div class="grid">${featured.map(productCard).join("")}</div>
+    </section>
+
+    <section class="nl">
+      <h2 class="lg" style="font-size:36px;margin-bottom:10px">Join the Private Client List</h2>
+      <p style="opacity:.8;margin-bottom:20px">Receive early access to archive drops and private seasonal reductions.</p>
+      <form onsubmit="event.preventDefault();toast('Subscribed! Use code GLORY10 for 10% off.');this.reset()">
+        <input type="email" placeholder="Enter your email address" required>
+        <button class="b" type="submit">Subscribe</button>
+      </form>
+    </section>
+  `;
+}
+
+function renderShop() {
+  let list = [...DB.products];
+
+  if (UI.search.trim()) {
+    const q = UI.search.trim().toLowerCase();
+    const underMatch = q.match(/under\s+(\d+)/);
+    if (underMatch) {
+      const lim = Number(underMatch[1]);
+      list = list.filter(p => getProductPricing(p).final <= lim);
+    } else {
+      list = list.filter(p =>
+        p.name.toLowerCase().includes(q) ||
+        (p.desc || "").toLowerCase().includes(q) ||
+        (p.cats || []).some(cid => (DB.categories.find(c => c.id === cid)?.name || "").toLowerCase().includes(q))
+      );
+    }
+  }
+
+  if (UI.cat && UI.cat !== "all" && UI.cat !== "sale") {
+    list = list.filter(p => (p.cats || []).includes(UI.cat));
+  }
+  if (UI.onlySale || UI.cat === "sale") {
+    list = list.filter(p => getProductPricing(p).onSale);
+  }
+  list = list.filter(p => getProductPricing(p).final <= UI.maxPrice);
+
+  if (UI.sort === "low") list.sort((a, b) => getProductPricing(a).final - getProductPricing(b).final);
+  if (UI.sort === "high") list.sort((a, b) => getProductPricing(b).final - getProductPricing(a).final);
+  if (UI.sort === "disc") list.sort((a, b) => getProductPricing(b).pct - getProductPricing(a).pct);
+
+  const activeCatObj = DB.categories.find(c => c.id === UI.cat);
+  const title = UI.onlySale || UI.cat === "sale"
+    ? "SEASONAL SALE"
+    : (activeCatObj ? `${activeCatObj.icon || ""} ${activeCatObj.name.toUpperCase()}` : "ALL COLLECTIONS");
+
+  return `
+    <div class="shop">
+      <aside class="fp" id="fp">
+        <h4>Categories</h4>
+        <label><input type="radio" name="fcat" ${UI.cat === "all" && !UI.onlySale ? "checked" : ""} onchange="UI.cat='all';UI.onlySale=false;render()"> All Products (${DB.products.length})</label>
+        ${DB.categories.map(c => {
+          const cnt = DB.products.filter(p => (p.cats || []).includes(c.id)).length;
+          return `<label><input type="radio" name="fcat" ${UI.cat === c.id ? "checked" : ""} onchange="UI.cat='${c.id}';UI.onlySale=false;render()"> ${c.icon || ""} ${c.name} (${cnt})</label>`;
+        }).join("")}
+
+        <h4>Offers</h4>
+        <label><input type="checkbox" ${UI.onlySale || UI.cat === "sale" ? "checked" : ""} onchange="UI.onlySale=this.checked;if(!this.checked&&UI.cat==='sale')UI.cat='all';render()"> On Sale Only</label>
+
+        <h4>Max Price: ${fmtPrice(UI.maxPrice)}</h4>
+        <input type="range" min="20" max="2000" step="10" value="${UI.maxPrice}" oninput="UI.maxPrice=Number(this.value);render()">
+
+        <div style="margin-top:20px">
+          <button class="b o sm" onclick="UI.cat='all';UI.onlySale=false;UI.search='';UI.maxPrice=2000;$('q').value='';render()">Reset Filters</button>
+        </div>
+      </aside>
+
+      <div>
+        <div class="fl">
+          <div>
+            <b>${title}</b>
+            <div style="color:var(--mut);font-size:12px">${list.length} items available</div>
+          </div>
+          <div class="row">
+            ${compareList.length ? `<button class="b o sm" data-a="opencmp">Compare (${compareList.length})</button>` : ""}
+            <select style="width:auto" onchange="UI.sort=this.value;render()">
+              <option value="featured" ${UI.sort === "featured" ? "selected" : ""}>Sort: Featured</option>
+              <option value="low" ${UI.sort === "low" ? "selected" : ""}>Price: Low to High</option>
+              <option value="high" ${UI.sort === "high" ? "selected" : ""}>Price: High to Low</option>
+              <option value="disc" ${UI.sort === "disc" ? "selected" : ""}>Biggest Discount</option>
+            </select>
+          </div>
+        </div>
+        ${list.length
+          ? `<div class="grid">${list.map(productCard).join("")}</div>`
+          : `<div style="padding:60px 20px;text-align:center;background:var(--bg2)"><p>No products match your current filters.</p><br><button class="b" onclick="UI.cat='all';UI.onlySale=false;UI.search='';render()">Show All Products</button></div>`}
+      </div>
+    </div>
+  `;
+}
+
+/* ==========================================================================
+   7. MODALS & DRAWERS (PRODUCT DETAIL, CART, WISHLIST, COMPARE)
+   ========================================================================== */
+let modalState = { imgIdx: 0, size: "", color: "" };
+
+function openProductModal(id) {
+  const p = DB.products.find(x => x.id === id);
+  if (!p) return;
+  const pr = getProductPricing(p);
+  modalState = {
+    imgIdx: 0,
+    size: (p.sizes && p.sizes[0]) || "One Size",
+    color: (p.colors && p.colors[0]) || "#111111"
+  };
+
+  const draw = () => {
+    const imgs = (p.imgs && p.imgs.length) ? p.imgs : [IM.w1];
+    $("ov").innerHTML = `
+      <div class="ov" onclick="if(event.target===this)closeOv()">
+        <div class="md">
+          <button class="x" onclick="closeOv()">×</button>
+          <div class="pd">
+            <div>
+              <div class="zm"><img src="${imgs[modalState.imgIdx] || imgs[0]}" alt="${p.name}"></div>
+              ${imgs.length > 1 ? `
+                <div class="th">
+                  ${imgs.map((src, i) => `<div class="${i === modalState.imgIdx ? "on" : ""}" onclick="modalState.imgIdx=${i};openProductModalUpdate('${p.id}')"><img src="${src}"></div>`).join("")}
+                </div>` : ""}
+            </div>
+            <div>
+              ${pr.onSale ? `<span class="badge sale" style="margin-bottom:10px">SAVE ${pr.pct}%</span>` : ""}
+              <h2 class="lg" style="font-size:36px;line-height:1.1">${p.name}</h2>
+              <div class="pr" style="font-size:20px;margin:12px 0">
+                ${fmtPrice(pr.final)}
+                ${pr.onSale ? `<s>${fmtPrice(pr.orig)}</s>` : ""}
+              </div>
+              <p style="color:var(--mut);margin-bottom:20px">${p.desc || "Crafted with premium materials for timeless elegance."}</p>
+
+              ${p.colors && p.colors.length ? `
+                <div style="margin-bottom:16px">
+                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Color</div>
+                  ${p.colors.map(c => `<span class="sw ${modalState.color === c ? "on" : ""}" style="background:${c}" onclick="modalState.color='${c}';openProductModalUpdate('${p.id}')"></span>`).join("")}
+                </div>` : ""}
+
+              ${p.sizes && p.sizes.length ? `
+                <div style="margin-bottom:22px">
+                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Size</div>
+                  ${p.sizes.map(sz => `<span class="ch ${modalState.size === sz ? "on" : ""}" onclick="modalState.size='${sz}';openProductModalUpdate('${p.id}')">${sz}</span>`).join("")}
+                </div>` : ""}
+
+              <div class="row">
+                <button class="b" style="flex:1" onclick="addToCart('${p.id}', modalState.size, modalState.color);closeOv()">Add to Bag — ${fmtPrice(pr.final)}</button>
+                <button class="b o" onclick="toggleWish('${p.id}');openProductModalUpdate('${p.id}')">${wish.includes(p.id) ? "♥ Saved" : "♡ Wishlist"}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  };
+  window.openProductModalUpdate = () => draw();
+  draw();
+}
+
+function openCartDrawer() {
+  let subtotal = 0;
+  const rows = cart.map((item, idx) => {
+    const p = DB.products.find(x => x.id === item.id);
+    if (!p) return "";
+    const pr = getProductPricing(p);
+    subtotal += pr.final * item.qty;
+    return `
+      <div class="ci">
+        <div class="t"><img src="${(p.imgs && p.imgs[0]) || IM.w1}"></div>
+        <div style="flex:1">
+          <div style="font-weight:500">${p.name}</div>
+          <small style="color:var(--mut)">Size: ${item.size} · Color: <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${item.color}"></span></small>
+          <div style="margin-top:4px">${fmtPrice(pr.final)} × ${item.qty}</div>
+          <div class="row" style="margin:6px 0 0">
+            <button class="b o sm" onclick="updCartQty(${idx},-1)">-</button>
+            <span>${item.qty}</span>
+            <button class="b o sm" onclick="updCartQty(${idx},1)">+</button>
+            <button style="margin-left:auto;color:#b3372c;font-size:12px" onclick="updCartQty(${idx},-999)">Remove</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  let couponDisc = 0;
+  if (appliedCoupon) {
+    const cObj = (DB.settings.discounts.coupons || []).find(c => c.active && c.code.toUpperCase() === appliedCoupon.toUpperCase());
+    if (cObj) couponDisc = Math.round(subtotal * (cObj.percent / 100) * 100) / 100;
+    else appliedCoupon = null;
+  }
+  const total = Math.max(0, subtotal - couponDisc);
+
+  $("ov").innerHTML = `
+    <div class="ov r" onclick="if(event.target===this)closeOv()">
+      <div class="dr">
+        <button class="x" onclick="closeOv()">×</button>
+        <h2 class="lg" style="font-size:28px;margin-bottom:4px">Shopping Bag</h2>
+        ${!currentUser
+          ? `<div style="background:var(--bg2);padding:8px 12px;font-size:12px;margin-bottom:10px;direction:rtl;font-family:Cairo,sans-serif">
+               💡 <a style="text-decoration:underline;cursor:pointer;font-weight:700" onclick="openAccountModal()">سجل الدخول بحسابك</a> لحفظ محتويات السلة تلقائياً واسترجاعها من أي جهاز.
+             </div>`
+          : `<div style="color:#236b43;font-size:12px;margin-bottom:10px;direction:rtl;font-family:Cairo,sans-serif">
+               ✓ محفوظ تلقائياً في حساب: <b>${currentUser}</b>
+             </div>`}
+        <div style="flex:1;overflow:auto">${rows || `<p style="color:var(--mut);margin-top:40px;text-align:center">Your shopping bag is empty.</p>`}</div>
+
+        ${cart.length ? `
+          <div style="border-top:1px solid var(--line);padding-top:14px;margin-top:14px">
+            <div class="row">
+              <input id="cpnIn" placeholder="Promo code (e.g. GLORY10)" value="${appliedCoupon || ""}" style="flex:1">
+              <button class="b o sm" onclick="applyCouponCode($('cpnIn').value)">Apply</button>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin:6px 0"><span>Subtotal</span><span>${fmtPrice(subtotal)}</span></div>
+            ${couponDisc > 0 ? `<div style="display:flex;justify-content:space-between;color:#236b43;margin:6px 0"><span>Promo (${appliedCoupon})</span><span>-${fmtPrice(couponDisc)}</span></div>` : ""}
+            <div style="display:flex;justify-content:space-between;font-weight:600;font-size:16px;margin:10px 0"><span>Total</span><span>${fmtPrice(total)}</span></div>
+            <button class="b" style="width:100%" onclick="checkoutWhatsApp(${total})">Order via WhatsApp</button>
+          </div>
+        ` : ""}
+      </div>
+    </div>
+  `;
+}
+
+function openWishlistDrawer() {
+  const items = wish.map(id => DB.products.find(p => p.id === id)).filter(Boolean);
+  $("ov").innerHTML = `
+    <div class="ov r" onclick="if(event.target===this)closeOv()">
+      <div class="dr">
+        <button class="x" onclick="closeOv()">×</button>
+        <h2 class="lg" style="font-size:28px;margin-bottom:12px">Saved Wishlist (${items.length})</h2>
+        <div style="flex:1;overflow:auto">
+          ${items.length ? items.map(p => {
+            const pr = getProductPricing(p);
+            return `
+              <div class="ci">
+                <div class="t"><img src="${(p.imgs && p.imgs[0]) || IM.w1}"></div>
+                <div style="flex:1">
+                  <div style="font-weight:500">${p.name}</div>
+                  <div>${fmtPrice(pr.final)}</div>
+                  <div class="row">
+                    <button class="b sm" onclick="addToCart('${p.id}');openWishlistDrawer()">Move to Bag</button>
+                    <button class="b o sm" onclick="toggleWish('${p.id}');openWishlistDrawer()">Remove</button>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join("") : `<p style="color:var(--mut);margin-top:40px;text-align:center">No saved items yet.</p>`}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function openCompareModal() {
+  const items = compareList.map(id => DB.products.find(p => p.id === id)).filter(Boolean);
+  $("ov").innerHTML = `
+    <div class="ov" onclick="if(event.target===this)closeOv()">
+      <div class="md">
+        <button class="x" onclick="closeOv()">×</button>
+        <h2 class="lg" style="font-size:30px;margin-bottom:16px">Product Comparison</h2>
+        <div class="tb">
+          <table>
+            <tr><th>Feature</th>${items.map(p => `<th>${p.name}</th>`).join("")}</tr>
+            <tr><td>Image</td>${items.map(p => `<td><img src="${(p.imgs && p.imgs[0]) || IM.w1}" style="width:90px;aspect-ratio:3/4;object-fit:cover"></td>`).join("")}</tr>
+            <tr><td>Price</td>${items.map(p => { const pr = getProductPricing(p); return `<td><b>${fmtPrice(pr.final)}</b> ${pr.onSale ? `<s>${fmtPrice(pr.orig)}</s>` : ""}</td>`; }).join("")}</tr>
+            <tr><td>Sizes</td>${items.map(p => `<td>${(p.sizes || []).join(", ")}</td>`).join("")}</tr>
+            <tr><td>Description</td>${items.map(p => `<td>${p.desc || "-"}</td>`).join("")}</tr>
+            <tr><td>Action</td>${items.map(p => `<td><button class="b sm" onclick="addToCart('${p.id}');closeOv()">Add to Bag</button></td>`).join("")}</tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function closeOv() { $("ov").innerHTML = ""; }
+
+function addToCart(id, size, color) {
+  const p = DB.products.find(x => x.id === id);
+  if (!p) return;
+  const sz = size || (p.sizes && p.sizes[0]) || "One Size";
+  const cl = color || (p.colors && p.colors[0]) || "#111111";
+  const existing = cart.find(i => i.id === id && i.size === sz && i.color === cl);
+  if (existing) existing.qty++;
+  else cart.push({ id, size: sz, color: cl, qty: 1 });
+  saveCart();
+  toast(currentUser ? `Added "${p.name}" & saved to ${currentUser}` : `Added "${p.name}" to bag`);
+}
+
+function updCartQty(idx, delta) {
+  if (!cart[idx]) return;
+  cart[idx].qty += delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  saveCart();
+  openCartDrawer();
+}
+
+function toggleWish(id) {
+  const i = wish.indexOf(id);
+  if (i >= 0) wish.splice(i, 1);
+  else wish.push(id);
+  saveWish();
+  if (UI.view !== "admin") render();
+}
+
+function applyCouponCode(code) {
+  const cObj = (DB.settings.discounts.coupons || []).find(c => c.active && c.code.toUpperCase() === code.trim().toUpperCase());
+  if (!cObj) {
+    toast("Invalid or inactive promo code");
+    appliedCoupon = null;
+  } else {
+    appliedCoupon = cObj.code.toUpperCase();
+    toast(`Coupon ${appliedCoupon} (-${cObj.percent}%) applied!`);
+  }
+  syncCurrentUserData();
+  openCartDrawer();
+}
+
+function checkoutWhatsApp(total) {
+  const lines = cart.map(i => {
+    const p = DB.products.find(x => x.id === i.id);
+    const pr = getProductPricing(p);
+    return `• ${p.name} (${i.size}) ×${i.qty} = ${fmtPrice(pr.final * i.qty)}`;
+  });
+  const customerLine = currentUser ? `Customer: ${currentUser}\n` : "";
+  const msg = `New Order — ${DB.settings.storeName}\n${customerLine}\n${lines.join("\n")}\n${appliedCoupon ? `Coupon: ${appliedCoupon}\n` : ""}Total: ${fmtPrice(total)}`;
+  const wa = (DB.settings.whatsapp || "").replace(/\D/g, "");
+  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+
+/* ==========================================================================
+   8. HIDDEN ADMIN CONTROL PANEL (Cloud Synced for All Visitors)
+   ========================================================================== */
+function handleImageFile(inputEl, callback) {
+  const file = inputEl.files && inputEl.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      const maxW = 600;
+      const scale = Math.min(1, maxW / img.width);
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      callback(canvas.toDataURL("image/jpeg", 0.78));
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function renderAdmin() {
+  if (!UI.adminAuth) {
+    return `
+      <div style="max-width:420px;margin:80px auto;padding:30px;background:var(--bg2);border:1px solid var(--line);direction:rtl;font-family:Cairo,sans-serif;text-align:center">
+        <div style="font-size:36px;margin-bottom:10px">🔐</div>
+        <h2 style="margin-bottom:16px">تسجيل الدخول</h2>
+        <form onsubmit="event.preventDefault();if($('adPass').value===DB.settings.adminPass){UI.adminAuth=true;render();}else{toast('كلمة المرور غير صحيحة!')}">
+          <input type="password" id="adPass" placeholder="" required autofocus style="margin-bottom:12px;text-align:center">
+          <div class="row" style="margin:0">
+            <button class="b" style="flex:1" type="submit">دخول</button>
+            <button class="b o" type="button" onclick="UI.view='home';render()">إلغاء</button>
+          </div>
+        </form>
+      </div>
+    `;
+  }
+
+  const tabs = [
+    { id: "dashboard", label: "📊 نظرة عامة والربط السحابي" },
+    { id: "products", label: "📦 إدارة المنتجات" },
+    { id: "categories", label: "🗂️ الأقسام والأيقونات" },
+    { id: "discounts", label: "🏷️ نظام التخفيضات" },
+    { id: "appearance", label: "🎨 الواجهة والإعدادات" }
+  ];
+
+  let content = "";
+  const isCloudConnected = Boolean(getCloudUrl());
+
+  if (UI.adminTab === "dashboard") {
+    const onSaleCount = DB.products.filter(p => getProductPricing(p).onSale).length;
+    const usersCount = Object.keys(usersDB).length;
+    content = `
+      <h2>مرحباً بك في لوحة التحكم الشاملة</h2>
+      <p style="color:var(--mut)">
+        حالة المزامنة السحابية للجميع:
+        ${isCloudConnected
+          ? `<span class="badge" style="background:#236b43;color:#fff">🟢 متصل أونلاين — أي تعديل يظهر لجميع الزوار فوراً</span>`
+          : `<span class="badge sale">🟠 غير مربوط بـ Firebase بعد (أضف الرابط بالأسفل ليعمل للجميع)</span>`}
+      </p>
+
+      <div class="st">
+        <div><span>إجمالي المنتجات</span><b>${DB.products.length}</b></div>
+        <div><span>الأقسام النشطة</span><b>${DB.categories.length}</b></div>
+        <div><span>منتجات عليها خصم</span><b>${onSaleCount}</b></div>
+        <div><span>الحسابات المسجلة</span><b>${usersCount}</b></div>
+      </div>
+
+      <div class="ad-box">
+        <h3>☁️ الربط السحابي المباشر (Firebase Realtime Database)</h3>
+        <p style="color:var(--mut);margin-bottom:10px;font-size:13px">
+          لجعل جميع تعديلاتك وحسابات العملاء محفوظة أونلاين وتعمل على أي هاتف أو جهاز يدخل الموقع:
+        </p>
+        <div class="row">
+          <input id="quickFbUrl" placeholder="https://your-project-default-rtdb.firebaseio.com" value="${getCloudUrl()}" style="flex:1;direction:ltr">
+          <button class="b ok" onclick="connectFirebaseUrl($('quickFbUrl').value)">🔗 حفظ ومزامنة الآن</button>
+        </div>
+      </div>
+
+      <div class="ad-box">
+        <h3>💾 النسخ الاحتياطي وتصدير الملف</h3>
+        <div class="row">
+          <button class="b o" onclick="exportUpdatedHTML()">⬇️ تنزيل ملف index.html مدمج بالرابط والبيانات</button>
+          <button class="b o" onclick="exportJSON()">📤 تصدير نسخة احتياطية (JSON)</button>
+          <label class="b o" style="margin:0;cursor:pointer">
+            📥 استيراد نسخة (JSON)
+            <input type="file" accept=".json" hidden onchange="importJSON(this)">
+          </label>
+        </div>
+      </div>
+    `;
+  }
+
+  if (UI.adminTab === "products") {
+    const ep = UI.editProdId ? DB.products.find(p => p.id === UI.editProdId) : null;
+    content = `
+      <h2>إدارة المنتجات والأسعار والصور</h2>
+
+      <div class="ad-box">
+        <h3>${ep ? "✏️ تعديل المنتج: " + ep.name : "➕ إضافة منتج جديد"}</h3>
+        <form id="prodForm" onsubmit="saveProductForm(event)">
+          <div class="ad-grid">
+            <div>
+              <label>اسم المنتج *</label>
+              <input id="pName" value="${ep ? ep.name : ""}" placeholder="مثال: جاكيت جلد كلاسيك" required>
+            </div>
+            <div>
+              <label>السعر الأساسي (${DB.settings.currency}) *</label>
+              <input type="number" step="0.01" id="pPrice" value="${ep ? ep.price : ""}" placeholder="150" required>
+            </div>
+            <div>
+              <label>نسبة الخصم على هذا المنتج (%)</label>
+              <input type="number" min="0" max="95" id="pDisc" value="${ep ? (ep.discountPercent || 0) : 0}" placeholder="0">
+            </div>
+            <div>
+              <label>شارة مميزة (Badge)</label>
+              <input id="pBadge" value="${ep ? (ep.badge || "") : ""}" placeholder="NEW / BEST SELLER / LIMITED">
+            </div>
+          </div>
+
+          <div class="ad-grid" style="margin-top:12px">
+            <div>
+              <label>المقاسات (افصل بينها بفاصلة)</label>
+              <input id="pSizes" value="${ep ? (ep.sizes || []).join(", ") : "S, M, L, XL"}">
+            </div>
+            <div>
+              <label>الألوان (أكواد Hex مفصولة بفاصلة)</label>
+              <input id="pColors" value="${ep ? (ep.colors || []).join(", ") : "#111111, #e5ddd0"}">
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <label>الأقسام التابع لها المنتج</label>
+            <div class="chk-list">
+              ${DB.categories.map(c => `
+                <label class="chk-item">
+                  <input type="checkbox" name="pCats" value="${c.id}" ${ep && (ep.cats || []).includes(c.id) ? "checked" : ""}>
+                  ${c.icon || ""} ${c.name}
+                </label>
+              `).join("")}
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <label>وصف المنتج</label>
+            <textarea id="pDesc" rows="2" placeholder="تفاصيل الخامة والتصميم...">${ep ? (ep.desc || "") : ""}</textarea>
+          </div>
+
+          <div style="margin-top:12px">
+            <label>صور المنتج (يمكنك رفع صورة من جهازك أو لصق روابط الصور - رابط في كل سطر)</label>
+            <div class="row">
+              <label class="b o sm" style="margin:0;cursor:pointer">
+                📁 رفع صورة من الجهاز
+                <input type="file" accept="image/*" hidden onchange="handleImageFile(this, url => { const ta=$('pImgs'); ta.value = (ta.value ? ta.value + '\\n' : '') + url; toast('تمت إضافة الصورة!'); })">
+              </label>
+            </div>
+            <textarea id="pImgs" rows="3" placeholder="https://example.com/image.jpg">${ep ? (ep.imgs || []).join("\n") : ""}</textarea>
+          </div>
+
+          <div class="row" style="margin-top:14px">
+            <button class="b ok" type="submit">${ep ? "💾 حفظ التعديلات" : "➕ إضافة المنتج للمتجر"}</button>
+            ${ep ? `<button class="b o" type="button" onclick="UI.editProdId=null;render()">إلغاء التعديل</button>` : ""}
+          </div>
+        </form>
+      </div>
+
+      <h3>قائمة المنتجات الحالية (${DB.products.length})</h3>
+      <div class="tb">
+        <table>
+          <thead>
+            <tr>
+              <th>الصورة</th>
+              <th>المنتج</th>
+              <th>الأقسام</th>
+              <th>السعر</th>
+              <th>الخصم الفعلي</th>
+              <th>تحكم</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${DB.products.map(p => {
+              const pr = getProductPricing(p);
+              const catsStr = (p.cats || []).map(cid => DB.categories.find(c => c.id === cid)?.name).filter(Boolean).join("، ");
+              return `
+                <tr>
+                  <td><img class="ad-thumb" src="${(p.imgs && p.imgs[0]) || IM.w1}"></td>
+                  <td><b>${p.name}</b><br><small style="color:var(--mut)">${(p.sizes || []).join(", ")}</small></td>
+                  <td>${catsStr || "-"}</td>
+                  <td>
+                    <input type="number" value="${p.price}" style="width:85px" onchange="quickUpdatePrice('${p.id}', this.value)">
+                  </td>
+                  <td>
+                    ${pr.onSale ? `<span class="badge sale">-${pr.pct}% (${fmtPrice(pr.final)})</span>` : `<span class="badge off">بدون خصم</span>`}
+                  </td>
+                  <td>
+                    <div class="row" style="margin:0">
+                      <button class="b o sm" onclick="UI.editProdId='${p.id}';render();window.scrollTo(0,120)">تعديل</button>
+                      <button class="b dng sm" onclick="deleteProduct('${p.id}')">حذف</button>
+                    </div>
+                  </td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  if (UI.adminTab === "categories") {
+    const ec = UI.editCatId ? DB.categories.find(c => c.id === UI.editCatId) : null;
+    content = `
+      <h2>إدارة الأقسام والأيقونات وتوزيع المنتجات</h2>
+
+      <div class="ad-box">
+        <h3>${ec ? "✏️ تعديل القسم: " + ec.name : "➕ إضافة قسم جديد"}</h3>
+        <form onsubmit="saveCategoryForm(event)">
+          <div class="ad-grid">
+            <div>
+              <label>اسم القسم *</label>
+              <input id="cName" value="${ec ? ec.name : ""}" placeholder="مثال: Hoodies / ساعات" required>
+            </div>
+            <div>
+              <label>أيقونة القسم (إيموجي أو رمز)</label>
+              <input id="cIcon" value="${ec ? (ec.icon || "") : "✨"}" placeholder="🧥 / 👟 / 👜 / ⌚">
+            </div>
+            <div>
+              <label>الظهور في القائمة العلوية</label>
+              <select id="cNav">
+                <option value="1" ${!ec || ec.showNav !== false ? "selected" : ""}>نعم، يظهر في القائمة</option>
+                <option value="0" ${ec && ec.showNav === false ? "selected" : ""}>إخفاء من القائمة</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" style="margin-top:12px">
+            <button class="b ok" type="submit">${ec ? "💾 حفظ القسم" : "➕ إضافة القسم"}</button>
+            ${ec ? `<button class="b o" type="button" onclick="UI.editCatId=null;render()">إلغاء</button>` : ""}
+          </div>
+        </form>
+      </div>
+
+      <h3>الأقسام الحالية (${DB.categories.length})</h3>
+      <div class="tb">
+        <table>
+          <thead>
+            <tr>
+              <th>الأيقونة</th>
+              <th>اسم القسم</th>
+              <th>عدد المنتجات</th>
+              <th>القائمة</th>
+              <th>تحكم</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${DB.categories.map(c => {
+              const cnt = DB.products.filter(p => (p.cats || []).includes(c.id)).length;
+              return `
+                <tr>
+                  <td style="font-size:24px">${c.icon || "✦"}</td>
+                  <td><b>${c.name}</b></td>
+                  <td>${cnt} منتج</td>
+                  <td>${c.showNav !== false ? "ظاهر" : "مخفي"}</td>
+                  <td>
+                    <div class="row" style="margin:0">
+                      <button class="b o sm" onclick="UI.editCatId='${c.id}';render()">تعديل</button>
+                      <button class="b dng sm" onclick="deleteCategory('${c.id}')">حذف</button>
+                    </div>
+                  </td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ad-box" style="margin-top:24px">
+        <h3>🔗 إضافة / إزالة منتجات داخل قسم محدد بسرعة</h3>
+        <div class="row">
+          <select id="assignCatSel" style="max-width:260px" onchange="render()">
+            ${DB.categories.map(c => `<option value="${c.id}" ${window._assignCat === c.id ? "selected" : ""}>${c.icon || ""} ${c.name}</option>`).join("")}
+          </select>
+        </div>
+        <div class="chk-list" style="max-height:240px;margin-top:10px">
+          ${(() => {
+            const targetCat = window._assignCat || (DB.categories[0] && DB.categories[0].id);
+            if (!targetCat) return "لا توجد أقسام";
+            return DB.products.map(p => {
+              const checked = (p.cats || []).includes(targetCat);
+              return `
+                <label class="chk-item">
+                  <input type="checkbox" ${checked ? "checked" : ""} onchange="toggleProductCategory('${p.id}', '${targetCat}', this.checked)">
+                  ${p.name}
+                </label>
+              `;
+            }).join("");
+          })()}
+        </div>
+      </div>
+    `;
+  }
+
+  if (UI.adminTab === "discounts") {
+    const d = DB.settings.discounts;
+    content = `
+      <h2>نظام التخفيضات والعروض الترويجية</h2>
+
+      <div class="ad-box">
+        <h3>🌍 1. تخفيض شامل على كل منتجات الموقع</h3>
+        <p style="color:var(--mut);margin-bottom:12px">عند التفعيل، سيتم تطبيق نسبة الخصم تلقائياً على جميع المنتجات في المتجر.</p>
+        <div class="row">
+          <label style="display:inline-flex;align-items:center;gap:8px;margin:0;cursor:pointer">
+            <input type="checkbox" style="width:auto" ${d.globalEnabled ? "checked" : ""} onchange="DB.settings.discounts.globalEnabled=this.checked;saveDB('تم تحديث حالة التخفيض الشامل');render()">
+            <b>تفعيل التخفيض الشامل على كل المنتجات</b>
+          </label>
+          <input type="number" min="1" max="95" value="${d.globalPercent}" style="width:110px" onchange="DB.settings.discounts.globalPercent=Number(this.value);saveDB('تم تحديث نسبة الخصم الشامل');render()">
+          <span>% خصم</span>
+          <button class="b dng sm" onclick="clearAllDiscounts()">🗑️ إزالة جميع التخفيضات من كل المنتجات</button>
+        </div>
+      </div>
+
+      <div class="ad-box">
+        <h3>🗂️ 2. تخفيضات حسب القسم</h3>
+        <p style="color:var(--mut);margin-bottom:12px">حدد نسبة خصم لقسم كامل (ضع 0 لإزالة الخصم عن القسم).</p>
+        <div class="ad-grid">
+          ${DB.categories.map(c => {
+            const val = (d.categoryDiscounts && d.categoryDiscounts[c.id]) || 0;
+            return `
+              <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg);padding:10px;border:1px solid var(--line)">
+                <span>${c.icon || ""} <b>${c.name}</b></span>
+                <div style="display:flex;align-items:center;gap:6px">
+                  <input type="number" min="0" max="95" value="${val}" style="width:75px;padding:6px" onchange="setCategoryDiscount('${c.id}', this.value)">
+                  <span>%</span>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+
+      <div class="ad-box">
+        <h3>📦 3. تخفيضات على منتجات محددة</h3>
+        <div class="tb">
+          <table>
+            <thead>
+              <tr>
+                <th>المنتج</th>
+                <th>السعر الأصلي</th>
+                <th>نسبة خصم المنتج (%)</th>
+                <th>السعر النهائي للعميل</th>
+                <th>إجراء</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${DB.products.map(p => {
+                const pr = getProductPricing(p);
+                return `
+                  <tr>
+                    <td><b>${p.name}</b></td>
+                    <td>${fmtPrice(p.price)}</td>
+                    <td>
+                      <input type="number" min="0" max="95" value="${p.discountPercent || 0}" style="width:80px" onchange="setProductDiscount('${p.id}', this.value)"> %
+                    </td>
+                    <td>
+                      <b>${fmtPrice(pr.final)}</b>
+                      ${pr.onSale ? `<span class="badge sale" style="margin-right:6px">-${pr.pct}%</span>` : ""}
+                    </td>
+                    <td>
+                      ${(p.discountPercent || 0) > 0
+                        ? `<button class="b dng sm" onclick="setProductDiscount('${p.id}', 0)">إزالة الخصم</button>`
+                        : `<button class="b o sm" onclick="setProductDiscount('${p.id}', 20)">خصم 20%</button>`}
+                    </td>
+                  </tr>
+                `;
+              }).join("")}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="ad-box">
+        <h3>🎟️ 4. أكواد الخصم (Promo Codes) في السلة</h3>
+        <form class="row" onsubmit="addCoupon(event)">
+          <input id="newCpnCode" placeholder="كود الخصم (مثال: EID20)" style="max-width:200px" required>
+          <input id="newCpnPct" type="number" min="1" max="95" placeholder="النسبة %" style="max-width:120px" required>
+          <button class="b ok sm" type="submit">➕ إضافة كوبون</button>
+        </form>
+        <div class="row" style="margin-top:12px">
+          ${(d.coupons || []).map((c, i) => `
+            <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--line);display:flex;align-items:center;gap:10px">
+              <b>${c.code}</b>
+              <span class="badge sale">-${c.percent}%</span>
+              <button style="color:#b3372c;font-size:12px" onclick="DB.settings.discounts.coupons.splice(${i},1);saveDB('تم حذف الكوبون');render()">حذف</button>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  if (UI.adminTab === "appearance") {
+    const s = DB.settings;
+    content = `
+      <h2>تخصيص الواجهة والأيقونات والإعدادات العامة</h2>
+
+      <form onsubmit="saveGeneralSettings(event)">
+        <div class="ad-box">
+          <h3>☁️ رابط قاعدة البيانات السحابية (Firebase)</h3>
+          <label>Firebase Realtime Database URL (يعمل الموقع به أونلاين لكل الزوار)</label>
+          <input id="sFb" value="${s.firebaseUrl || ""}" placeholder="https://your-project-default-rtdb.firebaseio.com" style="direction:ltr">
+        </div>
+
+        <div class="ad-box">
+          <h3>🏪 الهوية الأساسية وبيانات التواصل</h3>
+          <div class="ad-grid">
+            <div><label>اسم المتجر (الشعار)</label><input id="sName" value="${s.storeName}"></div>
+            <div><label>رمز العملة</label><input id="sCurr" value="${s.currency}"></div>
+            <div><label>رقم الواتساب (مع كود الدولة)</label><input id="sWa" value="${s.whatsapp}"></div>
+            <div><label>كلمة مرور لوحة التحكم</label><input id="sPass" value="${s.adminPass}"></div>
+          </div>
+          <div style="margin-top:12px"><label>نص الشريط العلوي الإعلاني (Top Bar)</label><input id="sTop" value="${s.topBar}"></div>
+          <div style="margin-top:12px"><label>نص الفوتر أسفل الموقع</label><input id="sFoot" value="${s.footerText}"></div>
+        </div>
+
+        <div class="ad-box">
+          <h3>✨ تعديل أيقونات الموقع</h3>
+          <div class="ad-grid">
+            <div><label>أيقونة الحساب</label><input id="ic1" value="${s.icons.account || "👤"}"></div>
+            <div><label>أيقونة المفضلة</label><input id="ic2" value="${s.icons.wishlist}"></div>
+            <div><label>أيقونة تغيير الثيم</label><input id="ic3" value="${s.icons.theme}"></div>
+            <div><label>أيقونة سلة المشتريات</label><input id="ic4" value="${s.icons.cart}"></div>
+            <div><label>أيقونة الواتساب</label><input id="ic5" value="${s.icons.whatsapp}"></div>
+          </div>
+        </div>
+
+        <div class="ad-box">
+          <h3>🖼️ الواجهة الرئيسية (Hero Section)</h3>
+          <div class="ad-grid">
+            <div><label>العنوان الفرعي العلوي</label><input id="hEye" value="${s.hero.eyebrow}"></div>
+            <div><label>العنوان الرئيسي الكبير</label><input id="hTit" value="${s.hero.title}"></div>
+          </div>
+          <div style="margin-top:12px"><label>الوصف</label><input id="hSub" value="${s.hero.subtitle}"></div>
+          <div class="ad-grid" style="margin-top:12px">
+            <div>
+              <label>صورة الواجهة الأولى (رابط أو رفع من الجهاز)</label>
+              <div class="row" style="margin:4px 0">
+                <input id="hImg1" value="${s.hero.img1}">
+                <label class="b o sm" style="margin:0;cursor:pointer">رفع صورة<input type="file" accept="image/*" hidden onchange="handleImageFile(this, u => { $('hImg1').value = u; toast('تم تحميل الصورة الأولى'); })"></label>
+              </div>
+            </div>
+            <div>
+              <label>صورة الواجهة الثانية (رابط أو رفع من الجهاز)</label>
+              <div class="row" style="margin:4px 0">
+                <input id="hImg2" value="${s.hero.img2}">
+                <label class="b o sm" style="margin:0;cursor:pointer">رفع صورة<input type="file" accept="image/*" hidden onchange="handleImageFile(this, u => { $('hImg2').value = u; toast('تم تحميل الصورة الثانية'); })"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="b ok" type="submit">💾 حفظ جميع الإعدادات ومزامنتها</button>
+      </form>
+    `;
+  }
+
+  return `
+    <div class="ad">
+      <aside>
+        <div style="padding:8px 12px;font-weight:700;border-bottom:1px solid var(--line);margin-bottom:6px">لوحة الإدارة</div>
+        ${tabs.map(t => `<a class="${UI.adminTab === t.id ? "on" : ""}" onclick="UI.adminTab='${t.id}';render()">${t.label}</a>`).join("")}
+        <hr style="border:0;border-top:1px solid var(--line);margin:8px 0">
+        <a onclick="UI.view='home';render()">🏠 العودة للمتجر</a>
+        <a style="color:#b3372c" onclick="UI.adminAuth=false;UI.view='home';render()">🚪 إغلاق لوحة الإدارة</a>
+      </aside>
+      <section>${content}</section>
+    </div>
+  `;
+}
+
+/* ==========================================================================
+   9. ADMIN ACTIONS & EXPORT FUNCTIONS
+   ========================================================================== */
+async function connectFirebaseUrl(url) {
+  DB.settings.firebaseUrl = (url || "").trim().replace(/\/+$/, "");
+  saveDB("جاري المزامنة مع السحابة...");
+  await pushStoreToCloud();
+  toast("تم الربط والمزامنة السحابية بنجاح!");
+  render();
+}
+
+function saveProductForm(e) {
+  e.preventDefault();
+  const name = $("pName").value.trim();
+  const price = Number($("pPrice").value) || 0;
+  const discountPercent = Number($("pDisc").value) || 0;
+  const badge = $("pBadge").value.trim();
+  const sizes = $("pSizes").value.split(",").map(s => s.trim()).filter(Boolean);
+  const colors = $("pColors").value.split(",").map(s => s.trim()).filter(Boolean);
+  const desc = $("pDesc").value.trim();
+  const imgs = $("pImgs").value.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  const cats = [...document.querySelectorAll('input[name="pCats"]:checked')].map(el => el.value);
+
+  if (UI.editProdId) {
+    const idx = DB.products.findIndex(p => p.id === UI.editProdId);
+    if (idx >= 0) {
+      DB.products[idx] = { ...DB.products[idx], name, price, discountPercent, badge, sizes, colors, desc, imgs: imgs.length ? imgs : [IM.w1], cats };
+    }
+    UI.editProdId = null;
+    saveDB("تم تحديث المنتج وحفظه للجميع");
+  } else {
+    DB.products.unshift({
+      id: "p_" + Date.now(),
+      name, price, discountPercent, badge, sizes, colors, desc,
+      imgs: imgs.length ? imgs : [IM.w1],
+      cats
+    });
+    saveDB("تمت إضافة المنتج الجديد ونشره للجميع");
+  }
+  render();
+}
+
+function quickUpdatePrice(id, val) {
+  const p = DB.products.find(x => x.id === id);
+  if (p) {
+    p.price = Math.max(0, Number(val) || 0);
+    saveDB("تم تحديث السعر ونشره للجميع");
+    render();
+  }
+}
+
+function deleteProduct(id) {
+  if (!confirm("هل تريد حذف هذا المنتج نهائياً؟")) return;
+  DB.products = DB.products.filter(p => p.id !== id);
+  saveDB("تم حذف المنتج وتحديث المتجر");
+  render();
+}
+
+function saveCategoryForm(e) {
+  e.preventDefault();
+  const name = $("cName").value.trim();
+  const icon = $("cIcon").value.trim();
+  const showNav = $("cNav").value === "1";
+
+  if (UI.editCatId) {
+    const c = DB.categories.find(x => x.id === UI.editCatId);
+    if (c) { c.name = name; c.icon = icon; c.showNav = showNav; }
+    UI.editCatId = null;
+    saveDB("تم تحديث القسم وحفظه");
+  } else {
+    const id = name.toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, "-") + "-" + Math.floor(Math.random() * 999);
+    DB.categories.push({ id, name, icon, showNav });
+    saveDB("تمت إضافة القسم الجديد ونشره");
+  }
+  render();
+}
+
+function deleteCategory(id) {
+  if (!confirm("هل تريد حذف هذا القسم؟")) return;
+  DB.categories = DB.categories.filter(c => c.id !== id);
+  DB.products.forEach(p => { p.cats = (p.cats || []).filter(cid => cid !== id); });
+  saveDB("تم حذف القسم وتحديث المتجر");
+  render();
+}
+
+function toggleProductCategory(prodId, catId, isAdded) {
+  window._assignCat = catId;
+  const p = DB.products.find(x => x.id === prodId);
+  if (!p) return;
+  p.cats = p.cats || [];
+  if (isAdded && !p.cats.includes(catId)) p.cats.push(catId);
+  if (!isAdded) p.cats = p.cats.filter(c => c !== catId);
+  saveDB("تم تحديث قسم المنتج");
+}
+
+function setCategoryDiscount(catId, pct) {
+  DB.settings.discounts.categoryDiscounts = DB.settings.discounts.categoryDiscounts || {};
+  DB.settings.discounts.categoryDiscounts[catId] = Math.min(95, Math.max(0, Number(pct) || 0));
+  saveDB("تم تحديث خصم القسم");
+  render();
+}
+
+function setProductDiscount(prodId, pct) {
+  const p = DB.products.find(x => x.id === prodId);
+  if (p) {
+    p.discountPercent = Math.min(95, Math.max(0, Number(pct) || 0));
+    saveDB("تم تحديث خصم المنتج");
+    render();
+  }
+}
+
+function clearAllDiscounts() {
+  if (!confirm("هل تريد إزالة جميع التخفيضات عن كل المنتجات والأقسام؟")) return;
+  DB.settings.discounts.globalEnabled = false;
+  DB.settings.discounts.categoryDiscounts = {};
+  DB.products.forEach(p => { p.discountPercent = 0; });
+  saveDB("تمت إزالة جميع التخفيضات");
+  render();
+}
+
+function addCoupon(e) {
+  e.preventDefault();
+  const code = $("newCpnCode").value.trim().toUpperCase();
+  const percent = Math.min(95, Math.max(1, Number($("newCpnPct").value) || 10));
+  DB.settings.discounts.coupons = DB.settings.discounts.coupons || [];
+  DB.settings.discounts.coupons.push({ code, percent, active: true });
+  saveDB("تمت إضافة الكوبون " + code);
+  render();
+}
+
+function saveGeneralSettings(e) {
+  e.preventDefault();
+  const s = DB.settings;
+  s.firebaseUrl = ($("sFb").value || "").trim().replace(/\/+$/, "");
+  s.storeName = $("sName").value.trim() || "GLORY STORE";
+  s.currency = $("sCurr").value.trim() || "$";
+  s.whatsapp = $("sWa").value.trim();
+  s.adminPass = $("sPass").value.trim() || "222555888admin";
+  s.topBar = $("sTop").value.trim();
+  s.footerText = $("sFoot").value.trim();
+  s.icons = {
+    account: $("ic1").value.trim() || "👤",
+    wishlist: $("ic2").value.trim() || "♡",
+    theme: $("ic3").value.trim() || "◐",
+    cart: $("ic4").value.trim() || "🛍",
+    whatsapp: $("ic5").value.trim() || "✆"
+  };
+  s.hero.eyebrow = $("hEye").value.trim();
+  s.hero.title = $("hTit").value.trim();
+  s.hero.subtitle = $("hSub").value.trim();
+  s.hero.img1 = $("hImg1").value.trim();
+  s.hero.img2 = $("hImg2").value.trim();
+  saveDB("تم حفظ جميع الإعدادات ومزامنتها");
+  render();
+}
+
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(DB, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "glory-store-backup.json";
+  a.click();
+}
+
+function importJSON(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const r = new FileReader();
+  r.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data.products && data.categories) {
+        DB = normalizeDB(data);
+        saveDB("تم استيراد البيانات ومزامنتها");
+        render();
+      } else alert("ملف غير صالح");
+    } catch { alert("خطأ في قراءة الملف"); }
+  };
+  r.readAsText(file);
+}
+
+function exportUpdatedHTML() {
+  let html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+  const fbUrl = getCloudUrl();
+  html = html.replace(/const HARDCODED_FIREBASE_URL = ".*?";/, `const HARDCODED_FIREBASE_URL = "${fbUrl}";`);
+  const markerStart = "const DEFAULT_DATA = ";
+  const markerEnd = ";\n\n/* ==========================================================================\n   2. HYBRID CLOUD";
+  const sIdx = html.indexOf(markerStart);
+  const eIdx = html.indexOf(markerEnd);
+  if (sIdx !== -1 && eIdx !== -1) {
+    html = html.slice(0, sIdx + markerStart.length) + JSON.stringify(DB, null, 2) + html.slice(eIdx);
+  }
+  const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "index.html";
+  a.click();
+  toast("تم تنزيل ملف index.html!");
+}
+
+/* ==========================================================================
+   10. MAIN RENDER, SECRET KEYBOARD TRIGGER & GLOBAL EVENT DELEGATION
+   ========================================================================== */
+function render() {
+  renderChrome();
+  $("fb").style.display = UI.view === "shop" ? "inline-flex" : "none";
+  if (UI.view === "home") $("app").innerHTML = renderHome();
+  else if (UI.view === "shop") $("app").innerHTML = renderShop();
+  else if (UI.view === "admin") $("app").innerHTML = renderAdmin();
+}
+
+let secretFiveCount = 0;
+let secretFiveTimer = null;
+document.addEventListener("keydown", e => {
+  const tag = (e.target && e.target.tagName) || "";
+  if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+
+  if (e.key === "5") {
+    secretFiveCount++;
+    clearTimeout(secretFiveTimer);
+    secretFiveTimer = setTimeout(() => { secretFiveCount = 0; }, 4000);
+    if (secretFiveCount >= 10) {
+      secretFiveCount = 0;
+      UI.view = "admin";
+      render();
+      window.scrollTo(0, 0);
+    }
+  } else {
+    secretFiveCount = 0;
+  }
+});
+
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-a]");
+  if (!el) return;
+  const act = el.dataset.a;
+
+  if (act === "go") {
+    UI.view = el.dataset.v;
+    if (el.dataset.c) {
+      UI.cat = el.dataset.c;
+      UI.onlySale = el.dataset.c === "sale";
+    }
+    render();
+    window.scrollTo(0, 0);
+  }
+  else if (act === "acc") openAccountModal();
+  else if (act === "pd") {
+    if (e.target.closest("button")) return;
+    openProductModal(el.dataset.id);
+  }
+  else if (act === "qadd") {
+    e.stopPropagation();
+    addToCart(el.dataset.id);
+  }
+  else if (act === "tgw") {
+    e.stopPropagation();
+    toggleWish(el.dataset.id);
+  }
+  else if (act === "cmp") {
+    e.stopPropagation();
+    const id = el.dataset.id;
+    const i = compareList.indexOf(id);
+    if (i >= 0) compareList.splice(i, 1);
+    else if (compareList.length < 3) compareList.push(id);
+    else toast("Max 3 items to compare");
+    render();
+  }
+  else if (act === "opencmp") openCompareModal();
+  else if (act === "cart") openCartDrawer();
+  else if (act === "wl") openWishlistDrawer();
+  else if (act === "ff") $("fp")?.classList.toggle("s");
+  else if (act === "th") {
+    const cur = document.documentElement.getAttribute("data-theme");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+  }
+});
+
+$("q").addEventListener("input", e => {
+  const val = e.target.value;
+  UI.search = val;
+  const sg = $("sg");
+  if (!val.trim()) { sg.hidden = true; if (UI.view === "shop") render(); return; }
+  const matches = DB.products.filter(p => p.name.toLowerCase().includes(val.toLowerCase())).slice(0, 5);
+  if (matches.length) {
+    sg.hidden = false;
+    sg.innerHTML = matches.map(p => {
+      const pr = getProductPricing(p);
+      return `<div onclick="$('sg').hidden=true;openProductModal('${p.id}')"><span>${p.name}</span><b>${fmtPrice(pr.final)}</b></div>`;
+    }).join("");
+  } else {
+    sg.hidden = true;
+  }
+});
+
+$("q").addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    $("sg").hidden = true;
+    UI.view = "shop";
+    UI.cat = "all";
+    render();
+  }
+});
+
+document.addEventListener("change", e => {
+  if (e.target && e.target.id === "assignCatSel") {
+    window._assignCat = e.target.value;
+    render();
+  }
+});
+
+render();
+syncFromCloud();
+</script>
+</body>
+</html>
